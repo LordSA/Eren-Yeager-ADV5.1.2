@@ -708,7 +708,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
 
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
+            InlineKeyboardButton('🤖 Updates', url='https://t.me/mwpro11')
+
+            ],[
+
+            InlineKeyboardButton('CHANNEL', url='https://t.me/mwpro1'),
+
+            InlineKeyboardButton('GROUP', url='https://t.me/mwmoviespro')
 
             ],[
 
