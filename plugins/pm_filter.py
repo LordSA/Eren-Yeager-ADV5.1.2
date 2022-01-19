@@ -80,7 +80,7 @@ async def next_page(bot, query):
 
     if not search:
 
-        await query.answer("You are using one of my old messages, please send the request again.",show_alert=True)
+        await query.answer("You are using one of my old messages, please send the request again.(പഴയതു മാറ്റിപ്പിടി)",show_alert=True)
 
         return
 
@@ -204,7 +204,7 @@ async def advantage_spoll_choker(bot, query):
 
     if int(user) != 0 and query.from_user.id != int(user):
 
-        return await query.answer("okDa", show_alert=True)
+        return await query.answer("വിളച്ചിൽ എടുകുന്നോ കുഞ്ഞിപുഴു നിനക്ക് വേണേൽ നി search ചെയ്യൂ കാരണം എനിക്ക് വേറെ പണി ഇല്ല😅. മാമനോടെ ഒന്നും തോന്നല്ലെ 😇", show_alert=True)
 
     if movie_  == "close_spellcheck":
 
@@ -234,7 +234,7 @@ async def advantage_spoll_choker(bot, query):
 
         else:
 
-            k = await query.message.edit('This Movie Not Found In DataBase')
+            k = await query.message.edit('This Movie Not Found In DataBase(എടെ ഇതു ആ പെട്ടിയിൽ ഇല്ല)😅')
 
             await asyncio.sleep(10)
 
@@ -338,7 +338,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
             else:
 
-                await query.answer("Thats not for you!!",show_alert=True)
+                await query.answer("ഇത് നിനക്കുള്ളതല്ല നി വേറെ നോക്ക്😉",show_alert=True)
 
     elif "groupcb" in query.data:
 
@@ -628,11 +628,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
                     )
 
-                await query.answer('Check PM, I have sent files in pm',show_alert = True)
+                await query.answer('Check PM, I have sent files in pm(നിൻ്റെ pm നോക്ക് അതിൽ ഞാൻ ഇട്ടിട്ടുണ്ട്)',show_alert = True)
 
         except UserIsBlocked:
 
-            await query.answer('Unblock the bot mahn !',show_alert = True)
+            await query.answer('പൊട്ട എന്നെ unblock ചെയ്യൂ ! (Unblock the bot mahn.. !)',show_alert = True)
 
         except PeerIdInvalid:
 
@@ -646,7 +646,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if AUTH_CHANNEL and not await is_subscribed(client, query):
 
-            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒",show_alert=True)
+            await query.answer("I Like Your Smartness(വിളച്ചിൽ എടുകുന്നോ എന്നെ ചൂടാക്കാതെ പോയി സബ് ചെയ്യൂ🙄), But Don't Be Oversmart 😒",show_alert=True)
 
             return
 
@@ -656,7 +656,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if not files_:
 
-            return await query.answer('No such file exist.')
+            return await query.answer('അങ്ങനെ ഒരു സാധനവും ഇതിൽ ഇല്ല(Files not in database).')
 
         files = files_[0]
 
