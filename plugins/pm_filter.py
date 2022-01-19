@@ -1,4 +1,4 @@
-#Kanged From @TroJanZheX
+#Kanged From @EvaMariaTG(Pls forgive me)
 
 import asyncio
 
@@ -774,7 +774,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         buttons= [[
 
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria'),
+            InlineKeyboardButton('🤖 Updates', url='https://t.me/mwpro11'),
 
             InlineKeyboardButton('♥️ Source', callback_data='source')
 
