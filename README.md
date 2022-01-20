@@ -67,7 +67,7 @@ You can deploy this bot anywhere.
 <pre>
 git clone https://github.com/LordSA/movie-world.git
 # Install Packages
-pip3 install -r requirements.txt
+pip3 install U -r requirements.txt
 Edit info.py with variables as given below then run bot
 python3 bot.py
 </pre>
