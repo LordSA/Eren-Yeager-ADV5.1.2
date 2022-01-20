@@ -47,6 +47,9 @@ async def start(client, message):
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
             InlineKeyboardButton('🤖 Updates', url='https://t.me/mwpro11')
             ],[
+            InlineKeyboardButton('CHANNEL', url='https://t.me/mwpro1'),
+            InlineKeyboardButton('GROUP', url='https://t.me/mwmoviespro')
+            ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
         ]]
@@ -89,6 +92,9 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
             InlineKeyboardButton('🤖 Updates', url='https://t.me/mwpro11')
+            ],[
+            InlineKeyboardButton('CHANNEL', url='https://t.me/mwpro1'),
+            InlineKeyboardButton('GROUP', url='https://t.me/mwmoviespro')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
