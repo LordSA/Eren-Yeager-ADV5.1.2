@@ -11,6 +11,7 @@ class script(object):
 ✯ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: <a href=https://www.python.org/>𝙿𝚈𝚃𝙷𝙾𝙽 𝟹</a>
 ✯ 𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴: <a href=https://www.mongodb.com/>𝙼𝙾𝙽𝙶𝙾 𝙳𝙱</a>
 ✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: <a href=https://id.heroku.com/login>𝙷𝙴𝚁𝙾𝙺𝚄</a>
+✯ 𝙲𝙾𝙳𝙴𝙳 𝙱𝚈: <a href=https://github.com/LordSA>𝙻𝙾𝚁𝙳 𝚂𝙰</a>
 ✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v1.0.1 [ 𝙱𝙴𝚃𝙰 ]"""
     SOURCE_TXT = """<b>NOTE:</b>
 - Movie World is a open source project. 
