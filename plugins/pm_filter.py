@@ -428,7 +428,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Auto Filter', callback_data='autofilter')
         ], [
             InlineKeyboardButton('Connection', callback_data='coct'),
-            InlineKeyboardButton('Extra Mods', callback_data='extra')
+            InlineKeyboardButton('Extra Mods', callback_data='extra'),
             InlineKeyboardButton('Json', callback_data=json')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
