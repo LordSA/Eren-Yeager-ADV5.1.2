@@ -77,7 +77,40 @@ these are the extra features of Eva Maria
 • /info  - <code>get information about a user.</code>
 • /imdb  - <code>get the film information from IMDb source.</code>
 • /search  - <code>get the film information from various sources.</code>"""
-    ADMIN_TXT = """Help: <b>Admin mods</b>
+   TGRAPH_TXT = """Help: <b>TGraph & Paste</b>
+
+Do as you wish with telegra.ph module!
+
+<b>Commands and Usage:</b>
+• /tgmedia or /tgraph - upload supported media (within 5MB) to telegraph.
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member.""" 
+    GTRANS_TXT = """Help: <b>Google Translator</b>
+
+Translate texts to a specific language!
+
+<b>Commands and Usage:</b>
+• /tr [language code][reply] - translate replied message to specific language.
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• IMDb can translate texts to 200+ languages."""
+    PURGE_TXT = """Help: <b>Purge</b>
+
+Need to delete lots of messages? That's what purges are for!
+
+<b>Commands and Usage:</b>
+• /purge - delete all messages from the replied to message, to the current message.
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on group.
+• These commands can be used by Only admin."""
+   ADMIN_TXT = """Help: <b>Admin mods</b>
 
 <b>NOTE:</b>
 This module only works for my admins
@@ -94,6 +127,74 @@ This module only works for my admins
 • /unban  - <code>to unban a user.</code>
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>"""
+    MEMES_TXT = """Help: <b>Memes</b>
+
+Some dank memes for fun or whatever!
+
+<b>Commands and Usage:</b>
+• /throw or /dart - t𝗈 m𝖺𝗄𝖾 drat 
+• /roll or /dice - roll the dice 
+• /goal or /shoot - to make a goal or shoot
+• /luck or /cownd - Spin the Lucky
+• /runs strings
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
+    TTS_TXT = """Help: <b>Text to Speech</b>
+
+A module to convert text to voice with language support.
+
+<b>Commands and Usage:</b>
+• /tts - Reply to any text message with language code to convert as audio.
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
+    MUSIC_TXT = """Help: <b>Music</b>
+
+Music download modules, for those who love music.
+
+<b>Commands and Usage:</b>
+• /song or /mp3 (songname) - download song from yt servers.
+• /video or /mp4 (songname) - download video from yt servers.
+
+<b>YouTube Thumbnail Download</b>
+• /ytthumb (youtube link)
+<b>Example:</b> <code>/ytthumb https://youtu.be/h6PtzFYaMxQ</code>
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
+    PASSWORD_GEN_TXT = """Help: <b>Password Generator</b>
+
+There Is Nothing To Know More. Send Me The Limit Of Your Password.
+- I Will Give The Password Of That Limit.
+
+<b>Commands and Usage:</b>
+• /genpassword or /genpw <code>20</code>
+
+<b>NOTE:</b>
+• Only Digits Are Allowed
+• Maximum Allowed Digits Till 84 
+(I Can't Generate Passwords Above The Length 84)
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
+    SHARE_TXT = """Help: <b>Sharing Text Maker</b>
+
+a bot to create a link to share text in the telegram.
+
+<b>Commands and Usage:</b>
+• /share (text or reply to message)
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
     STATUS_TXT = """★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{}</code>
 ★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{}</code>
 ★ 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{}</code>
