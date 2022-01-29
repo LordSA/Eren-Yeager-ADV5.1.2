@@ -15,7 +15,7 @@ class script(object):
 ✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v1.0.1 [ 𝙱𝙴𝚃𝙰 ]"""
     SOURCE_TXT = """<b>NOTE:</b>
 - Movie World is a open source project. 
-- Source - https://github.com/LordSA/movie-world  
+- Source - <a href=https://t.me/lord1of5darkness9>𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔</a>  
 
 <b>DEVS:</b>
 - <a href=https://t.me/mwpro11>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>"""
@@ -77,7 +77,7 @@ these are the extra features of Eva Maria
 • /info  - <code>get information about a user.</code>
 • /imdb  - <code>get the film information from IMDb source.</code>
 • /search  - <code>get the film information from various sources.</code>"""
-   TGRAPH_TXT = """Help: <b>TGraph</b>
+    TGRAPH_TXT = """Help: <b>TeleGraph</b>
 
 <b>NOTE:</b>
 • IMDb should have admin privillage.
