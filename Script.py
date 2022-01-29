@@ -108,7 +108,7 @@ Need to delete lots of messages? That's what purges are for!
 • IMDb should have admin privillage.
 • These commands works on group.
 • These commands can be used by Only admin."""
-   ADMIN_TXT = """Help: <b>Admin mods</b>
+    ADMIN_TXT = """Help: <b>Admin mods</b>
 
 <b>NOTE:</b>
 This module only works for my admins
