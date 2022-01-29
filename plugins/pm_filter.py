@@ -406,14 +406,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/mwpro11')
+            InlineKeyboardButton('🔍 𝚂𝙴𝙰𝚁𝙲𝙷', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🤖 𝚂𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11')
         ], [
-            InlineKeyboardButton('CHANNEL', url='https://t.me/mwpro1'),
-            InlineKeyboardButton('GROUP', url='https://t.me/mwmoviespro')
+            InlineKeyboardButton('🖥 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', url='https://t.me/mwpro1'),
+            InlineKeyboardButton('🎬 𝙶𝚁𝙾𝚄𝙿', url='https://t.me/mwmoviespro')
         ], [
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('ℹ️ 𝙷𝙴𝙻𝙿', callback_data='help'),
+            InlineKeyboardButton('😊 𝙰𝙱𝙾𝚄𝚃', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -424,12 +424,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
-            InlineKeyboardButton('💡 Auto Filter', callback_data='autofilter'),
+            InlineKeyboardButton('🗂 𝙼𝙰𝙽𝚄𝙰𝙻 𝙵𝙸𝙻𝚃𝙴𝚁', callback_data='manuelfilter'),
+            InlineKeyboardButton('💡 𝙰𝚄𝚃𝙾 𝙵𝙸𝙻𝚃𝙴𝚁', callback_data='autofilter'),
             InlineKeyboardButton('📃 𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴', callback_data='tr')
         ], [
-            InlineKeyboardButton('🖇 Connection', callback_data='coct'),
-            InlineKeyboardButton('📂 Extra Mods', callback_data='extra'),
+            InlineKeyboardButton('🖇 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂', callback_data='coct'),
+            InlineKeyboardButton('📂 𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳𝚂', callback_data='extra'),
             InlineKeyboardButton('📚 𝙼𝙴𝙼𝙴𝚂', callback_data='memes')
         ], [
             InlineKeyboardButton('📲 𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃', callback_data='sharetext'),
@@ -438,10 +438,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ], [
             InlineKeyboardButton('📟 𝙿𝙰𝚂𝚂-𝙶𝙴𝙽', callback_data='genpassword'),
             InlineKeyboardButton('🌬 𝙿𝚄𝚁𝙶𝙴', callback_data='purge'),
-            InlineKeyboardButton('🌀 𝚃𝙶𝚁𝙰𝙿𝙷', callback_data='tgraph')
+            InlineKeyboardButton('🌀 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷', callback_data='tgraph')
         ], [
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('🔮 Status', callback_data='stats')
+            InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴', callback_data='start'),
+            InlineKeyboardButton('🔮 𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -451,11 +451,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/mwpro11'),
-            InlineKeyboardButton('♥️ Source', callback_data='source')
+            InlineKeyboardButton('🤖 𝚂𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11'),
+            InlineKeyboardButton('♥️ 𝚂𝙾𝚄𝚁𝙲𝙴', callback_data='source')
         ], [
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('🔐 Close', callback_data='close_data')
+            InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴', callback_data='start'),
+            InlineKeyboardButton('🔐 𝙲𝙻𝙾𝚂𝚂', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
