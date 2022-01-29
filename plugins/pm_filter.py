@@ -426,7 +426,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
             InlineKeyboardButton('💡 Auto Filter', callback_data='autofilter'),
-            InlineKeyboardButton('📃 𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴', callback_data='gtrans')
+            InlineKeyboardButton('📃 𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴', callback_data='tr')
         ], [
             InlineKeyboardButton('🖇 Connection', callback_data='coct'),
             InlineKeyboardButton('📂 Extra Mods', callback_data='extra'),
@@ -525,7 +525,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "gtrans":
+    elif query.data == "tr":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='help'),
             InlineKeyboardButton('lang codes', url='https://cloud.google.com/translate/docs/languages')
