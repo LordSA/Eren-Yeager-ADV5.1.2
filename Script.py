@@ -70,22 +70,23 @@ class script(object):
     EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
 
 <b>NOTE:</b>
-these are the extra features of Eva Maria
+these are the extra features of Movie World
 
 <b>Commands and Usage:</b>
 • /id - <code>get id of a specifed user.</code>
 • /info  - <code>get information about a user.</code>
 • /imdb  - <code>get the film information from IMDb source.</code>
 • /search  - <code>get the film information from various sources.</code>"""
-    TGRAPH_TXT = """Help: <b>TeleGraph</b>
+    TGRAPH_TXT = """Help: <b>TELEGRAPH & PASTE</b>
 
 <b>NOTE:</b>
-• IMDb should have admin privillage.
-• These commands works on both pm and group.
-• These commands can be used by any group member.
+• IMDb should have admin privillage
+• These commands works on both pm and group
+• These commands can be used by any group member
 
 <b>Commands and Usage:</b>
-• /tgmedia or /tgraph - upload supported media (within 5MB) to telegraph.""" 
+
+• /tgmedia or /tgraph - <code>upload supported media (within 5MB) to telegraph.</code>""" 
     GTRANS_TXT = """Help: <b>Google Translator</b>
 
 Translate texts to a specific language!
