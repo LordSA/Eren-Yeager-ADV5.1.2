@@ -77,7 +77,7 @@ these are the extra features of Eva Maria
 • /info  - <code>get information about a user.</code>
 • /imdb  - <code>get the film information from IMDb source.</code>
 • /search  - <code>get the film information from various sources.</code>"""
-   TGRAPH_TXT = """Help: <b>TGraph & Paste</b>
+   TGRAPH_TXT = """Help: <b>TGraph</b>
 
 <b>NOTE:</b>
 • IMDb should have admin privillage.
