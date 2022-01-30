@@ -110,7 +110,7 @@ Need to delete lots of messages? That's what purges are for!
 • These commands works on group.
 • These commands can be used by Only admin."""
     JSON_TXT= """Help: <b>JSON</b>
-<
+<b>NOTE:</b>
     ADMIN_TXT = """Help: <b>Admin mods</b>
 
 <b>NOTE:</b>
