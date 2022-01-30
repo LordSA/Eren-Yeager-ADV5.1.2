@@ -430,7 +430,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ], [
             InlineKeyboardButton('🖇 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂', callback_data='coct'),
             InlineKeyboardButton('📂 𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳𝚂', callback_data='extra'),
-            InlineKeyboardButton('📚 𝙼𝙴𝙼𝙴𝚂', callback_data='memes')
+            InlineKeyboardButton('🐵 𝙵𝚄𝙽', callback_data='memes')
+        ], [
+            InlineKeyboardButton('Json',callback_data='json'),
+            InlineKeyboardButton('Paste',callback_data='paste'),
+            InlineKeyboardButton('restrict',callback_data='restric')
         ], [
             InlineKeyboardButton('📲 𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃', callback_data='sharetext'),
             InlineKeyboardButton('🎵 𝙼𝚄𝚂𝙸𝙲', callback_data='music'),
@@ -441,6 +445,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🌀 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷', callback_data='tgraph')
         ], [
             InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴', callback_data='start'),
+            InlineKeyboardButton('Zompies',callback_data='zombies')
             InlineKeyboardButton('🔮 𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -581,6 +586,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "json'":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.messege.edit_text(
+            text=script.JSON_TXT
+            disable_web_page_preview=True,
+            reply_markup=reply_markup
+            parse_mode='html'
+        )
     elif query.data == "genpassword":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='help')
@@ -594,6 +610,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extra":
         buttons = [[
+            InlineKeyboardButton('pin',callback_data='pin'),
+            InlineKeyboardButton('Url Short',callback_data='shortner')
+        ], [
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
             InlineKeyboardButton('👮‍♂️ Admin', callback_data='admin')
         ]]
