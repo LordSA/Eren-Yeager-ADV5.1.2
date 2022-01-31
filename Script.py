@@ -87,6 +87,18 @@ these are the extra features of Movie World
 <b>Commands and Usage:</b>
 
 • /tgmedia or /tgraph - <code>upload supported media (within 5MB) to telegraph.</code>""" 
+    PASTE_TXT = """Help: <b>Paste</b>
+
+Paste some texts or documents on a website!
+
+<b>Commands and Usage:</b>
+• /paste [text] - paste the given text on Pasty
+• /paste [reply] - paste the replied text on Pasty
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
     GTRANS_TXT = """Help: <b>Google Translator</b>
 
 Translate texts to a specific language!
@@ -142,7 +154,8 @@ Some dank memes for fun or whatever!
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
     JSON_TXT = """Help: <b>Json</b>
-Note."""
+
+<b>Now not Working it is maintaining</b>."""
     TTS_TXT = """Help: <b>Text to Speech</b>
 
 A module to convert text to voice with language support.
