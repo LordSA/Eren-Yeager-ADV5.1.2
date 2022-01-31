@@ -536,10 +536,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=Script.ZOMBIES_TXT,
+            text=script.ZOMBIES_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
+        )
     elif query.data == "tr":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='help'),
