@@ -433,8 +433,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🐵 𝙵𝚄𝙽', callback_data='memes')
         ], [
             InlineKeyboardButton('Json',callback_data='json'),
-            InlineKeyboardButton('Paste',callback_data='paste'),
-            InlineKeyboardButton('restrict',callback_data='restric')
+            InlineKeyboardButton('Paste',callback_data='hell'),
+            InlineKeyboardButton('restrict',callback_data='help')
         ], [
             InlineKeyboardButton('📲 𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃', callback_data='sharetext'),
             InlineKeyboardButton('🎵 𝙼𝚄𝚂𝙸𝙲', callback_data='music'),
@@ -445,7 +445,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🌀 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷', callback_data='tgraph')
         ], [
             InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴', callback_data='start'),
-            InlineKeyboardButton('Zompies',callback_data='zombies')
+            InlineKeyboardButton('Zompies',callback_data='help')
             InlineKeyboardButton('🔮 𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -610,8 +610,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extra":
         buttons = [[
-            InlineKeyboardButton('pin',callback_data='pin'),
-            InlineKeyboardButton('Url Short',callback_data='shortner')
+            InlineKeyboardButton('pin',callback_data='help'),
+            InlineKeyboardButton('Url Short',callback_data='help')
         ], [
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
             InlineKeyboardButton('👮‍♂️ Admin', callback_data='admin')
