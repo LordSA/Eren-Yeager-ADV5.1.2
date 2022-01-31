@@ -141,6 +141,8 @@ Some dank memes for fun or whatever!
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
+    JSON_TXT = """Help: <b>Json</b>
+Note."""
     TTS_TXT = """Help: <b>Text to Speech</b>
 
 A module to convert text to voice with language support.
