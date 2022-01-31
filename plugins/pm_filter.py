@@ -445,7 +445,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🌀 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷', callback_data='tgraph')
         ], [
             InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴', callback_data='start'),
-            InlineKeyboardButton('Zompies',callback_data='help')
+            InlineKeyboardButton('👻 𝚉𝙾𝙼𝙱𝙸𝙴𝚂',callback_data='zombies')
             InlineKeyboardButton('🔮 𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -530,6 +530,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "zombies":
+        buttons = [[
+            InlineKeyboardButton('« Back', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=Script.ZOMBIES_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
     elif query.data == "tr":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='help'),
