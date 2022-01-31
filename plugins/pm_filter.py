@@ -433,7 +433,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🐵 𝙵𝚄𝙽', callback_data='memes')
         ], [
             InlineKeyboardButton('📄 𝙹𝚂𝙾𝙽',callback_data='json'),
-            InlineKeyboardButton('⏬ 𝙿𝙰𝚂𝚃𝙴',callback_data='help'),
+            InlineKeyboardButton('⏬ 𝙿𝙰𝚂𝚃𝙴',callback_data='paste'),
             InlineKeyboardButton('🚫 𝚁𝙴𝚂𝚃𝚁𝙸𝙲𝚃',callback_data='help')
         ], [
             InlineKeyboardButton('📲 𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃', callback_data='sharetext'),
@@ -537,6 +537,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ZOMBIES_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "paste":
+        buttons = [[
+            InlineKeyboardButton('« Back', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.PASTE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
