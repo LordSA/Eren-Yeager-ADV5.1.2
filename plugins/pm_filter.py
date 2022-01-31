@@ -432,9 +432,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📂 𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳𝚂', callback_data='extra'),
             InlineKeyboardButton('🐵 𝙵𝚄𝙽', callback_data='memes')
         ], [
-            InlineKeyboardButton('Json',callback_data='json'),
-            InlineKeyboardButton('Paste',callback_data='hell'),
-            InlineKeyboardButton('restrict',callback_data='help')
+            InlineKeyboardButton('📄 𝙹𝚂𝙾𝙽',callback_data='json'),
+            InlineKeyboardButton('⏬ 𝙿𝙰𝚂𝚃𝙴',callback_data='help'),
+            InlineKeyboardButton('🚫 𝚁𝙴𝚂𝚃𝚁𝙸𝙲𝚃',callback_data='help')
         ], [
             InlineKeyboardButton('📲 𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃', callback_data='sharetext'),
             InlineKeyboardButton('🎵 𝙼𝚄𝚂𝙸𝙲', callback_data='music'),
