@@ -196,6 +196,34 @@ a bot to create a link to share text in the telegram.
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
+    ZOMBIES_TXT = """Help: <b>Zombies</b>
+
+<b>Kick incative members from group. Add me as admin with ban users permission in group.</b>
+
+<b>Commands and Usage:</b>
+• /inkick - command with required arguments and i will kick members from group.
+• /instatus - to check current status of chat member from group.
+• /inkick within_month long_time_ago - to kick users who are offline for more than 6-7 days.
+• /inkick long_time_ago - to kick members who are offline for more than a month and Deleted Accounts.
+• /dkick - to kick deleted accounts."""
+
+    CREATOR_REQUIRED = """❗You have to be the group creator to do that."""
+      
+    INPUT_REQUIRED = "❗ **Arguments Required**"
+      
+    KICKED = """✔️ Successfully Kicked {} members according to the arguments provided."""
+      
+    START_KICK = """🚮 Removing inactive members this may take a while..."""
+      
+    ADMIN_REQUIRED = """❗I am not an admin here\n__Leaving this chat, add me again as admin with ban user permission."""
+      
+    DKICK = """✔️ Kicked {} Deleted Accounts Successfully."""
+      
+    FETCHING_INFO = """Collecting users information..."""
+      
+    STATUS = """{}\nChat Member Status**\n\n```recently``` - {}\n```within_week``` - {}\n```within_month``` - {}\n```long_time_ago``` - {}\nDeleted Account - {}\nBot - {}\nUnCached - {}
+"""
+
     STATUS_TXT = """★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{}</code>
 ★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{}</code>
 ★ 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{}</code>
