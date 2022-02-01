@@ -172,7 +172,7 @@ This module only works for my admins
 • /unban  - <code>to unban a user.</code>
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>"""
-    MEMES_TXT = """Help: <b>Memes</b>
+    MEMES_TXT = """Help: <b>FUN</b>
 
 Some dank memes for fun or whatever!
 
@@ -187,12 +187,10 @@ Some dank memes for fun or whatever!
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
-    JSON_TXT = """Help: <b>Json</b>
+    INFO_TXT = """Help: <b>Json</b>
 
 <b>Commands and Usage:</b>
-• /id - get id of a specified user.
-• /info  - get information about a user.
-• /json - get the json details of a message.
+• /json - <code>get the json details of a message.<code>
 <code> /id & /info is not from json it's just added to this.<code>
 
 <b>NOTE:</b>
