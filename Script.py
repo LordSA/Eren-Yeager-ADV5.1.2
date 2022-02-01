@@ -87,6 +87,40 @@ these are the extra features of Movie World
 <b>Commands and Usage:</b>
 
 • /tgmedia or /tgraph - <code>upload supported media (within 5MB) to telegraph.</code>""" 
+    RESTRIC_TXT = """Help: <b>Restrictions</b>
+
+<b>What is this?</b>
+
+Some people need to be publicly banned; spammers, annoyances, or just trolls.
+This module allows you to do that easily, by exposing some common actions, so everyone will see!
+
+<b>Commands and Usage:</b>
+• /ban - ban a user.
+• /tban - temporarily ban a user. Example time values: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 weeks.
+• /mute - mute a user.
+• /tmute - temporarily mute a user. Example time values: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 weeks.
+• /unban or /unmute - unmute a user & unban a user.
+
+<b>Examples:</b>
+- Mute a user for two hours.
+-> <code>/tmute @username 2h</code>
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on group.
+• These commands can be used by Only admin."""
+    PIN_MESSAGE_TXT = """Help: <b>Pin Message</b>
+
+All the pin related commands can be found here; keep your chat up to date on the latest news with a simple pinned message!
+
+<b>Commands and Usage:</b>
+• /pin: Pin the message you replied to. Add 'loud' or 'notify' to send a notification to group members.
+• /unpin: Unpin the current pinned message. If used as a reply, unpins the replied to message.
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works only group.
+• These commands can be used by Only admin."""
     PASTE_TXT = """Help: <b>Paste</b>
 
 Paste some texts or documents on a website!
@@ -155,7 +189,17 @@ Some dank memes for fun or whatever!
 • These commands can be used by any group member."""
     JSON_TXT = """Help: <b>Json</b>
 
-<b>Now not Working it is maintaining</b>."""
+<b>Commands and Usage:</b>
+• /id - get id of a specified user.
+• /info  - get information about a user.
+• /json - get the json details of a message.
+<code> /id & /info is not from json it's just added to this.<code>
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
+
     TTS_TXT = """Help: <b>Text to Speech</b>
 
 A module to convert text to voice with language support.
