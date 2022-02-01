@@ -654,7 +654,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extra":
         buttons = [[
-            InlineKeyboardButton('📌 𝙿𝙸𝙽',callback_data='help'),
+            InlineKeyboardButton('📌 𝙿𝙸𝙽',callback_data='pin'),
             InlineKeyboardButton('Url Short',callback_data='help')
         ], [
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
