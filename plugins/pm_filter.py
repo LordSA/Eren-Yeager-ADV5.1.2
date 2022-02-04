@@ -655,7 +655,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "extra":
         buttons = [[
             InlineKeyboardButton('📌 𝙿𝙸𝙽',callback_data='pin'),
-            InlineKeyboardButton('🔗 𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃',callback_data='help')
+            InlineKeyboardButton('🔗 𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃',callback_data='shortner')
         ], [
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
             InlineKeyboardButton('👮‍♂️ Admin', callback_data='admin')
@@ -673,6 +673,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.SHARE_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "shortner":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.URL_SHORTNER_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
