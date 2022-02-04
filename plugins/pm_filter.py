@@ -1,4 +1,4 @@
-# Kanged From Evamaria(pls forgive me)
+# MADE BY LORD SA
 import asyncio
 import re
 import ast
@@ -120,7 +120,7 @@ async def next_page(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer("Hey {query.from_user.first_name} വിളച്ചിൽ എടുകുന്നോ കുഞ്ഞിപുഴു നിനക്ക് വേണേൽ നി search ചെയ്യൂ കാരണം എനിക്ക് വേറെ പണി ഇല്ല😅. മാമനോടെ ഒന്നും തോന്നല്ലെ 😇", show_alert=True)
+        return await query.answer("വിളച്ചിൽ എടുകുന്നോ കുഞ്ഞിപുഴു നിനക്ക് വേണേൽ നി search ചെയ്യൂ കാരണം എനിക്ക് വേറെ പണി ഇല്ല😅. മാമനോടെ ഒന്നും തോന്നല്ലെ 😇", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.message_id)
@@ -364,7 +364,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False 
                 )
-                await query.answer('Hey {query.from_user.first_name} Check PM, I have sent files in pm(നിൻ്റെ pm നോക്ക് അതിൽ ഞാൻ ഇട്ടിട്ടുണ്ട്)', show_alert=True)
+                await query.answer(f'Hey {query.from_user.first_name} Check PM, I have sent files in pm(നിൻ്റെ pm നോക്ക് അതിൽ ഞാൻ ഇട്ടിട്ടുണ്ട്)', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn!(പൊട്ട എന്നെ unblock ചെയ്യൂ)', show_alert=True)
         except PeerIdInvalid:
