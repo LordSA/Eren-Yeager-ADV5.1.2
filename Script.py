@@ -77,6 +77,20 @@ these are the extra features of Movie World
 • /info  - <code>get information about a user.</code>
 • /imdb  - <code>get the film information from IMDb source.</code>
 • /search  - <code>get the film information from various sources.</code>"""
+    URL_SHORTNER_TXT = """Help: <b>URL Shortner</b>
+
+Some URLs is Shortner
+
+<b>Commands and Usage:</b>
+• /short <code>(link)</code> - I will send the shorted links.
+
+<b>Example:</b>
+<code>/short https://t.me/josprojects</code>
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
     TGRAPH_TXT = """Help: <b>TELEGRAPH & PASTE</b>
 
 <b>NOTE:</b>
