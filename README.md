@@ -83,6 +83,8 @@ python3 bot.py
 * /filters - view filters
 * /connect - connect to PM.
 * /disconnect - disconnect from PM
+* /connections - view the connections
+* /settings - settings for connected groups
 * /del - delete a filter
 * /delall - delete all filters
 * /deleteall - delete all index(autofilter)
