@@ -73,11 +73,6 @@ async def start(client, message):
                     "🤖 𝙹𝙾𝙸𝙽 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 𝙲𝙷𝙰𝙽𝙽𝙴𝙻", url=invite_link.invite_link
                 )
             ]
-            [
-                InlineKeyboardButton(
-                    " 🔄 Try Again", callback_data=f"{pre}#{file_id}"
-                )
-            ]
         ]
 
         if message.command[1] != "subscribe":
