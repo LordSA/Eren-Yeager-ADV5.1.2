@@ -1,5 +1,5 @@
 from plugins.vc.queues import QUEUE, get_queue, pop_an_item, clear_queue
-from config import bot, call_py
+from info import bot, call_py
 from pytgcalls import StreamType, PyTgCalls
 from pyrogram import Client
 from pyrogram.raw.base import Update
