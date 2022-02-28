@@ -28,4 +28,4 @@ WORKDIR /app
 RUN pip3 install --upgrade pip
 RUN pip3 install -U -r requirements.txt
 
-CMD ["/bin/bash", "/start.sh"]
+CMD python3 main.py
