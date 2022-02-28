@@ -1,6 +1,5 @@
 # Made by SA
 from __future__ import unicode_literals
-
 import asyncio
 import math
 import os
@@ -85,7 +84,7 @@ def a(client, message: Message):
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**An Error Occured. Please Report This To @JOSPSupport !!**')
+        m.edit('**An Error Occured. Please Report This To @mwpro11 !!**')
         print(e)
     try:
         os.remove(audio_file)
