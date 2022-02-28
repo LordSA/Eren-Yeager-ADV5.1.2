@@ -14,7 +14,7 @@ from pyrogram.types import Message
 from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 
-from config import HNDLR
+from info import HNDLR
 
 
 @Client.on_message(filters.command(["song", "music", "mp3"], prefixes=f"{HNDLR}"))
