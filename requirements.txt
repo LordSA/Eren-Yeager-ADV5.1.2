@@ -27,3 +27,4 @@ requests
 ytthumb
 python-dotenv
 pillow
+py-tgcalls==0.8.2
