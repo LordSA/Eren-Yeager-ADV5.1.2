@@ -23,7 +23,6 @@ yt-dlp
 wget
 python-arq
 ffmpeg-python
-requests
 ytthumb
 python-dotenv
 pillow
