@@ -5,7 +5,7 @@ import time
 import random
 from pyrogram import Client, filters
 from info import HNDLR
-from plugins.Tools.helper_functions.cust_p_filters import f_onw_fliter
+from plugins.Tools.help_func.cust_p_filters import f_onw_fliter
 
 # -- Constants -- #
 ALIVE = "എന്തിനാടാ start ഉണ്ടാകുമ്പോൾ എന്നെ നേക്കി എൻ്റെ വായിൽ ഉള്ളത് കേൾക്കുന്നത്... എന്നാ പരിപാടിയാ..." 
