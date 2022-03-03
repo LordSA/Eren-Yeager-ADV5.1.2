@@ -7,7 +7,7 @@ from pyrogram import Client, filters
 from plugins.Tools.help_func.admin_check import admin_check
 from plugins.Tools.help_func.cust_p_filters import f_onw_fliter
 
-TG_MAX_SELECT_LEN = 100
+TG_MAX_SELECT_LEN = 400
 
 @Client.on_message(
     filters.command("purge") &
