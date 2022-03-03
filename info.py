@@ -1,9 +1,9 @@
 import re
 import os
 from os import environ
-from python-dotenv import load_dotenv
+from dotenv import load_dotenv
 from pyrogram import Client, filters
-from py-tgcalls import PyTgCalls
+from pytgcalls import PyTgCalls
 
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
