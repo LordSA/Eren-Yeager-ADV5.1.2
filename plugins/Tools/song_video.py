@@ -1,18 +1,3 @@
-#!/usr/bin/env python3
-# Copyright (C) @Lord SA
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 from __future__ import unicode_literals
 
 import asyncio
@@ -32,20 +17,23 @@ import youtube_dl
 from youtube_search import YoutubeSearch
 import requests
 
+## Extra Fns -------------------------------
+
 # Convert hh:mm:ss to seconds
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
-@Client.on_message(filters.command(["song", "music", "mp3"]) & ~filters.channel & ~filters.edited)
-def a(client, message: Message):
-    urlissed = get_text(message)
+
+## Commands --------------------------------
+
+@Client.on_message(filters.command(["song", "sf"]) & ~filters.channel & ~filters.edited)
+def a(client, message):
     query = ''
-    reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply(f"**🔎 Searching..** `{urlissed}`", reply_to_message_id=reply_id)
+    m = message.reply('`𝙵𝚒𝚗𝚍𝚒𝚗𝚐 𝚢𝚘𝚞𝚛 𝚜𝚘𝚗𝚐`')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -69,37 +57,36 @@ def a(client, message: Message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"[Zaute Km]" 
+            performer = f"[@Lucifer_DevilZ]"
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
 
         except Exception as e:
             print(e)
-            m.edit('**Found Literary Noting. Please Try Another Song or Use Correct Spelling!**')
+            m.edit("**𝐈 𝘾𝙖𝙣'𝙩 𝙁𝙞𝙣𝙙 𝘼𝙣𝙮𝙩𝙝𝙞𝙣𝙜 𝐑𝐞𝐥𝐚𝐭𝐞𝐝 𝐓𝐨 𝐓𝐡𝐚𝐭.𝐏𝐥𝐞𝐚𝐬𝐞 𝐭𝐫𝐲 𝐚𝐧𝐨𝐭𝐡𝐞𝐫 𝐬𝐨𝐧𝐠 𝐨𝐫 𝐮𝐬𝐞 𝐜𝐨𝐫𝐫𝐞𝐜𝐭 𝐬𝐩𝐞𝐥𝐥𝐢𝐧𝐠!**")
             return
     except Exception as e:
         m.edit(
-            "**Enter Song Name with Command**❗\nFor Example: `/song Alone Marshmellow`"
+            "**𝐄𝐧𝐭𝐞𝐫 𝐒𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 𝐰𝐢𝐭𝐡 𝐂𝐨𝐦𝐦𝐚𝐧𝐝**❗\nFor 𝐄𝐱𝐚𝐦𝐩𝐥𝐞: `/song 𝙎𝙪𝙣𝙛𝙡𝙤𝙬𝙚𝙧`"
         )
         print(str(e))
         return
-    m.edit("`Uploading... Please Wait...`")
+    m.edit("`𝙐𝙥𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙋𝙡𝙚𝙖𝙨𝙚 𝙒𝙖𝙞𝙩 𝙏𝙝𝙞𝙨 𝙈𝙞𝙜𝙝𝙩 𝙗𝙚 𝙏𝙖𝙠𝙚 𝙎𝙤𝙢𝙚 𝙈𝙞𝙣𝙪𝙩𝙚𝙨`")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🏷 <b>Title:</b> <a href="{link}">{title}</a>'
+        rep = f'🎹 <b>𝑻𝒊𝒕𝒍𝒆:</b> <a href="{link}">{title}</a>\n🎙️ <b>𝑫𝒖𝒓𝒂𝒕𝒊𝒐𝒏:</b> <code>{duration}</code>\n🎵 <b>𝑽𝒊𝒆𝒘𝒔:</b> <code>{views}</code>\n🙋 𝖱𝖾𝗊 𝖡𝗒: </b> {message.from_user.mention()}'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-        message.reply_audio(audio_file, caption=rep, parse_mode='HTML',reply_to_message_id=reply_id, title=title, duration=dur, performer=performer, thumb=thumb_name)
+        message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name, reply_to_message_id=message.message_id)
         m.delete()
-        message.delete()
     except Exception as e:
-        m.edit('**An Error Occured. Please Report This To @mwpro11 !!**')
+        m.edit('**𝐀𝐧 𝐄𝐫𝐫𝐨𝐫 𝐎𝐜𝐜𝐮𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐑𝐞𝐩𝐨𝐫𝐭 𝐓𝐡𝐢𝐬 𝐓𝐨 @Sflix2kchats!!**')
         print(e)
     try:
         os.remove(audio_file)
@@ -108,7 +95,7 @@ def a(client, message: Message):
         print(e)
 
 
-def get_text(message: Message) -> [None, str]:
+def get_text(message: Message) -> [None,str]:
     text_to_return = message.text
     if message.text is None:
         return None
@@ -125,11 +112,11 @@ def humanbytes(size):
         return ""
     power = 2 ** 10
     raised_to_pow = 0
-    dict_power_n = {0: "", 1: "Ki", 2: "Mi", 3: "Gi", 4: "Ti"}
+    dict_power_n = {0: "", 1: "K", 2: "M", 3: "G", 4: "T"}
     while size > power:
         size /= power
         raised_to_pow += 1
-    return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "B"
+    return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "b"
 
 
 async def progress(current, total, message, start, type_of_ps, file_name=None):
@@ -144,8 +131,8 @@ async def progress(current, total, message, start, type_of_ps, file_name=None):
         time_to_completion = round((total - current) / speed) * 1000
         estimated_total_time = elapsed_time + time_to_completion
         progress_str = "{0}{1} {2}%\n".format(
-            "".join("▣" for i in range(math.floor(percentage / 10))),
-            "".join("□" for i in range(10 - math.floor(percentage / 10))),
+            "".join("֍" for i in range(math.floor(percentage / 10))),
+            "".join("ｏ" for i in range(10 - math.floor(percentage / 10))),
             round(percentage, 2),
         )
 
@@ -248,13 +235,12 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(filters.command(["vsong", "video", "mp4"]))
+@Client.on_message(filters.command(["video", "mp4"]))
 async def vsong(client, message: Message):
     urlissed = get_text(message)
-    reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
 
     pablo = await client.send_message(
-        message.chat.id, f"**🔎 Searching..** `{urlissed}`", reply_to_message_id=reply_id
+        message.chat.id, f"**𝙁𝙞𝙣𝙙𝙞𝙣𝙜 𝙔𝙤𝙪𝙧 𝙑𝙞𝙙𝙚𝙤..** `{urlissed}`"
     )
     if not urlissed:
         await pablo.edit("Invalid Command Syntax Please Check help Menu To Know More!")
@@ -287,15 +273,16 @@ async def vsong(client, message: Message):
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url, download=True)
     except Exception as e:
-        await event.edit(event, f"**Download Failed** \n**Error :** `{str(e)}`")
+        await event.edit(event, f"**𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙁𝙖𝙞𝙡𝙚𝙙 𝙋𝙡𝙚𝙖𝙨𝙚 𝙏𝙮𝙧 𝘼𝙜𝙖𝙞𝙣** \n**Error :** `{str(e)}`")
         return
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
     capy = f"""
-**🏷️ Video :** [{thum}]({mo})
+**𝙏𝙞𝙩𝙡𝙚:** [{thum}]({mo})
+**𝙍𝙚𝙦𝙪𝙚𝙨𝙩𝙚𝙙 𝘽𝙮:** {message.from_user.mention}
 """
     await client.send_video(
-        message.chat.id, reply_to_message_id=reply_id,
+        message.chat.id,
         video=open(file_stark, "rb"),
         duration=int(ytdl_data["duration"]),
         file_name=str(ytdl_data["title"]),
@@ -303,10 +290,11 @@ async def vsong(client, message: Message):
         caption=capy,
         supports_streaming=True,
         progress=progress,
+        reply_to_message_id=message.message_id,
         progress_args=(
             pablo,
             c_time,
-            f"**📥 Download** `{urlissed}`",
+            f"**𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜 𝙋𝙡𝙚𝙖𝙨𝙚 𝙒𝙖𝙞𝙩 𝙏𝙝𝙞𝙨 𝙈𝙞𝙜𝙝𝙩 𝘽𝙚 𝙏𝙖𝙠𝙚 𝙎𝙤𝙢𝙚 𝙈𝙞𝙣𝙪𝙩𝙚𝙨** `{urlissed}`",
             file_stark,
         ),
     )
