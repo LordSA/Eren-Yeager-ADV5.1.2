@@ -12,6 +12,9 @@ from database.users_chats_db import db
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp
 from database.connections_mdb import active_connection
+from googletrans import Translator
+from plugins.Tools.list import list
+from database.gtrans_mdb import find_one
 import re
 import json
 import base64
@@ -635,3 +638,51 @@ async def callback_query_previous(_, message):
         ),
         parse_mode="markdown",
     )
+
+@Client.on_message(filters.command(["tr"]))
+async def left(client,message):
+	if (message.reply_to_message):
+		try:
+			lgcd = message.text.split("/tr")
+			lg_cd = lgcd[1].lower().replace(" ", "")
+			tr_text = message.reply_to_message.text
+			translator = Translator()
+			translation = translator.translate(tr_text,dest = lg_cd)
+			hehek = InlineKeyboardMarkup(
+                                [
+                                    [
+                                        InlineKeyboardButton(
+                                            text=f"𝘔𝘰𝘳𝘦 𝘓𝘢𝘯𝘨 𝘊𝘰𝘥𝘦𝘴", url="https://cloud.google.com/translate/docs/languages"
+                                        )
+                                    ],
+				    [
+                                        InlineKeyboardButton(
+                                            "𝘊𝘭𝘰𝘴𝘦", callback_data="close_data"
+                                        )
+                                    ],
+                                ]
+                            )
+			try:
+				for i in list:
+					if list[i]==translation.src:
+						fromt = i
+					if list[i] == translation.dest:
+						to = i 
+				await message.reply_text(f"translated from {fromt.capitalize()} to {to.capitalize()}\n\n```{translation.text}```", reply_markup=hehek, quote=True)
+			except:
+			   	await message.reply_text(f"Translated from **{translation.src}** To **{translation.dest}**\n\n```{translation.text}```", reply_markup=hehek, quote=True)
+			
+
+		except :
+			print("error")
+	else:
+			 ms = await message.reply_text("You can Use This Command by using reply to message")
+			 await ms.delete()
+
+@Client.on_message(filters.command(["stickerid"]))
+async def stickerid(bot, message):   
+    if message.reply_to_message.sticker:
+       await message.reply(f"**Sticker ID is**  \n `{message.reply_to_message.sticker.file_id}` \n \n ** Unique ID is ** \n\n`{message.reply_to_message.sticker.file_unique_id}`", quote=True)
+    else: 
+       await message.reply("Oops !! Not a sticker file")
+
