@@ -6,7 +6,7 @@ import aiohttp
 from Script import script
 from pyrogram import Client, filters
 from pyrogram.errors import ChatAdminRequired, FloodWait
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
 from database.users_chats_db import db
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT
@@ -15,6 +15,9 @@ from database.connections_mdb import active_connection
 from googletrans import Translator
 from plugins.Tools.list import list
 from database.gtrans_mdb import find_one
+from plugins.Tools.help_func.admin_check import admin_check
+from plugins.Tools.help_func.cust_p_filters import f_onw_fliter
+from plugins.Tools.help_func.cust_p_filters import admin_fliter
 import re
 import json
 import base64
@@ -728,3 +731,72 @@ async def jsonify(_, message):
             reply_markup=reply_markup
         )            
         os.remove("json.text")
+
+TG_MAX_SELECT_LEN = 400
+
+@Client.on_message(
+    filters.command("purge") &
+    f_onw_fliter
+)
+async def purge(client, message):
+    """ purge upto the replied message """
+    if message.chat.type not in (("supergroup", "channel")):
+        # https://t.me/c/1312712379/84174
+        return
+
+    is_admin = await admin_check(message)
+
+    if not is_admin:
+        return
+
+    status_message = await message.reply_text("...", quote=True)
+    await message.delete()
+    message_ids = []
+    count_del_etion_s = 0
+
+    if message.reply_to_message:
+        for a_s_message_id in range(
+            message.reply_to_message.message_id,
+            message.message_id
+        ):
+            message_ids.append(a_s_message_id)
+            if len(message_ids) == TG_MAX_SELECT_LEN:
+                await client.delete_messages(
+                    chat_id=message.chat.id,
+                    message_ids=message_ids,
+                    revoke=True
+                )
+                count_del_etion_s += len(message_ids)
+                message_ids = []
+        if len(message_ids) > 0:
+            await client.delete_messages(
+                chat_id=message.chat.id,
+                message_ids=message_ids,
+                revoke=True
+            )
+            count_del_etion_s += len(message_ids)
+
+    await status_message.edit_text(
+        f"deleted {count_del_etion_s} messages"
+    )
+    await asyncio.sleep(5)
+    await status_message.delete()
+
+@Client.on_message(
+    filters.command(["pin"]) &
+    admin_fliter
+)
+async def pin(_, message: Message):
+    if not message.reply_to_message:
+        return
+    await message.reply_to_message.pin()
+
+
+@Client.on_message(
+    filters.command(["unpin"]) &
+    admin_fliter
+)
+async def unpin(_, message: Message):
+    if not message.reply_to_message:
+        return
+    await message.reply_to_message.unpin()
