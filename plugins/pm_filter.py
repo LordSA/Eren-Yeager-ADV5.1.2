@@ -429,7 +429,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📃 𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴', callback_data='tr')
         ], [
             InlineKeyboardButton('🖇 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂', callback_data='coct'),
-            InlineKeyboardButton('📂 𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳𝚂', callback_data='extra'),
+            InlineKeyboardButton('📂 Extra MOds', callback_data='extra'),
             InlineKeyboardButton('🐵 𝙵𝚄𝙽', callback_data='memes')
         ], [
             InlineKeyboardButton('📄 𝙹𝚂𝙾𝙽',callback_data='info'),
@@ -440,12 +440,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🎵 𝙼𝚄𝚂𝙸𝙲', callback_data='music'),
             InlineKeyboardButton('📡 𝚃𝚃𝚂', callback_data='tts')
         ], [
-            InlineKeyboardButton('📟 𝙿𝙰𝚂𝚂-𝙶𝙴𝙽', callback_data='genpassword'),
+            InlineKeyboardButton('PING', callback_data='ping'),
             InlineKeyboardButton('🌬 𝙿𝚄𝚁𝙶𝙴', callback_data='purge'),
             InlineKeyboardButton('🌀 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷', callback_data='tgraph')
         ], [
             InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴', callback_data='start'),
-            InlineKeyboardButton('👻 𝚉𝙾𝙼𝙱𝙸𝙴𝚂',callback_data='zombies'),
+            InlineKeyboardButton('OTHER FEATURES', callback_data='oth'),
             InlineKeyboardButton('🔮 𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -663,6 +663,43 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.EXTRAMOD_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "oth":
+        buttons = [[
+            InlineKeyboardButton('Torrent', callback_data='tor'),
+            InlineKeyboardButton('STICKER ID', callback_data='stid'),
+            InlineKeyboardButton('INKICK', callback_data='zombies')
+        ], [
+            InlineKeyboardButton('👻 𝚉𝙾𝙼𝙱𝙸𝙴𝚂',callback_data='zombies'),
+            InlineKeyboardButton('📟 𝙿𝙰𝚂𝚂-𝙶𝙴𝙽', callback_data='genpassword')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.OTH_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )   
+    elif query.data == "tor":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='oth')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.TORRENT_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+     elif query.data == "stid":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='oth')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.STICKER_TXT,
+            disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
         )
