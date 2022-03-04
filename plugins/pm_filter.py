@@ -712,7 +712,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "oth":
         buttons = [[            
-            InlineKeyboardButton('STICKER ID', callback_data='stid'),            
+            InlineKeyboardButton('STICKER ID', callback_data='stid')            
         ], [                       
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
         ]]
@@ -733,7 +733,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-     elif query.data == "stid":
+    elif query.data == "stid":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='oth')
         ]]
