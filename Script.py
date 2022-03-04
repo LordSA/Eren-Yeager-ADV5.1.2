@@ -6,7 +6,7 @@ class script(object):
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
     ABOUT_TXT = """✯ 𝙼𝚈 𝙽𝙰𝙼𝙴: {}
-⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸
+⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸
 ✯ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁: <a href=https://t.me/mwpro11>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>
 ✯ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈: <a href=https://docs.pyrogram.org/>𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼</a>
 ✯ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: <a href=https://www.python.org/>𝙿𝚈𝚃𝙷𝙾𝙽 𝟹</a>
@@ -14,7 +14,7 @@ class script(object):
 ✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: <a href=https://id.heroku.com/login>𝙷𝙴𝚁𝙾𝙺𝚄</a>
 ✯ 𝙲𝙾𝙳𝙴𝙳 𝙱𝚈: <a href=https://github.com/LordSA>𝙻𝙾𝚁𝙳 𝚂𝙰</a>
 ✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v5.2.1 [ 𝙱𝙴𝚃𝙰 ]
-⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸"""
+⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸"""
     SOURCE_TXT = """<b>NOTE:</b>
 ✯ 🄼🄾🅅🄸🄴 🅆🄾🅁🄻🄳 🄸🅂 🄰 🄾🄿🄴🄽 🅂🄾🅄🅁🄲🄴 🄿🅁🄾🄹🄴🄲🅃. 
 ✯ 𝚂𝙾𝚄𝚁𝙲𝙴 - <a href=https://t.me/lord1of5darkness9>𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔</a>  
@@ -160,6 +160,34 @@ Translate texts to a specific language!
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • IMDb can translate texts to 200+ languages."""
+    OTH_TXT = """EXTRA BUTTONS FOR USE...."""
+    FILT_TXT = """ALL FILTER BUTTONS ARE HERE"""
+    MANEGER_TXT = """Do You Think I can Manage Your Group Then Don't Think Use My Features"""
+    TEXTWORK_TXT = """Text Editing and Link Editing or Regeneration"""
+        PINGS_TXT ="""<b>🌟 Ping:</b>
+Helps you to know your ping 🚶🏼‍♂️
+
+<b>Commands:</b>
+
+• /alive - To check you are alive.
+• /help - To get help 
+• /ping - To get your ping 
+• /repo - Source Code.
+
+<b>🏹Usage🏹 :</b>
+
+• This commands can be used in pms and groups
+• This commands can be used buy everyone in the groups and bots pm
+• Share us for more features"""
+    TORRENT_TXT = """<b>Torrent Search</b>
+
+<b>Commands and Usage:</b>
+• /torrent or /tor <movie name>: Get Your Torrent Link From Various Resource.
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
     PURGE_TXT = """Help: <b>Purge</b>
 
 Need to delete lots of messages? That's what purges are for!
