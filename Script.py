@@ -102,7 +102,16 @@ Some URLs is Shortner
 
 <b>Commands and Usage:</b>
 
-• /tgmedia or /tgraph - <code>upload supported media (within 5MB) to telegraph.</code>""" 
+• /tgmedia or /tgraph - <code>upload supported media (within 5MB) to telegraph.</code>"""
+    STICKER_TXT = """𝙃𝙚𝙡𝙥 𝙁𝙤𝙧 𝙎𝙩𝙞𝙘𝙠𝙚𝙧 𝙄𝙙
+    
+• 𝙐𝙨𝙖𝙜𝙚
+
+To Get Sticker ID
+ 
+ ⭕ 𝙃𝙤𝙬 𝙏𝙤 𝙐𝙨𝙚
+  
+◉ Reply To Any Sticker [/stickerid]"""
     RESTRIC_TXT = """Help: <b>Restrictions</b>
 
 <b>What is this?</b>
