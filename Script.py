@@ -164,7 +164,7 @@ Translate texts to a specific language!
     FILT_TXT = """ALL FILTER BUTTONS ARE HERE"""
     MANEGER_TXT = """Do You Think I can Manage Your Group Then Don't Think Use My Features"""
     TEXTWORK_TXT = """Text Editing and Link Editing or Regeneration"""
-        PINGS_TXT ="""<b>🌟 Ping:</b>
+    PINGS_TXT ="""<b>🌟 Ping:</b>
 Helps you to know your ping 🚶🏼‍♂️
 
 <b>Commands:</b>
