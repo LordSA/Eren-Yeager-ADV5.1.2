@@ -3,11 +3,15 @@ import logging
 import random
 import asyncio
 import aiohttp
+import traceback
+from asyncio import get_running_loop
+from io import BytesIO
 from Script import script
 from time import time, sleep
 from pyrogram import Client, filters
 from urllib.parse import quote
 from info import SUPPORT_CHAT
+from gtts import gTTS
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
@@ -1009,4 +1013,35 @@ async def share_text(client, message):
         )
         return
     await message.reply_text(share_link(input_text), reply_to_message_id=reply_id)
+
+#TTS
+
+def convert(text):
+    audio = BytesIO()
+    i = Translator().translate(text, dest="en")
+    lang = i.src
+    tts = gTTS(text, lang=lang)
+    audio.name = lang + ".mp3"
+    tts.write_to_fp(audio)
+    return audio
+
+
+@Client.on_message(filters.command("tts"))
+async def text_to_speech(_, message: Message):
+    if not message.reply_to_message:
+        return await message.reply_text("Reply to some text ffs.")
+    if not message.reply_to_message.text:
+        return await message.reply_text("Reply to some text ffs.")
+    m = await message.reply_text("Processing")
+    text = message.reply_to_message.text
+    try:
+        loop = get_running_loop()
+        audio = await loop.run_in_executor(None, convert, text)
+        await message.reply_audio(audio)
+        await m.delete()
+        audio.close()
+    except Exception as e:
+        await m.edit(e)
+        e = traceback.format_exc()
+        print(e)
 
