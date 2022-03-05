@@ -960,4 +960,20 @@ async def pasty(client, message):
     pasted = f"**Successfully Paste to Pasty**\n\n**Link:** • [Click here]({p_link})\n\n**Raw Link:** • [Click here]({p_raw})"
     await pablo.edit(pasted, disable_web_page_preview=True)
 
-	
+#Generate Password
+@Client.on_message(filters.command(["genpassword", 'genpw']))
+async def password(bot, update):
+    message = await update.reply_text(text="`Processing...`")
+    password = "abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+".lower()
+    try:
+        limit = int(message.text)
+    except:
+        await message.edit_text('Limit is wrong')
+        return
+    if limit > 100 or limit <= 0:
+        text = "Sorry... Failed To Create Password, Because Limit is 1 to 100."
+    else:
+        random_value = "".join(random.sample(password, limit))
+        text = f"**Limit :-** `{str(limit)}`.\n**Password :-** `{random_value}`**\n\nJoin @mwpro11",
+        reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('Movie World', url='https://t.me/mwmoviespro')]])
+    await message.edit_text(text, True)	
