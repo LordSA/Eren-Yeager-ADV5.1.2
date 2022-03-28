@@ -2,7 +2,7 @@ import os
 from pyrogram import Client, idle
 from pytgcalls import PyTgCalls
 from pytgcalls import idle as pyidle
-from config import bot, call_py
+from info import bot, call_py
 
 bot.start()
 print("UserBot Started")
