@@ -5,7 +5,6 @@ from pyrogram import Client
 from info import bot, call_py, HNDLR, contact_filter, GRPPLAY
 from pyrogram import filters
 from pyrogram.types import Message
-
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import (
@@ -85,7 +84,7 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("play") & filters.incoming & ~filters.edited)
 async def play(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
@@ -201,7 +200,7 @@ async def play(client, m: Message):
                             await huehue.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command(['stream'], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command('stream') & filters.incoming & ~filters.edited)
 async def stream(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
    chat_id = m.chat.id
@@ -241,7 +240,7 @@ async def stream(client, m: Message):
                await huehue.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command(["vplay"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("vplay") & filters.incoming & ~filters.edited)
 async def vplay(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     replied = m.reply_to_message
@@ -438,7 +437,7 @@ async def vstream(client, m: Message):
                await huehue.edit(f"`{ep}`")
 
 
-@Client.on_message(filters.command(["playfrom"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("playfrom") & filters.incoming & ~filters.edited)
 async def playfrom(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     chat_id = m.chat.id
@@ -492,7 +491,7 @@ async def playfrom(client, m: Message):
             await hmm.edit(f"**ERROR** \n`{e}`")
 
 
-@Client.on_message(filters.command(["playlist", "queue"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command("playlist", "queue") & filters.incoming & ~filters.edited)
 async def playlist(client, m: Message):
  if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
     chat_id = m.chat.id
