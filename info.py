@@ -76,7 +76,7 @@ contact_filter = filters.create(
 
 if GROUP_MODE == ("True"):
     grp = True
-else
+else:
     grp = False
 
 GRPPLAY = grp
