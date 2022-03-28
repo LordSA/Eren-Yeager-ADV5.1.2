@@ -74,6 +74,7 @@ contact_filter = filters.create(
     (message.from_user and message.from_user.is_contact) or message.outgoing
 )
 
+if GROUP_MODE is ("True")
 GRPPLAY = grp
 bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="plugins"))
 call_py = PyTgCalls(bot)
