@@ -74,9 +74,9 @@ contact_filter = filters.create(
     (message.from_user and message.from_user.is_contact) or message.outgoing
 )
 if GROUP_MODE==('True','true'):
-   grp = True
+    grp = True
 else:
-   grp = False
+    grp = False
 
 
 GRPPLAY = grp
