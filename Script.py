@@ -21,21 +21,24 @@ class script(object):
 
 <b>𝔇𝔢𝔳𝔢𝔩𝔬𝔭𝔢𝔯:</b>
 - <a href=https://t.me/mwpro11>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>"""
-    MANUELFILTER_TXT = """Help: <b>𝙵𝙸𝙻𝚃𝙴𝚁𝚂</b>
+    WHOIS_TXT ="""<b>ᴡʜᴏɪs ᴍᴏᴅᴜʟᴇ</b>
+ɴᴏᴛᴇ:- ɢɪᴠᴇ ᴀ ᴜsᴇʀ ᴅᴇᴛᴀɪʟs
+•/whois : ɢɪᴠᴇ ᴀ ᴜsᴇʀ 𝔉ᴜʟʟ ᴅᴇᴛᴀɪʟs"""
+    MANUELFILTER_TXT = """ʜᴇʟᴘ: <b>𝙵𝙸𝙻𝚃𝙴𝚁𝚂</b>
 
-✯ 🄵🄸🄻🅃🄴🅁 🄸🅂 🅃🄷🄴 🄵🄴🄰🅃🅄🅁🄴 🅆🄴🅁🄴 🅄🅂🄴🅁🅂 🄲🄰🄽 🅂🄴🅃 🄰🅄🅃🄾🄼🄰🅃🄴🄳 🅁🄴🄿🄻🄸🄴🅂 🄵🄾🅁 🄰 🄿🄰🅁🅃🄸🄲🅄🄻🄰🅁 🄺🄴🅈🅆🄾🅁🄳 🄰🄽🄳 🄼🄾🅅🄸🄴 🅆🄾🅁🄻🄳 🅆🄸🄻🄻 🅁🄴🅂🄿🄾🄽🄳 🅆🄷🄴🄽🄴🅅🄴🅁 🄰 🄺🄴🅈🅆🄾🅁🄳 🄸🅂 🄵🄾🅄🄽🄳 🅃🄷🄴 🄼🄴🅂🅂🄰🄶🄴
+✯ ғɪʟᴛᴇʀ ɪs 🅃🄷🄴 🄵🄴🄰🅃🅄🅁🄴 🅆🄴🅁🄴 🅄🅂🄴🅁🅂 🄲🄰🄽 🅂🄴🅃 🄰🅄🅃🄾🄼🄰🅃🄴🄳 🅁🄴🄿🄻🄸🄴🅂 🄵🄾🅁 🄰 🄿🄰🅁🅃🄸🄲🅄🄻🄰🅁 🄺🄴🅈🅆🄾🅁🄳 🄰🄽🄳 🄼🄾🅅🄸🄴 🅆🄾🅁🄻🄳 🅆🄸🄻🄻 🅁🄴🅂🄿🄾🄽🄳 🅆🄷🄴🄽🄴🅅🄴🅁 🄰 🄺🄴🅈🅆🄾🅁🄳 🄸🅂 🄵🄾🅄🄽🄳 🅃🄷🄴 🄼🄴🅂🅂🄰🄶🄴
 
-<b>NOTE:</b>
-1. movie world should have admin privillage.
-2. only admins can add filters in a chat.
-3. alert buttons have a limit of 64 characters.
+<b>ɴᴏᴛᴇ:</b>
+1. ᴇʀᴇɴ ʏᴇᴀɢᴇʀ sʜᴏᴜʟᴅ ʜᴀᴠᴇ ᴀᴅᴍɪɴ ᴘʀɪᴠɪʟʟᴀɢᴇ.
+2. ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴀᴅᴅ ғɪʟᴛᴇʀs ɪɴ ᴀ ᴄʜᴀᴛ.
+3. ᴀʟᴇʀᴛ ʙᴜᴛᴛᴏɴs ʜᴀᴠᴇ ᴀ ʟɪᴍɪᴛ ᴏғ 64 ᴄʜᴀʀᴀᴄᴛᴇʀs.
 
-<b>Commands and Usage:</b>
-• /filter - <code>add a filter in chat</code>
-• /filters - <code>list all the filters of a chat</code>
-• /del - <code>delete a specific filter in chat</code>
-• /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
-    BUTTON_TXT = """Help: <b>Buttons</b>
+<b>ᴄᴏᴍᴍᴀɴᴅs ᴀɴᴅ ᴜsᴀɢᴇ:</b>
+• /filter - <code>ᴀᴅᴅ ᴀ ғɪʟᴛᴇʀ ɪɴ ᴄʜᴀᴛ</code>
+• /filters - <code>ʟɪsᴛ ᴀʟʟ ᴛʜᴇ ғɪʟᴛᴇʀs ᴏғ ᴀ ᴄʜᴀᴛ</code>
+• /del - <code>ᴅᴇʟᴇᴛᴇ ᴀ sᴘᴇᴄɪғɪᴄ ғɪʟᴛᴇʀ ɪɴ ᴄʜᴀᴛ</code>
+• /delall - <code>ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ᴡʜᴏʟᴇ ғɪʟᴛᴇʀs ɪɴ ᴀ ᴄʜᴀᴛ [ᴄʜᴀᴛ ᴏᴡɴᴇʀ ᴏɴʟʏ]</code>"""
+    BUTTON_TXT = """ʜᴇʟᴘ: <b>ʙᴜᴛᴛᴏɴs</b>
 
 - Movie World Supports both url and alert inline buttons.
 
