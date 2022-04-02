@@ -1101,7 +1101,7 @@ async def telegraph(client, message):
     finally:
         os.remove(download_location)
 
-@Client.on_message(filters.command("whois", "info") & f_onw_fliter)
+@Client.on_message(filters.command('whois') & f_onw_fliter)
 async def who_is(client, message):
     """ extract user information """
     status_message = await message.reply_text(
