@@ -441,7 +441,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📡 𝕿𝚃𝚂', callback_data='tts'),
             InlineKeyboardButton('🗂 𝕺𝚃𝙷𝙴𝚁 𝕱EATURES', callback_data='oth')
         ], [                        
-            InlineKeyboardButton('🌀 𝕿𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷', callback_data='tgraph'),            
+            InlineKeyboardButton('🌀 𝕿𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷', callback_data='tgraph'),
+            InlineKeyboardButton('🤔 ᴡʜᴏɪs', callback_data='who'),            
             InlineKeyboardButton('🤖 𝕾𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11')
         ], [
             InlineKeyboardButton('🏠 𝑯𝙾𝙼𝙴', callback_data='start'),            
@@ -509,6 +510,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.BUTTON_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "who":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='filt')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.WHOIS_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
