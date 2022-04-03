@@ -79,6 +79,10 @@ if GROUP_MODE==('True','true'):
 else:
     grp = False
 
+if PICS==(''):
+    PC = PICS
+else:
+    PC = VIDS
 
 GRPPLAY = grp
 bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="plugins"))
