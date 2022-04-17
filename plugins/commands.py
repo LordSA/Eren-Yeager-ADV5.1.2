@@ -274,8 +274,8 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
-@Client.on_message(filters.command('help'))
-async def channel_info(client, message):
+@Client.on_message(filters.command("help") & filters.incoming & ~filters.edited)
+async def help(client, message):
 	if message.chat.type in ['group', 'supergroup']:
 		buttons = [
             [
@@ -285,8 +285,7 @@ async def channel_info(client, message):
                 InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=hope"),
             ]
             ]
-        reply_markup = InlineKeyboardMarkup(buttons)
-	
+        reply_markup = InlineKeyboardMarkup(buttons)	
         await message.reply(script.HELP_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
