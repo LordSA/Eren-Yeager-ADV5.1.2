@@ -450,7 +450,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔮 𝕾𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit.text(
+        await query.message.edit_text(
             caption=script.HELP_TXT.format(query.from_user.mention),      
             reply_markup=reply_markup,
             parse_mode='html'
