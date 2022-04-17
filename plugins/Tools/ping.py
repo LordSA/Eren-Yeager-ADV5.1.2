@@ -18,12 +18,6 @@ REPO = "നമ്മൾ നമ്മൾ പോലുമറിയാതെ അധ
 async def check_alive(_, message):
     await message.reply_text(ALIVE)
 
-
-@Client.on_message(filters.command("help", HNDLR) & f_onw_fliter)
-async def help_me(_, message):
-    await message.reply_text(HELP)
-
-
 @Client.on_message(filters.command("ping", HNDLR) & f_onw_fliter)
 async def ping(_, message):
     start_t = time.time()
