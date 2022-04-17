@@ -452,6 +452,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
+            video=random.choice(VIDS),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -466,6 +467,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
+            video=random.choice(VIDS),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -479,6 +481,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.FILT_TXT,
+            video=random.choice(VIDS),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -489,6 +492,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.SOURCE_TXT,
+            video=random.choice(VIDS),
             reply_markup=reply_markup,
             parse_mode='html'
         )
