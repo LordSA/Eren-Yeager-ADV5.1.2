@@ -282,10 +282,11 @@ async def channel_info(client, message):
                 InlineKeyboardButton('🤖 Updates', url='https://t.me/mwpro11')
             ],
             [
-                InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
+                InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=hope"),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
+	
         await message.reply(script.HELP_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
@@ -331,7 +332,7 @@ async def channel_info(client, message):
             parse_mode='html'
 	)
         return
-   if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
+   if len(message.command) == 2 and message.command[1] in ["hope"]:
         buttons = [[
 		InlineKeyboardButton('💡 𝕱𝙸𝙻𝚃𝙴𝚁𝚂 ', callback_data='filt'),
             InlineKeyboardButton('🖇 𝕮𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂', callback_data='coct'),
