@@ -285,7 +285,7 @@ async def help(client, message):
                 InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=hope"),
             ]
             ]
-        reply_markup = InlineKeyboardMarkup(buttons)	
+        reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.HELP_TXT.format, reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
