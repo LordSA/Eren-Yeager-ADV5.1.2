@@ -329,6 +329,42 @@ async def channel_info(client, message):
             caption=script.HELP_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
+	)
+        return
+   if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
+        buttons = [[
+		InlineKeyboardButton('💡 𝕱𝙸𝙻𝚃𝙴𝚁𝚂 ', callback_data='filt'),
+            InlineKeyboardButton('🖇 𝕮𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂', callback_data='coct'),
+            InlineKeyboardButton('📂 𝕰𝚇𝚃𝚁𝙰 〽𝙾𝙳', callback_data='extra')            
+        ], [
+            InlineKeyboardButton('📂 〽𝙰𝙽𝙴𝙶𝙴𝚁 𝕱𝙴𝙰𝚃𝚄𝚁𝙴𝚂', callback_data='usbt'),
+            InlineKeyboardButton('𝕿𝙾𝚁𝚁𝙴𝙽𝚃', callback_data='tor')
+        ], [
+            InlineKeyboardButton('📂 𝕿𝙴𝚇𝚃 𝕬𝙽𝙳 𝕷𝙸𝙽𝙺 𝕰𝙳𝙸𝚃', callback_data='tledit')
+        ], [
+            InlineKeyboardButton('🐵 𝕱𝚄𝙽', callback_data='memes'),
+            InlineKeyboardButton('📃 𝕿𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴', callback_data='tr'),        
+            InlineKeyboardButton('📄 𝕵𝚂𝙾𝙽',callback_data='info')           
+        ], [            
+            InlineKeyboardButton('🎵 〽𝚄𝚂𝙸𝙲', callback_data='music'),
+            InlineKeyboardButton('📡 𝕿𝚃𝚂', callback_data='tts'),
+            InlineKeyboardButton('🗂 𝕺𝚃𝙷𝙴𝚁 𝕱EATURES', callback_data='oth')
+        ], [                        
+            InlineKeyboardButton('🌀 𝕿𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷', callback_data='tgraph'),
+            InlineKeyboardButton('🤔 ᴡʜᴏɪs', callback_data='who'),            
+            InlineKeyboardButton('🤖 𝕾𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11')
+        ], [
+            InlineKeyboardButton('🏠 𝑯𝙾𝙼𝙴', callback_data='start'),            
+            InlineKeyboardButton('✴ 𝕻ING', callback_data='ping'),
+            InlineKeyboardButton('🔮 𝕾𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
+            
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_video(
+            video=random.choice(VIDS),
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
