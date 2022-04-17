@@ -450,8 +450,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔮 𝕾𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.HELP_TXT.format(query.from_user.mention),
+        await query.message.reply.video(
+            caption=script.HELP_TXT.format(query.from_user.mention),
             video=random.choice(VIDS),
             reply_markup=reply_markup,
             parse_mode='html'
