@@ -450,9 +450,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔮 𝕾𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.reply.video(
-            caption=script.HELP_TXT.format(query.from_user.mention),
-            video=random.choice(VIDS),
+        await query.message.edit.text(
+            caption=script.HELP_TXT.format(query.from_user.mention),      
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -466,8 +465,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.ABOUT_TXT.format(temp.B_NAME),
-            video=random.choice(VIDS),
+            text=script.ABOUT_TXT.format(temp.B_NAME),            
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -480,8 +478,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.FILT_TXT,
-            video=random.choice(VIDS),
+            text=script.FILT_TXT,            
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -491,8 +488,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.SOURCE_TXT,
-            video=random.choice(VIDS),
+            text=script.SOURCE_TXT,           
             reply_markup=reply_markup,
             parse_mode='html'
         )
