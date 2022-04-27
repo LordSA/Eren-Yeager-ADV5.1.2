@@ -1,8 +1,9 @@
 <p align="center">
-  <vid src=IMG_20211219_161930_849.jpg  alt="Movie World Logo">
+  <img src=https://telegra.ph/file/7226c9d57dc698158bab2.jpg  alt="Eren Yeager Logo">
 </p>
 <h1 align="center">
-  <b>Movie World</b>
+  <b>𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁</b>
+  <b>ADV5.0.9<b>
 </h1>
 
 
