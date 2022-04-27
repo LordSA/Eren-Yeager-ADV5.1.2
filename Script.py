@@ -7,20 +7,26 @@ class script(object):
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
     ABOUT_TXT = """✯ 𝙼𝚈 𝙽𝙰𝙼𝙴: {}
 ⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸
-✯ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁: <a href=https://t.me/mwpro11>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>
-✯ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈: <a href=https://docs.pyrogram.org/>𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼</a>
-✯ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: <a href=https://www.python.org/>𝙿𝚈𝚃𝙷𝙾𝙽 𝟹</a>
-✯ 𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴: <a href=https://www.mongodb.com/>𝙼𝙾𝙽𝙶𝙾 𝙳𝙱</a>
-✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: <a href=https://id.heroku.com/login>𝙷𝙴𝚁𝙾𝙺𝚄</a>
-✯ 𝙲𝙾𝙳𝙴𝙳 𝙱𝚈: <a href=https://github.com/LordSA>𝙻𝙾𝚁𝙳 𝚂𝙰</a>
-✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v5.2.1 [ 𝙱𝙴𝚃𝙰 ]
+✯ 『𝙲𝚁𝙴𝙰𝚃𝙾𝚁』   : <a href=https://t.me/mwpro11>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>
+╠
+✯ 『𝙻𝙸𝙱𝚁𝙰𝚁𝚈』   : <a href=https://docs.pyrogram.org/>𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼</a>
+╠
+✯ 『𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴』  : <a href=https://www.python.org/>𝙿𝚈𝚃𝙷𝙾𝙽 𝟹</a>
+╠
+✯ 『𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴』 : <a href=https://www.mongodb.com/>𝙼𝙾𝙽𝙶𝙾 𝙳𝙱</a>
+╠
+✯ 『𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁』: <a href=https://id.heroku.com/login>𝙷𝙴𝚁𝙾𝙺𝚄</a>
+╠
+✯ 『𝙲𝙾𝙳𝙴𝙳 𝙱𝚈』  : <a href=https://github.com/LordSA>𝙻𝙾𝚁𝙳 𝚂𝙰</a>
+╠
+✯ 『𝚅𝙴𝚁𝚂𝙸𝙾𝙽』   : v5.0.9 [ 𝙱𝙴𝚃𝙰 ]
 ⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸"""
-    SOURCE_TXT = """<b>NOTE:</b>
-✯ 🄼🄾🅅🄸🄴 🅆🄾🅁🄻🄳 🄸🅂 🄰 🄾🄿🄴🄽 🅂🄾🅄🅁🄲🄴 🄿🅁🄾🄹🄴🄲🅃. 
-✯ 𝚂𝙾𝚄𝚁𝙲𝙴 - <a href=https://t.me/lord1of5darkness9>𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔</a>  
+    SOURCE_TXT = """<b>『𝙽𝙾𝚃𝙴』:</b>
+✯ 『𝚃𝙰𝙻𝙺』  - 𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔 𝙸𝚂 𝙰 𝙿𝚁𝙸𝚅𝙰𝚃𝙴 𝙱𝙾𝚃 𝚈𝙾𝚄 𝙲𝙰𝙽 𝚄𝚂𝙴 𝙼𝙴 𝙱𝚄𝚃 𝙼𝚈 𝚂𝙾𝚄𝚁𝙲𝙴 𝙸𝚂 𝙽𝙾𝚃 𝙰𝚅𝙰𝙸𝙻𝙰𝙱𝙻𝙴
+✯ 『𝚂𝙾𝚄𝚁𝙲𝙴』- <a href=https://t.me/mwmoviespro>𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔</a>  
 
 <b>𝔇𝔢𝔳𝔢𝔩𝔬𝔭𝔢𝔯:</b>
-- <a href=https://t.me/mwpro11>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>"""
+- <a href=https://t.me/lord1of5darkness9>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>"""
     WHOIS_TXT ="""<b>ᴡʜᴏɪs ᴍᴏᴅᴜʟᴇ</b>
 ɴᴏᴛᴇ:- ɢɪᴠᴇ ᴀ ᴜsᴇʀ ᴅᴇᴛᴀɪʟs
 •/whois : ɢɪᴠᴇ ᴀ ᴜsᴇʀ 𝔉ᴜʟʟ ᴅᴇᴛᴀɪʟs"""
@@ -38,25 +44,23 @@ class script(object):
 • /filters - <code>ʟɪsᴛ ᴀʟʟ ᴛʜᴇ ғɪʟᴛᴇʀs ᴏғ ᴀ ᴄʜᴀᴛ</code>
 • /del - <code>ᴅᴇʟᴇᴛᴇ ᴀ sᴘᴇᴄɪғɪᴄ ғɪʟᴛᴇʀ ɪɴ ᴄʜᴀᴛ</code>
 • /delall - <code>ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ᴡʜᴏʟᴇ ғɪʟᴛᴇʀs ɪɴ ᴀ ᴄʜᴀᴛ [ᴄʜᴀᴛ ᴏᴡɴᴇʀ ᴏɴʟʏ]</code>"""
-    BUTTON_TXT = """ʜᴇʟᴘ: <b>ʙᴜᴛᴛᴏɴs</b>
+    BUTTON_TXT = """ʜᴇʟᴘ: <b>ʙᴜᴛᴛᴏɴs</b>𝚃𝚎𝚡𝚝𝚄𝙿𝙿𝙾𝚁𝚃𝙸𝙽𝙶』- 𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔 Supports both url and alert inline buttons.
 
-- Movie World Supports both url and alert inline buttons.
-
-<b>NOTE:</b>
-1. Telegram will not allows you to send buttons without any content, so content is mandatory.
-2. Movie World supports buttons with any telegram media type.
-3. Buttons should be properly parsed as markdown format
+<b>𝙽𝙾𝚃𝙴:</b>
+1. 𝚃𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝚠𝚒𝚕𝚕 𝚗𝚘𝚝 𝚊𝚕𝚕𝚘𝚠𝚜 𝚢𝚘𝚞 𝚝𝚘 𝚜𝚎𝚗𝚍 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚠𝚒𝚝𝚑𝚘𝚞𝚝 𝚊𝚗𝚢 𝚌𝚘𝚗𝚝𝚎𝚗𝚝, 𝚜𝚘 𝚌𝚘𝚗𝚝𝚎𝚗𝚝 𝚒𝚜 𝙼𝚊𝚗𝚍𝚊𝚝𝚘𝚛𝚢.
+2. 𝙼 𝚂𝚞𝚙𝚙𝚘𝚛𝚝𝚜 𝙱𝚞𝚝𝚝𝚘𝚗𝚜 𝚠𝚒𝚝𝚑 𝚊𝚗𝚢 𝚃𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝙼𝚎𝚍𝚒𝚊 𝚝𝚢𝚙𝚎.
+3. 𝙱𝚞𝚝𝚝𝚘𝚗𝚜 𝚜𝚑𝚘𝚞𝚕𝚍 𝚋𝚎 𝚙𝚛𝚘𝚙𝚎𝚛𝚕𝚢 𝚙𝚊𝚛𝚜𝚎𝚍 𝚊𝚜 𝚖𝚊𝚛𝚔𝚍𝚘𝚠𝚗 𝚏𝚘𝚛𝚖𝚊𝚝
 
 <b>URL buttons:</b>
 <code>[Button Text](buttonurl:https://t.me/mwpro2_bot)</code>
 
 <b>Alert buttons:</b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
-    AUTOFILTER_TXT = """Help: <b>Auto Filter</b>
+    AUTOFILTER_TXT = """𝙷𝙴𝙻𝙿: <b>𝙰𝚄𝚃𝙾 𝙵𝙸𝙻𝚃𝙴𝚁</b>
 
-<b>NOTE:</b>
-1. Make me the admin of your channel if it's private.
-2. make sure that your channel does not contains camrips, porn and fake files.
+<b>𝙽𝙾𝚃𝙴:</b>
+1. 𝙼𝚊𝚔𝚎 𝚖𝚎 𝚝𝚑𝚎 𝚊𝚍𝚖𝚒𝚗 𝚘𝚏 𝚢𝚘𝚞𝚛 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 𝚒𝚏 𝚒𝚝'𝚜 𝚙𝚛𝚒𝚟𝚊𝚝𝚎.
+2. 𝚖𝚊𝚔𝚎 𝚜𝚞𝚛𝚎 𝚝𝚑𝚊𝚝 𝚢𝚘𝚞𝚛 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 𝚍𝚘𝚎𝚜 𝚗𝚘𝚝 𝚌𝚘𝚗𝚝𝚊𝚒𝚗𝚜 𝚌𝚊𝚖𝚛𝚒𝚙𝚜, 𝚙𝚘𝚛𝚗 𝚊𝚗𝚍 𝚏𝚊𝚔𝚎 𝚏𝚒𝚕𝚎𝚜.
 3. Forward the last message to me with quotes.
  I'll add all the files in that channel to my db."""
     CONNECTION_TXT = """Help: <b>Connections</b>
@@ -254,7 +258,7 @@ Some dank memes for fun or whatever!
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
 
-    TTS_TXT = """Help: <b>Text to Speech</b>
+    TTS_TXT = """𝙷𝚎𝚕𝚙: <b>𝚃𝚎𝚡𝚝 𝚝𝚘 𝚂𝚙𝚎𝚎𝚌𝚑</b>
 
 A module to convert text to voice with language support.
 
@@ -270,8 +274,8 @@ A module to convert text to voice with language support.
 Music download modules, for those who love music.
 
 <b>Commands and Usage:</b>
-• /song or /mp3 (songname) - download song from yt servers.
-• /video or /mp4 (songname) - download video from yt servers.
+• /song  (songname) - download song from yt servers.
+• /video (songname) - download video from yt servers.
 
 <b>YouTube Thumbnail Download</b>
 • /ytthumb (youtube link)
