@@ -445,7 +445,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who'),            
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11')
         ], [
-            InlineKeyboardButton('『𝙷𝙾𝙼𝙴'』, callback_data='start'),            
+            InlineKeyboardButton('『𝙷𝙾𝙼𝙴』', callback_data='start'),            
             InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
             InlineKeyboardButton('『𝚂𝚃𝙰𝚃𝚄𝚂』', callback_data='stats')
         ]]
