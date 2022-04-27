@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=IMG_20211219_161930_849.jpg  alt="Movie World Logo">
+  <vid src=IMG_20211219_161930_849.jpg  alt="Movie World Logo">
 </p>
 <h1 align="center">
   <b>Movie World</b>
