@@ -64,7 +64,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"© ꐟ{get_size(file.file_size)}ꐟ {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"© 『{get_size(file.file_size)}』 {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -76,7 +76,7 @@ async def next_page(bot, query):
                     text=f"© {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
                 InlineKeyboardButton(
-                    text=f"ꐟ{get_size(file.file_size)}ꐟ",
+                    text=f"『{get_size(file.file_size)}』",
                     callback_data=f'files_#{file.file_id}',
                 ),
             ]
@@ -404,7 +404,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ 𝕬𝙳𝙳 𝕸𝙴 𝕿𝙾 𝖄𝙾𝚄𝚁 𝕲𝚁𝙾𝚄𝙾𝙿 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('➕ 𝕬𝙳𝙳 〽️𝙴 𝕿𝙾 𝖄𝙾𝚄𝚁 𝕲𝚁𝙾𝚄𝙾𝙿 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
             InlineKeyboardButton('🔍 𝕾𝙴𝙰𝚁𝙲𝙷', switch_inline_query_current_chat=''),
             InlineKeyboardButton('🤖 𝕾𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11')
@@ -424,30 +424,30 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('💡 𝕱𝙸𝙻𝚃𝙴𝚁𝚂 ', callback_data='filt'),
-            InlineKeyboardButton('🖇 𝕮𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂', callback_data='coct'),
-            InlineKeyboardButton('📂 𝕰𝚇𝚃𝚁𝙰 〽𝙾𝙳', callback_data='extra')            
+            InlineKeyboardButton('『𝙵𝙸𝙻𝚃𝙴𝚁𝚂』', callback_data='filt'),
+            InlineKeyboardButton('『𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂』', callback_data='coct'),
+            InlineKeyboardButton('『𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳』', callback_data='extra')            
         ], [
-            InlineKeyboardButton('📂 〽𝙰𝙽𝙴𝙶𝙴𝚁 𝕱𝙴𝙰𝚃𝚄𝚁𝙴𝚂', callback_data='usbt'),
-            InlineKeyboardButton('𝕿𝙾𝚁𝚁𝙴𝙽𝚃', callback_data='tor')
+            InlineKeyboardButton('『𝙼𝙰𝙽𝙴𝙶𝙴𝚁 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂』', callback_data='usbt'),
+            InlineKeyboardButton('『𝚃𝙾𝚁𝚁𝙴𝙽𝚃』', callback_data='tor')
         ], [
-            InlineKeyboardButton('📂 𝕿𝙴𝚇𝚃 𝕬𝙽𝙳 𝕷𝙸𝙽𝙺 𝕰𝙳𝙸𝚃', callback_data='tledit')
+            InlineKeyboardButton('『𝚃𝙴𝚇𝚃 𝙰𝙽𝙳 𝙻𝙸𝙽𝙺 𝙴𝙳𝙸𝚃』', callback_data='tledit')
         ], [
-            InlineKeyboardButton('🐵 𝕱𝚄𝙽', callback_data='memes'),
-            InlineKeyboardButton('📃 𝕿𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴', callback_data='tr'),        
-            InlineKeyboardButton('📄 𝕵𝚂𝙾𝙽',callback_data='info')           
+            InlineKeyboardButton('『𝙵𝚄𝙽』', callback_data='memes'),
+            InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr'),        
+            InlineKeyboardButton('『𝙹𝚂𝙾𝙽』',callback_data='info')           
         ], [            
-            InlineKeyboardButton('🎵 〽𝚄𝚂𝙸𝙲', callback_data='music'),
-            InlineKeyboardButton('📡 𝕿𝚃𝚂', callback_data='tts'),
-            InlineKeyboardButton('🗂 𝕺𝚃𝙷𝙴𝚁 𝕱EATURES', callback_data='oth')
+            InlineKeyboardButton('『𝙼𝚄𝚂𝙸𝙲』', callback_data='music'),
+            InlineKeyboardButton('『𝚃𝚃𝚂』', callback_data='tts'),
+            InlineKeyboardButton('『𝙾𝚃𝙷𝙴𝚁 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂』', callback_data='oth')
         ], [                        
-            InlineKeyboardButton('🌀 𝕿𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷', callback_data='tgraph'),
-            InlineKeyboardButton('🤔 ᴡʜᴏɪs', callback_data='who'),            
-            InlineKeyboardButton('🤖 𝕾𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11')
+            InlineKeyboardButton('『𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷』', callback_data='tgraph'),
+            InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who'),            
+            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11')
         ], [
-            InlineKeyboardButton('🏠 𝑯𝙾𝙼𝙴', callback_data='start'),            
-            InlineKeyboardButton('✴ 𝕻ING', callback_data='ping'),
-            InlineKeyboardButton('🔮 𝕾𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
+            InlineKeyboardButton('『𝙷𝙾𝙼𝙴'』, callback_data='start'),            
+            InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
+            InlineKeyboardButton('『𝚂𝚃𝙰𝚃𝚄𝚂』', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -457,11 +457,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 𝕾𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11'),
-            InlineKeyboardButton('♥️ 𝕾𝙾𝚄𝚁𝙲𝙴', callback_data='source')
+            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』, url='https://t.me/mwpro11'),
+            InlineKeyboardButton('『𝚂𝙾𝚄𝚁𝙲𝙴』', callback_data='source')
         ], [
-            InlineKeyboardButton('🏠 𝑯𝙾𝙼𝙴', callback_data='start'),
-            InlineKeyboardButton('🔐 𝕮𝙻𝙾𝚂𝚂', callback_data='close_data')
+            InlineKeyboardButton('『𝙷𝙾𝙼𝙴』', callback_data='start'),
+            InlineKeyboardButton('『𝙲𝙻𝙾𝚂𝚂』', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -471,8 +471,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "filt":
         buttons = [[
-            InlineKeyboardButton('🗂 〽𝙰𝙽𝚄𝙰𝙻 𝕱𝙸𝙻𝚃𝙴𝚁', callback_data='manuelfilter'),
-            InlineKeyboardButton('💡 𝕬𝚄𝚃𝙾 𝕱𝙸𝙻𝚃𝙴𝚁', callback_data='autofilter')      
+            InlineKeyboardButton('『𝙼𝙰𝙽𝚄𝙰𝙻 𝙵𝙸𝙻𝚃𝙴𝚁』', callback_data='manuelfilter'),
+            InlineKeyboardButton('『𝙰𝚄𝚃𝙾 𝙵𝙸𝙻𝚃𝙴𝚁』', callback_data='autofilter')      
         ], [
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
         ]]
@@ -495,7 +495,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "manuelfilter":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='filt'),
-            InlineKeyboardButton('⏹️ 𝕭𝚄𝚃𝚃𝙾𝙽𝚂', callback_data='button')
+            InlineKeyboardButton('『𝙱𝚄𝚃𝚃𝙾𝙽𝚂』', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -556,11 +556,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "usbt":
         buttons = [[
-            InlineKeyboardButton('🚫 𝕽𝙴𝚂𝚃𝚁𝙸𝙲𝚃',callback_data='restric'),
-            InlineKeyboardButton('🌬 𝕻𝚄𝚁𝙶𝙴', callback_data='purge')
+            InlineKeyboardButton('『𝚁𝙴𝚂𝚃𝚁𝙸𝙲𝚃』',callback_data='restric'),
+            InlineKeyboardButton('『𝙿𝚄𝚁𝙶𝙴』', callback_data='purge')
         ], [
-            InlineKeyboardButton('📛 𝕵𝙽 𝕶𝙸𝙲𝙺', callback_data='zombies'),
-            InlineKeyboardButton('📌 𝕻𝙸𝙽',callback_data='pin')
+            InlineKeyboardButton('『𝙸𝙽𝙺𝙸𝙲𝙺』', callback_data='zombies'),
+            InlineKeyboardButton('『𝙿𝙸𝙽』',callback_data='pin')
         ], [
             InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='help')
         ]]
@@ -573,11 +573,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "tledit":
         buttons = [[
-            InlineKeyboardButton('⏬ 𝕻𝙰𝚂𝚃𝙴',callback_data='paste'),
-            InlineKeyboardButton('🔗 𝖀𝚁𝙻-𝕾𝙷𝙾𝚁𝚃',callback_data='shortner')
+            InlineKeyboardButton('『𝙿𝙰𝚂𝚃𝙴』',callback_data='paste'),
+            InlineKeyboardButton('『𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃𝙴𝚁』',callback_data='shortner')
         ], [
-            InlineKeyboardButton('📲 𝕾𝙷𝙰𝚁𝙸𝙽𝙶 𝕿𝙴𝚇𝚃', callback_data='sharetext'),
-            InlineKeyboardButton('📟 𝕻𝙰𝚂𝚂-𝕲𝙴𝙽', callback_data='genpassword')
+            InlineKeyboardButton('『𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃』', callback_data='sharetext'),
+            InlineKeyboardButton('『𝙿𝙰𝚂𝚂-𝙶𝙴𝙽』', callback_data='genpassword')
         ], [
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
         ]]
@@ -723,7 +723,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "oth":
         buttons = [[            
-            InlineKeyboardButton('𝕾𝚃𝙸𝙲𝙺𝙴𝚁 𝕴𝙳', callback_data='stid')            
+            InlineKeyboardButton('『𝕾𝚃𝙸𝙲𝙺𝙴𝚁 𝕴𝙳』', callback_data='stid')            
         ], [                       
             InlineKeyboardButton('👩‍🦯 𝕭ack', callback_data='help')
         ]]
@@ -853,36 +853,36 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if settings is not None:
             buttons = [
                 [
-                    InlineKeyboardButton('Filter Button',
+                    InlineKeyboardButton('『𝙵𝙸𝙻𝚃𝙴𝚁 𝙱𝚄𝚃𝚃𝙾𝙽』',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('Single' if settings["button"] else 'Double',
+                    InlineKeyboardButton('𝚂𝙸𝙽𝙶𝙻𝙴' if settings["button"] else '𝙳𝙾𝚄𝙱𝙻𝙴',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Bot PM', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["botpm"] else '❌ No',
+                    InlineKeyboardButton('『𝙱𝙾𝚃 𝙿𝙼』', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('✅ 𝚈𝙴𝚂' if settings["botpm"] else '❌ 𝙽𝙾',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('File Secure',
+                    InlineKeyboardButton('『𝙵𝙸𝙻𝙴 𝚂𝙴𝙲𝚄𝚁𝙴』',
                                          callback_data=f'setgs#file_secure#{settings["file_secure"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["file_secure"] else '❌ No',
+                    InlineKeyboardButton('✅ 𝚈𝙴𝚂' if settings["file_secure"] else '❌ 𝙽𝙾',
                                          callback_data=f'setgs#file_secure#{settings["file_secure"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('IMDB', callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["imdb"] else '❌ No',
+                    InlineKeyboardButton('『𝙸𝙼𝙳𝙱』', callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('✅ 𝚈𝙴𝚂' if settings["imdb"] else '❌ 𝙽𝙾',
                                          callback_data=f'setgs#imdb#{settings["imdb"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Spell Check',
+                    InlineKeyboardButton('『𝚂𝙿𝙴𝙻𝙻 𝙲𝙷𝙴𝙲𝙺』',
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["spell_check"] else '❌ No',
+                    InlineKeyboardButton('✅ 𝚈𝙴𝚂' if settings["spell_check"] else '❌ 𝙽𝙾',
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Welcome', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["welcome"] else '❌ No',
+                    InlineKeyboardButton('『𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚂𝙿𝙴𝙴𝙲𝙷』', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('✅ 𝚈𝙴𝚂' if settings["welcome"] else '❌ 𝙽𝙾',
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
                 ]
             ]
@@ -917,7 +917,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"© ꐟ{get_size(file.file_size)}ꐟ {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"© 『{get_size(file.file_size)}』 {file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -930,7 +930,7 @@ async def auto_filter(client, msg, spoll=False):
                     callback_data=f'{pre}#{file.file_id}',
                 ),
                 InlineKeyboardButton(
-                    text=f"ꐟ{get_size(file.file_size)}ꐟ",
+                    text=f"『{get_size(file.file_size)}』",
                     callback_data=f'{pre}_#{file.file_id}',
                 ),
             ]
