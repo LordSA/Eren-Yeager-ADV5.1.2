@@ -109,12 +109,13 @@ python3 bot.py
 [![telegram badge](https://img.shields.io/badge/Telegram-Channel-30302f?style=flat&logo=telegram)](https://telegram.dog/mwpro11)
 
 ## Credits 
-* [![MovieWorld-Devs](https://img.shields.io/static/v1?label=MovieWorld&message=devs&color=critical)](https://telegram.dog/MovieWorldDevs)
+* [![𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔-Devs](https://img.shields.io/static/v1?label=MovieWorld&message=devs&color=critical)](https://telegram.dog/MovieWorldDevs)
 
 
 ## Thanks to 
  - Thanks To Dan For His Awsome [Libary](https://github.com/pyrogram/pyrogram)
  - Thanks To Mahesh For His Awesome [Media-Search-bot](https://github.com/Mahesh0253/Media-Search-bot)
+ - Thanks To Subin For His Evamaria [Evamaria](https://gitHub.com/EvamariaTG/Evamaria)
  - Thanks To [Trojanz](https://github.com/trojanzhex) for Their Awesome [Unlimited Filter Bot](https://github.com/TroJanzHEX/Unlimited-Filter-Bot) And [AutoFilterBoT](https://github.com/trojanzhex/auto-filter-bot)
  - Thanks To All Everyone In This Journey
 
