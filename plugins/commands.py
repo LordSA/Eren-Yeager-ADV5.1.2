@@ -46,8 +46,8 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('🤖 𝕾𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11'),
-                InlineKeyboardButton('ℹ️ 𝑯𝙴𝙻𝙿', url=f"https://t.me/{temp.U_NAME}?start=help"),
+                InlineKeyboardButton('『𝕾𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
+                InlineKeyboardButton('『𝙷𝙴𝙻𝙿』', url=f"https://t.me/{temp.U_NAME}?start=help"),
             ],
             [   InlineKeyboardButton('➕ 𝕬𝙳𝙳 〽𝙴 𝕿𝙾 𝖄𝙾𝚄𝚁 𝕲𝚁𝙾𝚄𝙿 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ]
@@ -67,14 +67,14 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ 𝕬𝙳𝙳 〽𝙴 𝕿𝙾 𝖄𝙾𝚄𝚁 𝕲𝚁𝙾𝚄𝙿 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔍 𝕾𝙴𝙰𝚁𝙲𝙷', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 𝕾𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11')
+            InlineKeyboardButton('『𝕾𝙴𝙰𝚁𝙲𝙷』', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('『𝕾𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11')
             ],[
-            InlineKeyboardButton('🖥 𝕮𝙷𝙰𝙽𝙽𝙴𝙻', url='https://t.me/+Sw4QUQp-kIU1NjY1'),
-            InlineKeyboardButton('🎬 𝕲𝚁𝙾𝚄𝙿', url='https://t.me/mwmoviespro')
+            InlineKeyboardButton('『𝙲𝙷𝙰𝙽𝙽𝙴𝙻』', url='https://t.me/+Sw4QUQp-kIU1NjY1'),
+            InlineKeyboardButton('『𝙶𝚁𝙾𝚄𝙿』', url='https://t.me/mwmoviespro')
             ],[
-            InlineKeyboardButton('ℹ️ 𝑯𝙴𝙻𝙿', callback_data='help'),
-            InlineKeyboardButton('😊 𝕬𝙱𝙾𝚄𝚃', callback_data='about')
+            InlineKeyboardButton('『𝙷𝙴𝙻𝙿』', callback_data='help'),
+            InlineKeyboardButton('『𝕬𝙱𝙾𝚄𝚃』', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_video(
@@ -93,7 +93,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 𝕵𝙾𝙸𝙽 𝖀𝙿𝙳𝙰𝚃𝙴𝚂 𝕮𝙷𝙰𝙽𝙽𝙴𝙻", url=invite_link.invite_link
+                    "『𝙹𝙾𝙸𝙽 𝙽𝙾𝚆』", url=invite_link.invite_link
                 )
             ]
         ]
@@ -102,9 +102,9 @@ async def start(client, message):
             try:
             	kk, file_id = message.command[1].split("_", 1)
             	pre = 'checksubp' if kk == 'filep' else 'checksub' 
-            	btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{pre}#{file_id}")])
+            	btn.append([InlineKeyboardButton(" 🔄 『𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽』", callback_data=f"{pre}#{file_id}")])
             except IndexError:
-                btn.append([InlineKeyboardButton(" 🔄 Try Again", url=f"https://t.me/{temp.U_NAME}/{message.command[1]}")])
+                btn.append([InlineKeyboardButton(" 🔄 『𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽』", url=f"https://t.me/{temp.U_NAME}/{message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
             text="**Please Join My Updates Channel to use this Bot!**",
@@ -116,14 +116,14 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ 𝕬𝙳𝙳 〽𝙴 𝕿𝙾 𝖄𝙾𝚄𝚁 𝕲𝚁𝙾𝚄𝙿 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔍 𝕾𝙴𝙰𝚁𝙲𝙷', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 𝕾𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11')
+            InlineKeyboardButton('『𝕾𝙴𝙰𝚁𝙲𝙷』', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('『𝕾𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11')
             ],[
-            InlineKeyboardButton('🖥 𝕮𝙷𝙰𝙽𝙽𝙴𝙻', url='https://t.me/+L2zAsilYH3I0OWNl'),
-            InlineKeyboardButton('🎬 𝕲𝚁𝙾𝚄𝙿', url='https://t.me/mwmoviespro')
+            InlineKeyboardButton('『𝙲𝙷𝙰𝙽𝙽𝙴𝙻』', url='https://t.me/+Sw4QUQp-kIU1NjY1'),
+            InlineKeyboardButton('『𝙶𝚁𝙾𝚄𝙿』', url='https://t.me/mwmoviespro')
             ],[
-            InlineKeyboardButton('ℹ️ 𝑯𝙴𝙻𝙿', callback_data='help'),
-            InlineKeyboardButton('😊 𝕬𝙱𝙾𝚄𝚃', callback_data='about')
+            InlineKeyboardButton('『𝙷𝙴𝙻𝙿』', callback_data='help'),
+            InlineKeyboardButton('『𝕬𝙱𝙾𝚄𝚃』', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -433,61 +433,61 @@ async def settings(client, message):
         buttons = [
             [
                 InlineKeyboardButton(
-                    'Filter Button',
+                    '𝙵𝙸𝙻𝚃𝙴𝚁 𝙱𝚄𝚃𝚃𝙾𝙽',
                     callback_data=f'setgs#button#{settings["button"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    'Single' if settings["button"] else 'Double',
+                    '𝚂𝙸𝙽𝙶𝙻𝙴' if settings["button"] else '𝙳𝙾𝚄𝙱𝙻𝙴',
                     callback_data=f'setgs#button#{settings["button"]}#{grp_id}',
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    'Bot PM',
+                    '𝙱𝙾𝚃 𝙿𝙼',
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    '✅ Yes' if settings["botpm"] else '❌ No',
+                    '✅ 𝚈𝙴𝚂' if settings["botpm"] else '❌ 𝙽𝙾',
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    'File Secure',
+                    '𝙵𝙸𝙻𝙴 𝚂𝙴𝙲𝚄𝚁𝙴',
                     callback_data=f'setgs#file_secure#{settings["file_secure"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    '✅ Yes' if settings["file_secure"] else '❌ No',
+                    '✅ 𝚈𝙴𝚂' if settings["file_secure"] else '❌ 𝙽𝙾',
                     callback_data=f'setgs#file_secure#{settings["file_secure"]}#{grp_id}',
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    'IMDB',
+                    '𝙸𝙼𝙳𝙱',
                     callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    '✅ Yes' if settings["imdb"] else '❌ No',
+                    '✅ 𝚈𝙴𝚂' if settings["imdb"] else '❌ 𝙽𝙾',
                     callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}',
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    'Spell Check',
+                    '𝚂𝙿𝙴𝙻𝙻 𝙲𝙷𝙴𝙲𝙺',
                     callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    '✅ Yes' if settings["spell_check"] else '❌ No',
+                    '✅ 𝚈𝙴𝚂' if settings["spell_check"] else '❌ 𝙽𝙾',
                     callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}',
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    'Welcome',
+                    '𝚆𝙴𝙻𝙲𝙾𝙼𝙴',
                     callback_data=f'setgs#welcome#{settings["welcome"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    '✅ Yes' if settings["welcome"] else '❌ No',
+                    '✅ 𝚈𝙴𝚂' if settings["welcome"] else '❌ 𝙽𝙾',
                     callback_data=f'setgs#welcome#{settings["welcome"]}#{grp_id}',
                 ),
             ],
@@ -590,7 +590,7 @@ async def torrent(_, message):
                 [
                     InlineKeyboardButton(f"{emoji.CROSS_MARK} Close",
                                          callback_data="close_data"),
-                    InlineKeyboardButton(f"Next ⏩",
+                    InlineKeyboardButton(f"『𝙽𝙴𝚇𝚃』",
                                          callback_data="next_tor")
                 ]
             ]
@@ -616,11 +616,11 @@ async def callback_query_next(_, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(f"⏪ Back",
+                    InlineKeyboardButton(f"『𝙿𝚁𝙴𝚅』",
                                          callback_data="back_tor"),
                     InlineKeyboardButton(f"{emoji.CROSS_MARK}",
                                          callback_data="close_data"),
-                    InlineKeyboardButton(f"Next ⏩",
+                    InlineKeyboardButton(f"『𝙽𝙴𝚇𝚃』",
                                          callback_data="next_tor")
                     
                 ]
@@ -647,11 +647,11 @@ async def callback_query_previous(_, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(f"⏪ Back",
+                    InlineKeyboardButton(f"『𝙿𝚁𝙴𝚅』",
                                          callback_data="back_tor"),
                     InlineKeyboardButton(f"{emoji.CROSS_MARK}",
                                          callback_data="close_data"),
-                    InlineKeyboardButton(f"Next ⏩",
+                    InlineKeyboardButton(f"『𝙽𝙴𝚇𝚃』",
                                          callback_data="next_tor")
                 ]
             ]
@@ -672,12 +672,12 @@ async def left(client,message):
                                 [
                                     [
                                         InlineKeyboardButton(
-                                            text=f"𝘔𝘰𝘳𝘦 𝘓𝘢𝘯𝘨 𝘊𝘰𝘥𝘦𝘴", url="https://cloud.google.com/translate/docs/languages"
+                                            text=f"『𝙼𝙾𝚁𝙴 𝙻𝙰𝙽𝙶 𝙲𝙾𝙳𝙴𝚂』", url="https://cloud.google.com/translate/docs/languages"
                                         )
                                     ],
 				    [
                                         InlineKeyboardButton(
-                                            "𝘊𝘭𝘰𝘴𝘦", callback_data="close_data"
+                                            "『𝙲𝙻𝙾𝚂𝙴』", callback_data="close_data"
                                         )
                                     ],
                                 ]
@@ -1093,10 +1093,10 @@ async def telegraph(client, message):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="𝕺𝙿𝙴𝙽 𝕷𝙸𝙽𝙺", url=f"https://telegra.ph{response[0]}"),
-                    InlineKeyboardButton(text="𝕾𝙷𝙰𝚁𝙴 𝕷𝙸𝙽𝙺", url=f"https://telegram.me/share/url?url=https://telegra.ph{response[0]}")
+                    InlineKeyboardButton(text="『𝕺𝙿𝙴𝙽 𝕷𝙸𝙽𝙺』", url=f"https://telegra.ph{response[0]}"),
+                    InlineKeyboardButton(text="『𝕾𝙷𝙰𝚁𝙴 𝕷𝙸𝙽𝙺』", url=f"https://telegram.me/share/url?url=https://telegra.ph{response[0]}")
              ], [
-                InlineKeyboardButton(text="⏪ 𝕭𝙰𝙲𝙺", callback_data="close_data")
+                InlineKeyboardButton(text="『𝙿𝚁𝙴𝚅』", callback_data="close_data")
            ]]
         )
     )
