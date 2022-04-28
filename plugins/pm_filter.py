@@ -429,20 +429,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂』', callback_data='coct')            
         ], [
             InlineKeyboardButton('『𝙿𝚄𝚁𝙶𝙴』', callback_data='purge'),
-            InlineKeyboardButton('『𝚃𝙾𝚁𝚁𝙴𝙽𝚃』', callback_data='tor'),
-            InlineKeyboardButton('『𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳』', callback_data='extra')
-        ], [
-            InlineKeyboardButton('『𝚃𝙴𝚇𝚃 𝙰𝙽𝙳 𝙻𝙸𝙽𝙺 𝙴𝙳𝙸𝚃』', callback_data='tledit')
-        ], [
             InlineKeyboardButton('『𝙵𝚄𝙽』', callback_data='memes'),
-            InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr'),        
-            InlineKeyboardButton('『𝙹𝚂𝙾𝙽』',callback_data='info')           
+            InlineKeyboardButton('『𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳』', callback_data='extra')
         ], [            
             InlineKeyboardButton('『𝙼𝚄𝚂𝙸𝙲』', callback_data='music'),
             InlineKeyboardButton('『𝚃𝚃𝚂』', callback_data='tts'),
-            InlineKeyboardButton('『𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷』', callback_data='tgraph')
+            InlineKeyboardButton('『𝙹𝚂𝙾𝙽』',callback_data='info')
         ], [                        
-            InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who'),            
+            InlineKeyboardButton('『𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷』', callback_data='tgraph'),            
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
             InlineKeyboardButton('『𝙽𝙴𝚇𝚃』', callback_data='nxt1')
         ], [
@@ -472,10 +466,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "nxt1":
         buttons = [[
-            InlineKeyboardButton('『𝕾𝚃𝙸𝙲𝙺𝙴𝚁 𝙸𝙳』', callback_data='stid'),     
+            InlineKeyboardButton('『𝕾𝚃𝙸𝙲𝙺𝙴𝚁 𝙸𝙳』', callback_data='stid'),
+            InlineKeyboardButton('『𝚃𝙾𝚁𝚁𝙴𝙽𝚃』', callback_data='tor'),
+            InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who')     
+        ], [
+            InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr'),
+            InlineKeyboardButton('『𝚁𝙴𝚂𝚃𝚁𝙸𝙲𝚃』',callback_data='restric'),
+            InlineKeyboardButton('『𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃』', callback_data='sharetext')
+        ], [
+            InlineKeyboardButton('『𝙿𝙰𝚂𝚃𝙴』',callback_data='paste'),
+            InlineKeyboardButton('『𝙸𝙽𝙺𝙸𝙲𝙺』', callback_data='zombies'),
+            InlineKeyboardButton('『𝙿𝙸𝙽』',callback_data='pin')                                           
         ], [
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='help'),
-            InlineKeyboardButton('『𝙼𝙰𝙽𝙴𝙶𝙴𝚁 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂』', callback_data='nxt2')
+            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
+            InlineKeyboardButton('『𝙽𝙴𝚇𝚃』', callback_data='nxt2')
         ], [
             InlineKeyboardButton('『𝙷𝙾𝙼𝙴』', callback_data='start'),            
             InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
@@ -520,7 +525,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "who":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -561,11 +566,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "usbt":
         buttons = [[
-            InlineKeyboardButton('『𝚁𝙴𝚂𝚃𝚁𝙸𝙲𝚃』',callback_data='restric'),
+            
             
         ], [
-            InlineKeyboardButton('『𝙸𝙽𝙺𝙸𝙲𝙺』', callback_data='zombies'),
-            InlineKeyboardButton('『𝙿𝙸𝙽』',callback_data='pin')
+            
         ], [
             InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='help')
         ]]
@@ -578,10 +582,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "tledit":
         buttons = [[
-            InlineKeyboardButton('『𝙿𝙰𝚂𝚃𝙴』',callback_data='paste'),
+            
             InlineKeyboardButton('『𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃𝙴𝚁』',callback_data='shortner')
         ], [
-            InlineKeyboardButton('『𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃』', callback_data='sharetext'),
+            
             InlineKeyboardButton('『𝙿𝙰𝚂𝚂-𝙶𝙴𝙽』', callback_data='genpassword')
         ], [
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
