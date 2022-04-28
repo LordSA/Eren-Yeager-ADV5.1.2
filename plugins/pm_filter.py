@@ -91,20 +91,20 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("⏪ 𝙱𝙰𝙲𝙺", callback_data=f"next_{req}_{key}_{off_set}"),
+            [InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"📃 𝙿𝙰𝙶𝙴𝚂 {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("𝙽𝙴𝚇𝚃 ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("⏪ 𝙱𝙰𝙲𝙺", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("𝙽𝙴𝚇𝚃 ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -406,14 +406,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('➕ 𝕬𝙳𝙳 〽️𝙴 𝕿𝙾 𝖄𝙾𝚄𝚁 𝕲𝚁𝙾𝚄𝙾𝙿 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('🔍 𝕾𝙴𝙰𝚁𝙲𝙷', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 𝕾𝚄𝙿𝙿𝙾𝚁𝚃', url='https://t.me/mwpro11')
+            InlineKeyboardButton('『𝕾𝙴𝙰𝚁𝙲𝙷』', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('『𝕾𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11')
         ], [
-            InlineKeyboardButton('🖥 𝕮𝙷𝙰𝙽𝙽𝙴𝙻', url='https://t.me/+Sw4QUQp-kIU1NjY1'),
-            InlineKeyboardButton('🎬 𝕲𝚁𝙾𝚄𝙿', url='https://t.me/mwmoviespro')
+            InlineKeyboardButton('『𝙲𝙷𝙰𝙽𝙽𝙴𝙻』', url='https://t.me/+Sw4QUQp-kIU1NjY1'),
+            InlineKeyboardButton('『𝙶𝚁𝙾𝚄𝙿』', url='https://t.me/mwmoviespro')
         ], [
-            InlineKeyboardButton('ℹ️ 𝑯𝙴𝙻𝙿', callback_data='help'),
-            InlineKeyboardButton('😊 𝕬𝙱𝙾𝚄𝚃', callback_data='about')
+            InlineKeyboardButton('『𝙷𝙴𝙻𝙿』', callback_data='help'),
+            InlineKeyboardButton('『𝕬𝙱𝙾𝚄𝚃』', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -564,39 +564,26 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "usbt":
-        buttons = [[
-            
-            
+    elif query.data == "nxt2":
+        buttons = [[           
+            InlineKeyboardButton('『𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃𝙴𝚁』',callback_data='shortner'),            
+            InlineKeyboardButton('『𝙿𝙰𝚂𝚂-𝙶𝙴𝙽』', callback_data='genpassword')            
         ], [
-            
+            InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='nxt1'),
+            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
+            InlineKeyboardButton('『𝙷𝙴𝙻𝙿』', callback_data='help')
         ], [
-            InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='help')
+            InlineKeyboardButton('『𝙷𝙾𝙼𝙴』', callback_data='start'),            
+            InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
+            InlineKeyboardButton('『𝚂𝚃𝙰𝚃𝚄𝚂』', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.MANEGER_TXT,
+            text=script.HELP_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "tledit":
-        buttons = [[
-            
-            InlineKeyboardButton('『𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃𝙴𝚁』',callback_data='shortner')
-        ], [
-            
-            InlineKeyboardButton('『𝙿𝙰𝚂𝚂-𝙶𝙴𝙽』', callback_data='genpassword')
-        ], [
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.TEXTWORK_TXT,
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )       
     elif query.data == "restric":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
@@ -765,7 +752,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "sharetext":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
