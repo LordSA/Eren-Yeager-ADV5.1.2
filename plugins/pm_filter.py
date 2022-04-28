@@ -424,12 +424,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('『𝙵𝙸𝙻𝚃𝙴𝚁𝚂』', callback_data='filt'),
-            InlineKeyboardButton('『𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂』', callback_data='coct'),
-            InlineKeyboardButton('『𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳』', callback_data='extra')            
+            InlineKeyboardButton('『𝙼𝙰𝙽𝚄𝙰𝙻 𝙵𝙸𝙻𝚃𝙴𝚁』', callback_data='manuelfilter'),
+            InlineKeyboardButton('『𝙰𝚄𝚃𝙾 𝙵𝙸𝙻𝚃𝙴𝚁』', callback_data='autofilter'),
+            InlineKeyboardButton('『𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂』', callback_data='coct')            
         ], [
             InlineKeyboardButton('『𝙼𝙰𝙽𝙴𝙶𝙴𝚁 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂』', callback_data='usbt'),
-            InlineKeyboardButton('『𝚃𝙾𝚁𝚁𝙴𝙽𝚃』', callback_data='tor')
+            InlineKeyboardButton('『𝚃𝙾𝚁𝚁𝙴𝙽𝚃』', callback_data='tor'),
+            InlineKeyboardButton('『𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳』', callback_data='extra')
         ], [
             InlineKeyboardButton('『𝚃𝙴𝚇𝚃 𝙰𝙽𝙳 𝙻𝙸𝙽𝙺 𝙴𝙳𝙸𝚃』', callback_data='tledit')
         ], [
@@ -439,11 +440,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ], [            
             InlineKeyboardButton('『𝙼𝚄𝚂𝙸𝙲』', callback_data='music'),
             InlineKeyboardButton('『𝚃𝚃𝚂』', callback_data='tts'),
-            InlineKeyboardButton('『𝙾𝚃𝙷𝙴𝚁 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂』', callback_data='oth')
+            InlineKeyboardButton('『𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷』', callback_data='tgraph')
         ], [                        
-            InlineKeyboardButton('『𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷』', callback_data='tgraph'),
             InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who'),            
-            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11')
+            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
+            InlineKeyboardButton('『𝙽𝙴𝚇𝚃』', callback_data='nxt1')
         ], [
             InlineKeyboardButton('『𝙷𝙾𝙼𝙴』', callback_data='start'),            
             InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
@@ -469,16 +470,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "filt":
+    elif query.data == "nxt1":
         buttons = [[
-            InlineKeyboardButton('『𝙼𝙰𝙽𝚄𝙰𝙻 𝙵𝙸𝙻𝚃𝙴𝚁』', callback_data='manuelfilter'),
-            InlineKeyboardButton('『𝙰𝚄𝚃𝙾 𝙵𝙸𝙻𝚃𝙴𝚁』', callback_data='autofilter')      
+            InlineKeyboardButton('『𝕾𝚃𝙸𝙲𝙺𝙴𝚁 𝕴𝙳』', callback_data='stid'),     
         ], [
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.FILT_TXT,            
+            text=script.HELP_TXT,            
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -721,9 +721,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "oth":
+    elif query.data == "nxt2":
         buttons = [[            
-            InlineKeyboardButton('『𝕾𝚃𝙸𝙲𝙺𝙴𝚁 𝕴𝙳』', callback_data='stid')            
+                        
         ], [                       
             InlineKeyboardButton('👩‍🦯 𝕭ack', callback_data='help')
         ]]
