@@ -69,7 +69,7 @@ async def next_page(bot, query):
                 InlineKeyboardButton(
                     text=f"『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1'
                 ),
-          ],[
+            ],[
                 InlineKeyboardButton(
                     text=f"© 『{get_size(file.file_size)}』 {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
@@ -85,7 +85,7 @@ async def next_page(bot, query):
                 InlineKeyboardButton(
                     text=f"『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url=https://t.me/+2A6YKxDL4udlMGU1
                 ),
-          ],[
+            ],[
                 InlineKeyboardButton(
                     text=f"© {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
@@ -920,7 +920,7 @@ async def auto_filter(client, msg, spoll=False):
                 InlineKeyboardButton(
                     text=f"『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1'
                 ),
-          ],[
+            ],[
                 InlineKeyboardButton(
                     text=f"© 『{get_size(file.file_size)}』 {file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
@@ -936,7 +936,7 @@ async def auto_filter(client, msg, spoll=False):
                 InlineKeyboardButton(
                     text=f"『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1'
                 ),
-          ],[
+            ],[
                 InlineKeyboardButton(
                     text=f"© {file.file_name}",
                     callback_data=f'{pre}#{file.file_id}',
