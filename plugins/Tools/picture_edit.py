@@ -2,7 +2,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram import Client, filters
 
 
-@Client.on_message(filters.photo & filters.private)
+#@Client.on_message(filters.photo & filters.private)
 async def photo(client: Client, message: Message):
     try:
         await client.send_message(
