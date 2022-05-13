@@ -1,6 +1,6 @@
 import random
 from pyrogram import Client, filters
-from plugins.helper_functions.cust_p_filters import f_onw_fliter
+from plugins.Tools.help_func.cust_p_filters import f_onw_fliter
 
 
 RUN_STRINGS = (
