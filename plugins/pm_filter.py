@@ -843,6 +843,76 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "removebg":
+        await query.message.edit_text(
+            "**Select required mode**ㅤㅤㅤㅤ",
+            reply_markup=InlineKeyboardMarkup(
+                [[
+                InlineKeyboardButton(text="𝖶𝗂𝗍𝗁 𝖶𝗁𝗂𝗍𝖾 𝖡𝖦", callback_data="rmbgwhite"),
+                InlineKeyboardButton(text="𝖶𝗂𝗍𝗁𝗈𝗎𝗍 𝖡𝖦", callback_data="rmbgplain"),
+                ],[
+                InlineKeyboardButton(text="𝖲𝗍𝗂𝖼𝗄𝖾𝗋", callback_data="rmbgsticker"),
+                ],[
+                InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')
+             ]]
+        ),)
+    elif query.data == "stick":
+        await query.message.edit(
+            "**Select a Type**",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="𝖭𝗈𝗋𝗆𝖺𝗅", callback_data="stkr"),
+                        InlineKeyboardButton(
+                            text="𝖤𝖽𝗀𝖾 𝖢𝗎𝗋𝗏𝖾𝖽", callback_data="cur_ved"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="𝖢𝗂𝗋𝖼𝗅𝖾", callback_data="circle_sticker"
+                        )
+                    ],
+                    [
+                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')
+                    ],
+                ]
+            ),
+        )
+    elif query.data == "rotate":
+        await query.message.edit_text(
+            "**Select the Degree**",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(text="180", callback_data="180"),
+                        InlineKeyboardButton(text="90", callback_data="90"),
+                    ],
+                    [InlineKeyboardButton(text="270", callback_data="270")],
+                    ],
+                    [
+                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')
+                ]
+            ),
+        )
+    elif query.data == "glitch":
+        await query.message.edit_text(
+            "**Select required mode**ㅤㅤㅤㅤ",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="𝖭𝗈𝗋𝗆𝖺𝗅", callback_data="normalglitch"
+                        ),
+                        InlineKeyboardButton(
+                            text="𝖲𝖼𝖺𝗇 𝖫𝖺𝗂𝗇𝗌", callback_data="scanlineglitch"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')
+                    ]
+                ]
+            ),
+        )
     elif query.data == "normalglitch":
         await query.message.edit_text(
             "**Select Glitch power level**",
@@ -932,7 +1002,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ],
                 ]
             ),
-        )
+        )    
     elif query.data == "bright":
         await bright(client, query.message)
     elif query.data == "mix":
