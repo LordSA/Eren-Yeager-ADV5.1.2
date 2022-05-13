@@ -5,6 +5,38 @@ from plugins.Tools.help_func.cust_p_filters import f_onw_fliter
 
 RUN_STRINGS = (
     "ഡാ നിന്റെ ഒക്കെ അമ്മയ്ക്കും പെങ്ങക്കും ഉള്ളതൊക്കെ തന്നാട എല്ലാർക്കും ഒള്ളത്.",
+    "A broken of a demeanly filled with darkness \
+    Why have you come to remind it ",
+    "We have become the lives to be the underwater to the underwater that we do not know.",
+    "You want the bad call ... but you need good thunder ....",
+    "Oh Bloody Grama Virtues!",
+    "Sea MUGGie I Am Going to Pay The Bill.",
+    "Want with me!",
+    "You are not a male chaff !!",
+    "I locked it, and the good beach is done by the good beach.",
+    "Kindi ... Kindi ...!",
+    "Giving the stems and then showing one and show the ISI Mark",
+    "Dayveyeese, Kingfisher ... Childe ...!.",
+    "You have made your father for half of the midnight?",
+    "This is the King of our work.",
+    "I'm fetts to feed ...."
+    "Mumak is every Bearby Kachyo ...",
+    "Oh it moves it .... When we moves it ...",
+    "The self of carpenter is the virtue of a carpenter.",
+    "Why not to feel this intelligence in Da Vijaya ...!",
+    "Where was this time ...."
+    "Save me only ...."
+    "I know his father's name is Bhavaniami ....",
+    "Da Dasa ...",
+    "Uppukam's English Salt Mongo Tree .....",
+    "Children ..",
+    "Your father to Paul ....",
+    "Car Engine Out Completely .....",
+    "This is the eye or magnety ...",
+    "Before falling in the 4th pegging, I will arrive there.",
+    "The drunk rains and wast ...."
+    "To tell me I love Yo ...."
+    "No, the Meenaka of Verbapur is not ....",
     "ഓ.. ധിക്കാരം... പഴേപോലെ തന്നെ....ഒരു മാറ്റോമില്ല.....ചുമ്മാതല്ല ഗതി പിടിക്കാത്തത്....!!!",
     "അള്ളാ... പിള്ളേരുടെ ഓരോ... പെഷനെ...",
     "എനിക്ക് എഴുതാൻ അല്ലെ അറിയൂ സാറേ.... വായിക്കാൻ അറിയില്ലല്ലോ....",
