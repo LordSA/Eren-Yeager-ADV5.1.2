@@ -1,5 +1,4 @@
-align="center">
-![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=WELCOME+TO+OUR+DOMAIN!;A+simple+Group+modular+bot!;and+all+futures!)
+![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=WELCOME+TO+MY+DOMAIN!;MY+NAME+IS+EREN+YEAGER;I'M+A+POWERFULL+MOVIE+USERBOT;WITH+ULTRA+FEATURES!)
 
 <p align="center">
   <img src=https://telegra.ph/file/7226c9d57dc698158bab2.jpg  alt="Eren Yeager Logo">
