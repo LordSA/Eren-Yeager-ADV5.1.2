@@ -987,16 +987,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "scanlineglitch":
-         buttons = [[
-             InlineKeyboardButton('『1』', callback_data="scanlineglitch1"),
-             InlineKeyboardButton('『2』', callback_data="scanlineglitch2"),
-             InlineKeyboardButton('『3』', callback_data="scanlineglitch3"),
-             ],[
-             InlineKeyboardButton('『4』', callback_data="scanlineglitch4"),
-             InlineKeyboardButton('『5』', callback_data="scanlineglitch5"),
-             ],[
-             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='glitch')
-       ]]
+        buttons = [[
+            InlineKeyboardButton('『1』', callback_data="scanlineglitch1"),
+            InlineKeyboardButton('『2』', callback_data="scanlineglitch2"),
+            InlineKeyboardButton('『3』', callback_data="scanlineglitch3"),
+            ],[
+            InlineKeyboardButton('『4』', callback_data="scanlineglitch4"),
+            InlineKeyboardButton('『5』', callback_data="scanlineglitch5"),
+            ],[
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='glitch')
+        ]]
         reply_markup = InlineKeyboardButtonMarkup(buttons)
         await query.message.edit_text(
             text="**Select Glitch power level**",
