@@ -1,6 +1,7 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram import Client, filters
-
+from info import VID
+import random
 
 @Client.on_message(filters.photo & filters.private)
 async def photo(client: Client, message: Message):
@@ -8,6 +9,7 @@ async def photo(client: Client, message: Message):
         await client.send_message(
             chat_id=message.chat.id,
             text="Select your required mode from below!ㅤㅤ",
+            video=random.choice(VID)
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
