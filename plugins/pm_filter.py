@@ -875,39 +875,34 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "removebg":
+        buttons = [[     
+            InlineKeyboardButton('『𝚆𝙸𝚃𝙷 𝚆𝙷𝙸𝚃𝙴 𝙱𝙶』', callback_data="rmbgwhite"),
+            InlineKeyboardButton('『𝚆𝙸𝚃𝙷𝙾𝚄𝚃 𝙱𝙶』', callback_data="rmbgplain"),
+            ],[
+            InlineKeyboardButton('『𝚂𝚃𝙸𝙲𝙺𝙴𝚁』', callback_data="rmbgsticker"),
+            ],[
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
+        ]]
+        reply_markup = InlineKeyboardButtonMarkup(buttons)
         await query.message.edit_text(
-            "**Select required mode**ㅤㅤㅤㅤ",
-            reply_markup=InlineKeyboardMarkup(
-                [[
-                InlineKeyboardButton(text="『𝚆𝙸𝚃𝙷 𝚆𝙷𝙸𝚃𝙴 𝙱𝙶』", callback_data="rmbgwhite"),
-                InlineKeyboardButton(text="『𝚆𝙸𝚃𝙷𝙾𝚄𝚃 𝙱𝙶』", callback_data="rmbgplain"),
-                ],[
-                InlineKeyboardButton(text="『𝚂𝚃𝙸𝙲𝙺𝙴𝚁』", callback_data="rmbgsticker"),
-                ],[
-                InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
-             ]]
-        ),)
+            text=" **Select required mode** ",
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
     elif query.data == "stick":
-        await query.message.edit(
-            "**Select a Type**",
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="『𝙽𝙾𝚁𝙼𝙰𝙻』", callback_data="stkr"),
-                        InlineKeyboardButton(
-                            text="『𝙴𝙳𝙶𝙴 𝙲𝚄𝚁𝚅𝙴』", callback_data="cur_ved"
-                        ),
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="『𝙲𝙸𝚁𝙲𝙻𝙴』", callback_data="circle_sticker"
-                        )
-                    ],
-                    [
-                        InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
-                    ],
-                ]
-            ),
+        buttons = [[                                    
+            InlineKeyboardButton(text="『𝙽𝙾𝚁𝙼𝙰𝙻』", callback_data="stkr"),
+            InlineKeyboardButton(text="『𝙴𝙳𝙶𝙴 𝙲𝚄𝚁𝚅𝙴』", callback_data="cur_ved"),
+            ],[
+            InlineKeyboardButton('『𝙲𝙸𝚁𝙲𝙻𝙴』', callback_data="circle_sticker")
+            ],[
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
+        ]]
+        reply_markup = InlineKeyboardButtonMarkup(buttons)
+        await query.message.edit_text(
+            text="**Select a Type**",
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
     elif query.data == "rotate":
         await query.message.edit_text(
