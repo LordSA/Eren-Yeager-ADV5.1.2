@@ -269,13 +269,22 @@ A module to convert text to voice with language support.
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
+    VIDE_TXT = """Help: <b>VIDEO</b>
+Video download modules, for those who love Video.    
+    
+<b>Commands and Usage:</b>
+• /video (songname) - download video from yt servers.
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
     MUSIC_TXT = """Help: <b>Music</b>
 
 Music download modules, for those who love music.
 
 <b>Commands and Usage:</b>
 • /song  (songname) - download song from yt servers.
-• /video (songname) - download video from yt servers.
 
 <b>YouTube Thumbnail Download</b>
 • /ytthumb (youtube link)
