@@ -993,7 +993,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         InlineKeyboardButton(text="『𝙱𝙾𝚇』", callback_data="box"),
                         InlineKeyboardButton(text="『𝙽𝙾𝚁𝙼𝙰𝙻』", callback_data="normal"),
                     ],
-                    [InlineKeyboardButton(text="『𝙶𝙰𝚄𝚂𝚂𝙸𝙰𝙽』", callback_data="gas")],
+                    [
+                        InlineKeyboardButton(text="『𝙶𝙰𝚄𝚂𝚂𝙸𝙰𝙽』", callback_data="gas"),
                     ],
                     [
                         InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
