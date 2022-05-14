@@ -71,10 +71,10 @@ RUN_STRINGS = (
 
 
 @Client.on_message(
-    filters.command("runs") &
+    filters.command("thug") &
     f_onw_fliter
 )
-async def runs(_, message):
+async def thug(_, message):
     """ /runs strings """
     effective_string = random.choice(RUN_STRINGS)
     if message.reply_to_message:
