@@ -535,7 +535,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝚁𝙴𝚂𝚃𝚁𝙸𝙲𝚃』',callback_data='restric'),
             InlineKeyboardButton('『VIDEO』', callback_data='video')
         ], [
-            InlineKeyboardButton('『𝙿𝙰𝚂𝚃𝙴』',callback_data='paste'),
+            InlineKeyboardButton('『REPORT』',callback_data='report'),
             InlineKeyboardButton('『𝙸𝙽𝙺𝙸𝙲𝙺』', callback_data='zombies'),
             InlineKeyboardButton('『𝙿𝙸𝙽』',callback_data='pin')                                           
         ], [
@@ -594,6 +594,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+    elif query.data == "report":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.RPT_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
     elif query.data == "autofilter":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
@@ -635,8 +645,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『COVID』', callback_data='covid'),
             InlineKeyboardButton('『𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃』', callback_data='sharetext')
         ], [
+            InlineKeyboardButton('『𝙿𝙰𝚂𝚃𝙴』',callback_data='paste'),
             InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who'),
-             InlineKeyboardButton('『FILE STORE』', callback_data='flstr')
+            InlineKeyboardButton('『FILE STORE』', callback_data='flstr')
         ], [
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='nxt1'),
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
@@ -740,7 +751,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "paste":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
