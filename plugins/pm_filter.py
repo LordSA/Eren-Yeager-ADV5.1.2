@@ -629,7 +629,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[           
             InlineKeyboardButton('『𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃𝙴𝚁』',callback_data='shortner'),            
             InlineKeyboardButton('『𝙿𝙰𝚂𝚂-𝙶𝙴𝙽』', callback_data='genpassword'),
-            InlineKeyboardButton('Photo', callback_data='photo')            
+            InlineKeyboardButton('『𝙿𝙷𝙾𝚃𝙾』', callback_data='photo')            
         ], [
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='nxt1'),
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
@@ -648,31 +648,31 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "photo":
         buttons = [[
-            InlineKeyboardButton(text="𝖡𝗋𝗂𝗀𝗍𝗁", callback_data="bright"),
-            InlineKeyboardButton(text="𝖬𝗂𝗑𝖾𝖽", callback_data="mix"),
-            InlineKeyboardButton(text="𝖡 & 𝖶", callback_data="b|w"),
+            InlineKeyboardButton(text="『𝙱𝚁𝙸𝙶𝙷𝚃』", callback_data="bright"),
+            InlineKeyboardButton(text="『𝙼𝙸𝚇𝙴𝙳』", callback_data="mix"),
+            InlineKeyboardButton(text="『𝙱 & 𝚆』", callback_data="b|w"),
             ],[
-            InlineKeyboardButton(text="𝖢𝗂𝗋𝖼𝗅𝖾", callback_data="circle"),
-            InlineKeyboardButton(text="𝖡𝗅𝗎𝗋", callback_data="blur"),
-            InlineKeyboardButton(text="𝖡𝗈𝗋𝖽𝖾𝗋", callback_data="border"),
+            InlineKeyboardButton(text="『𝙲𝙸𝚁𝙲𝙻𝙴』", callback_data="circle"),
+            InlineKeyboardButton(text="『𝙱𝙻𝚄𝚁』", callback_data="blur"),
+            InlineKeyboardButton(text="『𝙱𝙾𝚁𝙳𝙴𝚁』", callback_data="border"),
             ],[
-            InlineKeyboardButton(text="𝖲𝗍𝗂𝖼𝗄𝖾𝗋", callback_data="stick"),
-            InlineKeyboardButton(text="𝖱𝗈𝗍𝖺𝗍𝖾", callback_data="rotate"),
-            InlineKeyboardButton(text="𝖢𝗈𝗇𝗍𝗋𝖺𝗌𝗍", callback_data="contrast"),
+            InlineKeyboardButton(text="『𝚂𝚃𝙸𝙲𝙺𝙴𝚁』", callback_data="stick"),
+            InlineKeyboardButton(text="『𝚁𝙾𝚃𝙰𝚃𝙴』", callback_data="rotate"),
+            InlineKeyboardButton(text="『𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝚃』", callback_data="contrast"),
             ],[
-            InlineKeyboardButton(text="𝖲𝖾𝗉𝗂𝖺", callback_data="sepia"),
-            InlineKeyboardButton(text="𝖯𝖾𝗇𝖼𝗂𝗅", callback_data="pencil"),
-            InlineKeyboardButton(text="𝖢𝖺𝗋𝗍𝗈𝗈𝗇", callback_data="cartoon"),
+            InlineKeyboardButton(text="『𝚂𝙴𝙿𝙸𝙰』", callback_data="sepia"),
+            InlineKeyboardButton(text="『𝙿𝙴𝙽𝙲𝙸𝙻』", callback_data="pencil"),
+            InlineKeyboardButton(text="『𝙲𝙰𝚁𝚃𝙾𝙾𝙽』", callback_data="cartoon"),
             ],[
-            InlineKeyboardButton(text="𝖨𝗇𝗏𝖾𝗋𝗍", callback_data="inverted"),
-            InlineKeyboardButton(text="𝖦𝗅𝗂𝗍𝖼𝗁", callback_data="glitch"),
-            InlineKeyboardButton(text="𝖱𝖾𝗆𝗈𝗏𝖾 𝖡𝖦", callback_data="removebg")
+            InlineKeyboardButton(text="『𝙸𝙽𝚅𝙴𝚁𝚃』", callback_data="inverted"),
+            InlineKeyboardButton(text="『𝙶𝙻𝙸𝚃𝙲𝙷』", callback_data="glitch"),
+            InlineKeyboardButton(text="『𝚁𝙴𝙼𝙾𝚅𝙴 𝙱𝙶』", callback_data="removebg")
             ],[
-            InlineKeyboardButton(text="𝖢𝗅𝗈𝗌𝖾", callback_data="close_data")
+            InlineKeyboardButton(text="『𝙱𝙰𝙲𝙺』", callback_data="nxt2")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text="Select your required mode from below!",
+            text="Select your required mode from below!\𝚗 𝚃𝚘 𝚆𝚘𝚛𝚔 𝚃𝚑𝚒𝚜 𝙵𝚎𝚊𝚝𝚞𝚛𝚎 𝙿𝚕𝚎𝚊𝚜𝚎 𝚂𝚎𝚗𝚝 𝚃𝚑𝚎 𝙸𝚖𝚊𝚐𝚎 𝚏𝚘𝚛 𝙴𝚍𝚒𝚝.",
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -855,7 +855,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "shortner":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
+            InlineKeyboardButton('👩‍🦯 𝙱𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -879,12 +879,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             "**Select required mode**ㅤㅤㅤㅤ",
             reply_markup=InlineKeyboardMarkup(
                 [[
-                InlineKeyboardButton(text="𝖶𝗂𝗍𝗁 𝖶𝗁𝗂𝗍𝖾 𝖡𝖦", callback_data="rmbgwhite"),
-                InlineKeyboardButton(text="𝖶𝗂𝗍𝗁𝗈𝗎𝗍 𝖡𝖦", callback_data="rmbgplain"),
+                InlineKeyboardButton(text="『𝚆𝙸𝚃𝙷 𝚆𝙷𝙸𝚃𝙴 𝙱𝙶』", callback_data="rmbgwhite"),
+                InlineKeyboardButton(text="『𝚆𝙸𝚃𝙷𝙾𝚄𝚃 𝙱𝙶』", callback_data="rmbgplain"),
                 ],[
-                InlineKeyboardButton(text="𝖲𝗍𝗂𝖼𝗄𝖾𝗋", callback_data="rmbgsticker"),
+                InlineKeyboardButton(text="『𝚂𝚃𝙸𝙲𝙺𝙴𝚁』", callback_data="rmbgsticker"),
                 ],[
-                InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')
+                InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
              ]]
         ),)
     elif query.data == "stick":
@@ -893,18 +893,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="𝖭𝗈𝗋𝗆𝖺𝗅", callback_data="stkr"),
+                        InlineKeyboardButton(text="𝖭𝗈𝗋𝗆𝖺『𝙽𝙾𝚁𝙼𝙰𝙻』𝗅", callback_data="stkr"),
                         InlineKeyboardButton(
-                            text="𝖤𝖽𝗀𝖾 𝖢𝗎𝗋𝗏𝖾𝖽", callback_data="cur_ved"
+                            text="𝖤𝖽𝗀𝖾 𝖢𝗎𝗋𝗏𝖾𝖽『𝙴𝙳𝙶𝙴 𝙲𝚄𝚁𝚅𝙴』", callback_data="cur_ved"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="𝖢𝗂𝗋𝖼𝗅𝖾", callback_data="circle_sticker"
+                            text="𝖢𝗂𝗋𝖼𝗅𝖾『𝙲𝙸𝚁𝙲𝙻𝙴』", callback_data="circle_sticker"
                         )
                     ],
                     [
-                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')
+                        InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
                     ],
                 ]
             ),
@@ -915,13 +915,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="180", callback_data="180"),
-                        InlineKeyboardButton(text="90", callback_data="90"),
+                        InlineKeyboardButton(text="『180』", callback_data="180"),
+                        InlineKeyboardButton(text="『90』", callback_data="90"),
                     ],
-                    [InlineKeyboardButton(text="270", callback_data="270")],
+                    [InlineKeyboardButton(text="『270』", callback_data="270")],
                     ],
                     [
-                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')
+                        InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
                 ]
             ),
         )
