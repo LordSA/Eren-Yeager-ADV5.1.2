@@ -119,6 +119,12 @@ To Get Sticker ID
  ⭕ 𝙃𝙤𝙬 𝙏𝙤 𝙐𝙨𝙚
   
 ◉ Reply To Any Sticker [/stickerid]"""
+    RPT_TXT = """Help: <b>Report To Group Admins<b>
+This Feature is Used for Contacting Or Reporting Issues To Group Admins That The Bot Present 
+This Comaand Only Used In Groups
+
+<b>Commands and Usage<b>
+• /report - report to admins in the group"""
     RESTRIC_TXT = """Help: <b>Restrictions</b>
 
 <b>What is this?</b>
