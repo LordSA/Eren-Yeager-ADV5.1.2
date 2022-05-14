@@ -933,7 +933,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ], [
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
         ]]
-        reply_markup = InlineKeyboardButtonMarkup(buttons)
+        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=" **Select required mode** ",
             disable_web_page_preview=True,
