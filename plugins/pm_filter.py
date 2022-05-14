@@ -893,14 +893,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="𝖭𝗈𝗋𝗆𝖺『𝙽𝙾𝚁𝙼𝙰𝙻』𝗅", callback_data="stkr"),
+                        InlineKeyboardButton(text="『𝙽𝙾𝚁𝙼𝙰𝙻』", callback_data="stkr"),
                         InlineKeyboardButton(
-                            text="𝖤𝖽𝗀𝖾 𝖢𝗎𝗋𝗏𝖾𝖽『𝙴𝙳𝙶𝙴 𝙲𝚄𝚁𝚅𝙴』", callback_data="cur_ved"
+                            text="『𝙴𝙳𝙶𝙴 𝙲𝚄𝚁𝚅𝙴』", callback_data="cur_ved"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="𝖢𝗂𝗋𝖼𝗅𝖾『𝙲𝙸𝚁𝙲𝙻𝙴』", callback_data="circle_sticker"
+                            text="『𝙲𝙸𝚁𝙲𝙻𝙴』", callback_data="circle_sticker"
                         )
                     ],
                     [
@@ -932,14 +932,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton(
-                            text="𝖭𝗈𝗋𝗆𝖺𝗅", callback_data="normalglitch"
+                            text="『𝙽𝙾𝚁𝙼𝙰𝙻』", callback_data="normalglitch"
                         ),
                         InlineKeyboardButton(
-                            text="𝖲𝖼𝖺𝗇 𝖫𝖺𝗂𝗇𝗌", callback_data="scanlineglitch"
+                            text="『𝚂𝙲𝙰𝙽 𝙻𝙰𝙸𝙽𝚂』", callback_data="scanlineglitch"
                         ),
                     ],
                     [
-                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')
+                        InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
                     ]
                 ]
             ),
@@ -950,16 +950,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="1", callback_data="normalglitch1"),
-                        InlineKeyboardButton(text="2", callback_data="normalglitch2"),
-                        InlineKeyboardButton(text="3", callback_data="normalglitch3"),
+                        InlineKeyboardButton(text="『1』", callback_data="normalglitch1"),
+                        InlineKeyboardButton(text="『2』", callback_data="normalglitch2"),
+                        InlineKeyboardButton(text="『3』", callback_data="normalglitch3"),
                     ],
                     [
-                        InlineKeyboardButton(text="4", callback_data="normalglitch4"),
-                        InlineKeyboardButton(text="5", callback_data="normalglitch5"),
+                        InlineKeyboardButton(text="『4』", callback_data="normalglitch4"),
+                        InlineKeyboardButton(text="『5』", callback_data="normalglitch5"),
                     ],
                     [
-                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='glitch')
+                        InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='glitch')
                     ],
                 ]
             ),
@@ -970,16 +970,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="1", callback_data="scanlineglitch1"),
-                        InlineKeyboardButton(text="2", callback_data="scanlineglitch2"),
-                        InlineKeyboardButton(text="3", callback_data="scanlineglitch3"),
+                        InlineKeyboardButton(text="『1』", callback_data="scanlineglitch1"),
+                        InlineKeyboardButton(text="『2』", callback_data="scanlineglitch2"),
+                        InlineKeyboardButton(text="『3』", callback_data="scanlineglitch3"),
                     ],
                     [
-                        InlineKeyboardButton(text="4", callback_data="scanlineglitch4"),
-                        InlineKeyboardButton(text="5", callback_data="scanlineglitch5"),
+                        InlineKeyboardButton(text="『4』", callback_data="scanlineglitch4"),
+                        InlineKeyboardButton(text="『5』", callback_data="scanlineglitch5"),
                     ],
                     [
-                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='glitch')
+                        InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='glitch')
                     ],
                 ]
             ),
@@ -990,13 +990,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="𝖡𝗈𝗑", callback_data="box"),
-                        InlineKeyboardButton(text="𝖭𝗈𝗋𝗆𝖺𝗅", callback_data="normal"),
+                        InlineKeyboardButton(text="『𝙱𝙾𝚇』", callback_data="box"),
+                        InlineKeyboardButton(text="『𝙽𝙾𝚁𝙼𝙰𝙻』", callback_data="normal"),
                     ],
-                    [InlineKeyboardButton(text="𝖦𝖺𝗎𝗌𝗌𝗂𝖺𝗇", callback_data="gas")],
+                    [InlineKeyboardButton(text="『𝙶𝙰𝚄𝚂𝚂𝙸𝙰𝙽』", callback_data="gas")],
                     ],
                     [
-                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')
+                        InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
                 ]
             ),
         )
@@ -1006,11 +1006,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="𝖶𝗂𝗍𝗁 𝖡𝖦", callback_data="circlewithbg"),
-                        InlineKeyboardButton(text="𝖶𝗂𝗍𝗁𝗈𝗎𝗍 𝖡𝖦", callback_data="circlewithoutbg"),
+                        InlineKeyboardButton(text="『𝚆𝙸𝚃𝙷 𝙱𝙶』", callback_data="circlewithbg"),
+                        InlineKeyboardButton(text="『𝚆𝙸𝚃𝙷𝙾𝚄𝚃 𝙱𝙶』", callback_data="circlewithoutbg"),
                     ],
                     [
-                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')
+                        InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
                     ]
                 ]
             ),
@@ -1021,15 +1021,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="𝖱𝖾𝖽", callback_data="red"),
-                        InlineKeyboardButton(text="𝖦𝗋𝖾𝖾𝗇", callback_data="green"),
+                        InlineKeyboardButton(text="『𝚁𝙴𝙳』", callback_data="red"),
+                        InlineKeyboardButton(text="『𝙶𝚁𝙴𝙴𝙽』", callback_data="green"),
                     ],
                     [
-                        InlineKeyboardButton(text="𝖡𝗅𝖺𝖼𝗄", callback_data="black"),
-                        InlineKeyboardButton(text="𝖡𝗅𝗎𝖾", callback_data="blue"),
+                        InlineKeyboardButton(text="『𝙱𝙻𝙰𝙲𝙺』", callback_data="black"),
+                        InlineKeyboardButton(text="『𝙱𝙻𝚄𝙴』", callback_data="blue"),
                     ],
                     [
-                        InlineKeyboardButton('🔙 𝖡𝖺𝖼𝗄', callback_data='photo')   
+                        InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')   
                     ],
                 ]
             ),
