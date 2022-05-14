@@ -8,8 +8,8 @@ async def photo(client: Client, message: Message):
     try:
         await client.send_message(
             chat_id=message.chat.id,
-            text="Select your required mode from below!ㅤㅤ",
             video=random.choice(VID)
+            text="Select your required mode from below!ㅤㅤ",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
