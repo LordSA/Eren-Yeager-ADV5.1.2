@@ -13,32 +13,32 @@ async def photo(client: Client, message: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="『𝙱𝚁𝙸𝙶𝙷𝚃』", callback_data="bright"),
-                        InlineKeyboardButton(text="『𝙼𝙸𝚇𝙴𝙳』", callback_data="mix"),
-                        InlineKeyboardButton(text="『𝙱 & 𝚆』", callback_data="b|w"),
+                        InlineKeyboardButton('『𝙱𝚁𝙸𝙶𝙷𝚃』', callback_data="bright"),
+                        InlineKeyboardButton('『𝙼𝙸𝚇𝙴𝙳』', callback_data="mix"),
+                        InlineKeyboardButton('『𝙱 & 𝚆』', callback_data="b|w"),
                     ],
                     [
-                        InlineKeyboardButton(text="『𝙲𝙸𝚁𝙲𝙻𝙴』", callback_data="circle"),
-                        InlineKeyboardButton(text="『𝙱𝙻𝚄𝚁』", callback_data="blur"),
-                        InlineKeyboardButton(text="『𝙱𝙾𝚁𝙳𝙴𝚁』", callback_data="border"),
+                        InlineKeyboardButton('『𝙲𝙸𝚁𝙲𝙻𝙴』', callback_data="circle"),
+                        InlineKeyboardButton('『𝙱𝙻𝚄𝚁』', callback_data="blur"),
+                        InlineKeyboardButton('『𝙱𝙾𝚁𝙳𝙴𝚁』', callback_data="border"),
                     ],
                     [
-                        InlineKeyboardButton(text="『𝚂𝚃𝙸𝙲𝙺𝙴𝚁』", callback_data="stick"),
-                        InlineKeyboardButton(text="『𝚁𝙾𝚃𝙰𝚃𝙴』", callback_data="rotate"),
-                        InlineKeyboardButton(text="『𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝚃』", callback_data="contrast"),
+                        InlineKeyboardButton('『𝚂𝚃𝙸𝙲𝙺𝙴𝚁』', callback_data="stick"),
+                        InlineKeyboardButton('『𝚁𝙾𝚃𝙰𝚃𝙴』', callback_data="rotate"),
+                        InlineKeyboardButton('『𝙲𝙾𝙽𝚃𝚁𝙰𝚂𝚃』', callback_data="contrast"),
                     ],
                     [
-                        InlineKeyboardButton(text="『𝚂𝙴𝙿𝙸𝙰』", callback_data="sepia"),
-                        InlineKeyboardButton(text="『𝙿𝙴𝙽𝙲𝙸𝙻』", callback_data="pencil"),
-                        InlineKeyboardButton(text="『𝙲𝙰𝚁𝚃𝙾𝙾𝙽』", callback_data="cartoon"),
+                        InlineKeyboardButton('『𝚂𝙴𝙿𝙸𝙰』', callback_data="sepia"),
+                        InlineKeyboardButton('『𝙿𝙴𝙽𝙲𝙸𝙻』', callback_data="pencil"),
+                        InlineKeyboardButton('『𝙲𝙰𝚁𝚃𝙾𝙾𝙽』', callback_data="cartoon"),
                     ],
                     [
-                        InlineKeyboardButton(text="『𝙸𝙽𝚅𝙴𝚁𝚃』", callback_data="inverted"),
-                        InlineKeyboardButton(text="『𝙶𝙻𝙸𝚃𝙲𝙷』", callback_data="glitch"),
-                        InlineKeyboardButton(text="『𝚁𝙴𝙼𝙾𝚅𝙴 𝙱𝙶』", callback_data="removebg"),
+                        InlineKeyboardButton('『𝙸𝙽𝚅𝙴𝚁𝚃』', callback_data="inverted"),
+                        InlineKeyboardButton('『𝙶𝙻𝙸𝚃𝙲𝙷』', callback_data="glitch"),
+                        InlineKeyboardButton('『𝚁𝙴𝙼𝙾𝚅𝙴 𝙱𝙶』', callback_data="removebg"),
                     ],
                     [
-                        InlineKeyboardButton(text="『𝙱𝙰𝙲𝙺』", callback_data="nxt2"),
+                        InlineKeyboardButton('『𝙱𝙰𝙲𝙺』', callback_data="help"),
                     ],
                 ]
             ),
