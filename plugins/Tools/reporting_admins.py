@@ -1,7 +1,7 @@
 import pyrogram
 import asyncio
 import os
-from pyrogram import filters, Client as Client
+from pyrogram import filters, Client
 
 @Client.on_message((filters.command('report') | filters.regex("@admins") | filters.regex("@admin")) & filters.group)
 async def report_user(bot, message):
