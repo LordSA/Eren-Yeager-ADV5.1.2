@@ -221,7 +221,7 @@ Helps you to know your ping 🚶🏼‍♂️
 <b>Commands:</b>
 
 • /alive - To check you are alive.
-• /help - To get help 
+• /help - To get help(Not Working) 
 • /ping - To get your ping 
 • /repo - Source Code.
 
@@ -267,6 +267,13 @@ This module only works for my admins
 • /unban  - <code>to unban a user.</code>
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>"""
+    THUG_TXT = """Help : <b>THUG<b>
+• /thug strings
+
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
     MEMES_TXT = """Help: <b>FUN</b>
 
 Some dank memes for fun or whatever!
@@ -276,7 +283,6 @@ Some dank memes for fun or whatever!
 • /roll or /dice - roll the dice 
 • /goal or /shoot - to make a goal or shoot
 • /luck or /cownd - Spin the Lucky
-• /runs strings
 
 <b>NOTE:</b>
 • IMDb should have admin privillage.
