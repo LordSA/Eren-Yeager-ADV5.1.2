@@ -1,4 +1,4 @@
- from PIL import Image, ImageEnhance, ImageFilter
+from PIL import Image, ImageEnhance, ImageFilter
 import shutil
 import cv2
 import os
