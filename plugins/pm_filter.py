@@ -672,7 +672,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text="Select your required mode from below! \𝚗 𝚃𝚘 𝚆𝚘𝚛𝚔 𝚃𝚑𝚒𝚜 𝙵𝚎𝚊𝚝𝚞𝚛𝚎 𝙿𝚕𝚎𝚊𝚜𝚎 𝚂𝚎𝚗𝚝 𝚃𝚑𝚎 𝙸𝚖𝚊𝚐𝚎 𝚏𝚘𝚛 𝙴𝚍𝚒𝚝.",
+            text="Select your required mode from below! \n 𝚃𝚘 𝚆𝚘𝚛𝚔 𝚃𝚑𝚒𝚜 𝙵𝚎𝚊𝚝𝚞𝚛𝚎 𝙿𝚕𝚎𝚊𝚜𝚎 𝚂𝚎𝚗𝚝 𝚃𝚑𝚎 𝙸𝚖𝚊𝚐𝚎 𝚏𝚘𝚛 𝙴𝚍𝚒𝚝.",
             reply_markup=reply_markup,
             parse_mode='html'
         )
