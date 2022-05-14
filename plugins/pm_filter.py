@@ -996,7 +996,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
              InlineKeyboardButton('『5』', callback_data="scanlineglitch5"),
              ],[
              InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='glitch')
-        ]]
+       ]]
         reply_markup = InlineKeyboardButtonMarkup(buttons)
         await query.message.edit_text(
             text="**Select Glitch power level**",
