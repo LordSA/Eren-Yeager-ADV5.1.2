@@ -176,10 +176,45 @@ Translate texts to a specific language!
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • IMDb can translate texts to 200+ languages."""
-    OTH_TXT = """EXTRA BUTTONS FOR USE...."""
-    FILT_TXT = """ALL FILTER BUTTONS ARE HERE"""
-    MANEGER_TXT = """Do You Think I can Manage Your Group Then Don't Think Use My Features"""
-    TEXTWORK_TXT = """Text Editing and Link Editing or Regeneration"""
+    COVID_TXT = """➤ 𝐇𝐞𝐥𝐩: 𝖢𝗈𝗏𝗂𝖽
+𝚃𝚑𝚒𝚜 𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙𝚜 𝚢𝚘𝚞 𝚝𝚘 𝚔𝚗𝚘𝚠 𝚍𝚊ily 𝚒𝚗𝚏𝚘𝚛𝚖𝚊𝚝𝚒𝚘𝚗 𝚊𝚋𝚘𝚞𝚝 𝚌𝚘𝚟𝚒𝚍
+
+➤ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐚𝐧𝐝 𝐔𝐬𝐚𝐠𝐞:
+
+➪ /covid - 𝗎𝗌𝖾 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗐𝗂𝗍𝗁 𝗒𝗈𝗎𝗋 𝖼𝗈𝗎𝗇𝗍𝗋𝗒 𝗇𝖺𝗆𝖾 𝗍𝗈 𝗀𝖾𝗍 𝖼𝗈𝗏𝗂𝖽𝖾 𝗂𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇
+
+➛𝖤𝗑𝖺𝗆𝗉𝗅𝖾:
+/covid 𝖨𝗇𝖽𝗂𝖺"""
+
+    IMAGE_TXT = """➤ 𝐇𝐞𝐥𝐩: Photo
+    
+𝚃𝚑𝚒𝚜 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙𝚜 𝚢𝚘𝚞 𝚝𝚘 𝚎𝚍𝚒𝚝 𝚒𝚖𝚊𝚐𝚎 𝚟𝚎𝚛𝚢 𝚎𝚊𝚜𝚒𝚕𝚢
+
+<b>IMPORTANT<b>
+Select your required mode from below! \n 𝚃𝚘 𝚆𝚘𝚛𝚔 𝚃𝚑𝚒𝚜 𝙵𝚎𝚊𝚝𝚞𝚛𝚎 𝙿𝚕𝚎𝚊𝚜𝚎 𝚂𝚎𝚗𝚝 𝚃𝚑𝚎 𝙸𝚖𝚊𝚐𝚎 𝚏𝚘𝚛 𝙴𝚍𝚒𝚝.
+
+➤ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐚𝐧𝐝 𝐔𝐬𝐚𝐠𝐞:
+
+➪ 𝖩𝗎𝗌𝗍 𝗌𝖾𝗇𝖽 𝗆𝖾 𝖺 𝗂𝗆𝖺𝗀𝖾 𝗍𝗈 𝖾𝖽𝗂𝗍 ✨
+"""
+    ABOOK_TXT = """➤ 𝐇𝐞𝐥𝐩: 𝖠𝗎𝖽𝗂𝗈𝖻𝗈𝗈𝗄
+𝚈𝚘𝚞 𝚌𝚊𝚗 𝚌𝚘𝚗𝚟𝚎𝚛𝚝 𝚊 𝙿𝙳𝙵 𝚏𝚒𝚕𝚎 𝚝𝚘 𝚊 𝚊𝚞𝚍𝚒𝚘 𝚏𝚒𝚕𝚎 𝚠𝚒𝚝𝚑 𝚝𝚑𝚒𝚜 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 ✯
+
+➤ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐚𝐧𝐝 𝐔𝐬𝐚𝐠𝐞:
+
+➪ /audiobook: 𝖱𝖾𝗉𝗅𝗒 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗍𝗈 𝖺𝗇𝗒 𝖯𝖣𝖥 𝗍𝗈 𝗀𝖾𝗇𝖾𝗋𝖺𝗍𝖾 𝗍𝗁𝖾 𝖺𝗎𝖽𝗂𝗈"""
+    FILE_TXT = """➤ 𝐇𝐞𝐥𝐩: 𝖥𝗂𝗅𝖾 𝖲𝗍𝗈𝗋𝖾
+ <b>Now This Feature Is Blocked Due To Admins Issue<b>
+ 
+ 
+𝚆𝚒𝚝𝚑 𝚝𝚑𝚒𝚜 𝚌𝚘𝚖𝚖𝚊𝚍𝚜 𝚒 𝚌𝚊𝚗 𝚜𝚝𝚘𝚛𝚎 𝚏𝚒𝚕𝚎𝚜 𝚊𝚗𝚍 𝚐𝚒𝚟𝚎 𝚢𝚘𝚞 𝚊 𝚜𝚑𝚊𝚛𝚎𝚊𝚋𝚕𝚎 𝚕𝚒𝚗𝚔 𝚠𝚒𝚝𝚑 𝚝𝚑𝚒𝚜 𝚕𝚒𝚗𝚔 𝚒 𝚌𝚊𝚗 𝚜𝚑𝚊𝚛𝚎 𝚝𝚑𝚊𝚝 𝚏𝚒𝚕𝚎𝚜 𝚢𝚘𝚞 𝚐𝚒𝚟𝚎 𝚖𝚎 𝚏𝚛𝚘𝚖 𝚊𝚗𝚢 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 𝚠𝚒𝚝𝚑𝚘𝚞𝚝 𝚊𝚍𝚍𝚒𝚗𝚐 𝚖𝚎
+
+➤ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐚𝐧𝐝 𝐔𝐬𝐚𝐠𝐞:
+➪ /plink - 𝖱𝖾𝗉𝗅𝗒 𝗍𝗈 𝖺𝗇𝗒 𝗆𝖾𝖽𝗂𝖺 𝗍𝗈 𝗀𝖾𝗍 𝗅𝗂𝗇𝗄
+➪ /pbatch - 𝖴𝗌𝖾 𝗒𝗈𝗎𝗋 𝗆𝖺𝖽𝗂𝖺 𝗅𝗂𝗇𝗄 𝗐𝗂𝗍𝗁 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽
+➪ /batch - To create link for multiple post
+➛𝖤𝗑𝖺𝗆𝗉𝗅𝖾:
+/batch <code>https://t.me/mwkzkls/2 https://t.me/mwzkls/13</code>"""
     PINGS_TXT ="""<b>🌟 Ping:</b>
 Helps you to know your ping 🚶🏼‍♂️
 
