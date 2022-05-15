@@ -158,13 +158,13 @@ async def next_page(bot, query):
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+            [InlineKeyboardButton(f"📃 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton(f"📃 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
@@ -529,11 +529,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('『𝕾𝚃𝙸𝙲𝙺𝙴𝚁 𝙸𝙳』', callback_data='stid'),
             InlineKeyboardButton('『𝚃𝙾𝚁𝚁𝙴𝙽𝚃』', callback_data='tor'),
-            InlineKeyboardButton('『THUG LIFE』', callback_data='thug')     
+            InlineKeyboardButton('『𝚃𝙷𝚄𝙶 𝙻𝙸𝙵𝙴』', callback_data='thug')     
         ], [
             InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr'),
             InlineKeyboardButton('『𝚁𝙴𝚂𝚃𝚁𝙸𝙲𝚃』',callback_data='restric'),
-            InlineKeyboardButton('『VIDEO』', callback_data='video')
+            InlineKeyboardButton('『𝚅𝙸𝙳𝙴𝙾』', callback_data='video')
         ], [
             InlineKeyboardButton('『REPORT』',callback_data='report'),
             InlineKeyboardButton('『𝙸𝙽𝙺𝙸𝙲𝙺』', callback_data='zombies'),
@@ -641,13 +641,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝙿𝙰𝚂𝚂-𝙶𝙴𝙽』', callback_data='genpassword'),
             InlineKeyboardButton('『𝙵𝚄𝙽』', callback_data='memes')                      
         ], [
-            InlineKeyboardButton('『AUDIOBOOK』',callback_data='abook'),            
-            InlineKeyboardButton('『COVID』', callback_data='covid'),
+            InlineKeyboardButton('『𝙰𝚄𝙳𝙸𝙾𝙱𝙾𝙾𝙺』',callback_data='abook'),            
+            InlineKeyboardButton('『𝙲𝙾𝚅𝙸𝙳』', callback_data='covid'),
             InlineKeyboardButton('『𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃』', callback_data='sharetext')
         ], [
             InlineKeyboardButton('『𝙿𝙰𝚂𝚃𝙴』',callback_data='paste'),
             InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who'),
-            InlineKeyboardButton('『FILE STORE』', callback_data='flstr')
+            InlineKeyboardButton('『𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴』', callback_data='flstr')
         ], [
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='nxt1'),
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
@@ -1362,12 +1362,12 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
+            [InlineKeyboardButton(text=f"📃 1/{round(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="📃 1/1", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
