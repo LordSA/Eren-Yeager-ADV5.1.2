@@ -1,6 +1,6 @@
 import re
 import os
-from os import environ
+from os import environ, getenv
 from dotenv import load_dotenv
 from pyrogram import Client, filters
 from pytgcalls import PyTgCalls
@@ -90,3 +90,7 @@ else:
 GRPPLAY = grp
 bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="plugins"))
 call_py = PyTgCalls(bot)
+
+#VC modes
+que = {}
+DURATION_LIMIT = int(getenv("DURATION_LIMIT", "800"))
