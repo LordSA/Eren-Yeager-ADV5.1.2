@@ -77,19 +77,13 @@ contact_filter = filters.create(
     lambda _, __, message:
     (message.from_user and message.from_user.is_contact) or message.outgoing
 )
-if GROUP_MODE==('True','true'):
-    grp = True
-else:
-    grp = False
 
 if PICS==(''):
     PC = PICS
 else:
     PC = VIDS
 
-GRPPLAY = grp
-bot = Client(SESSION, API_ID, API_HASH, plugins=dict(root="plugins"))
-call_py = PyTgCalls(bot)
+
 
 #VC modes
 que = {}
