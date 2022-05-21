@@ -5,14 +5,14 @@
 </p>
 <h1 align="center">
   <b>𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁</b>
-  <b>ADV5.0.9<b>
+  <b>ADV5.1.0<b>
 </h1>
 
 
 [![Stars](https://img.shields.io/github/stars/LordSA/movie-world?style=flat-square&color=yellow)](https://github.com/LordSA/movie-world/stargazers)
 [![Forks](https://img.shields.io/github/forks/LordSA/movie-world?style=flat-square&color=orange)](https://github.com/LordSA/movie-world/fork)
 [![Size](https://img.shields.io/github/repo-size/LordSA/movie-world?style=flat-square&color=green)](https://github.com/LordSA/movie-world/)   
-[![Private  black-love svg2](https://badges.frapsoft.com/os/v2/private-source.svg?v=103)](https://github.com/LordSA/movie-world)   
+[![Private  black-love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/LordSA/movie-world)   
 [![Contributors](https://img.shields.io/github/contributors/LordSA/movie-world?style=flat-square&color=green)](https://github.com/LordSA/movie-world/graphs/contributors)
 [![License](https://img.shields.io/badge/License-AGPL-blue)](https://github.com/LordSA/movie-world/blob/main/LICENSE)
 [![Sparkline](https://stars.medv.io/LordSA/movie-world.svg)](https://stars.medv.io/LordSA/movie-world)
