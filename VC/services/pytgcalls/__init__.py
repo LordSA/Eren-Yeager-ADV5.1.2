@@ -1,4 +1,4 @@
-from DaisyXMusic.services.queues import queues
+from VC.services.queues import queues
 
 from .pytgcalls import pytgcalls, run
 
