@@ -19,7 +19,7 @@ class script(object):
 ╠
 ✯ 『𝙲𝙾𝙳𝙴𝙳 𝙱𝚈』  : <a href=https://t.me/lord1of5darkness9>𝙻𝙾𝚁𝙳 𝚂𝙰</a>
 ╠
-✯ 『𝚅𝙴𝚁𝚂𝙸𝙾𝙽』   : v5.1.0 [ 𝙱𝙴𝚃𝙰 ]
+✯ 『𝚅𝙴𝚁𝚂𝙸𝙾𝙽』   : v5.1.2 [ 𝙱𝙴𝚃𝙰 ]
 ⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸"""
     SOURCE_TXT = """<b>『𝙽𝙾𝚃𝙴』:</b>
 ✯ 『𝚃𝙰𝙻𝙺』  - 𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔 𝙸𝚂 𝙰 𝙿𝚁𝙸𝚅𝙰𝚃𝙴 𝙱𝙾𝚃 𝚈𝙾𝚄 𝙲𝙰𝙽 𝚄𝚂𝙴 𝙼𝙴 𝙱𝚄𝚃 𝙼𝚈 𝚂𝙾𝚄𝚁𝙲𝙴 𝙸𝚂 𝙽𝙾𝚃 𝙰𝚅𝙰𝙸𝙻𝙰𝙱𝙻𝙴
@@ -94,7 +94,7 @@ Some URLs is Shortner
 • /short <code>(link)</code> - I will send the shorted links.
 
 <b>Example:</b>
-<code>/short https://t.me/josprojects</code>
+<code>/short https://t.me/mwmoviespro</code>
 
 <b>NOTE:</b>
 • IMDb should have admin privillage.
