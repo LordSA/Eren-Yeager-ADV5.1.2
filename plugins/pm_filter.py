@@ -530,6 +530,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),            
             reply_markup=reply_markup,
             parse_mode='html'
@@ -557,6 +566,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝚂𝚃𝙰𝚃𝚄𝚂』', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),            
             reply_markup=reply_markup,
@@ -567,6 +586,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.SOURCE_TXT,           
             reply_markup=reply_markup,
@@ -579,6 +607,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.MANUELFILTER_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
@@ -588,6 +625,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='manuelfilter')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.BUTTON_TXT,
             reply_markup=reply_markup,
@@ -599,6 +645,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.WHOIS_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
@@ -608,6 +663,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.RPT_TXT,
             reply_markup=reply_markup,
@@ -619,6 +683,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.AUTOFILTER_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
@@ -629,6 +702,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.CONNECTION_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
@@ -638,6 +720,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.TGRAPH_TXT,
             disable_web_page_preview=True,
@@ -667,6 +758,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝚂𝚃𝙰𝚃𝚄𝚂』', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
             disable_web_page_preview=True,
@@ -699,6 +799,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.IMAGE_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
@@ -708,6 +817,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.RESTRIC_TXT,
             disable_web_page_preview=True,
@@ -720,6 +838,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.THUG_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -730,6 +857,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.FILE_TXT,
             disable_web_page_preview=True,
@@ -742,6 +878,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.PIN_MESSAGE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -753,6 +898,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.ZOMBIES_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -763,6 +917,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.PASTE_TXT,
             disable_web_page_preview=True,
@@ -776,6 +939,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.GTRANS_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -786,6 +958,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.PURGE_TXT,
             disable_web_page_preview=True,
@@ -798,6 +979,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.MEMES_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -808,6 +998,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.TTS_TXT,
             disable_web_page_preview=True,
@@ -820,6 +1019,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.MUSIC_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -830,6 +1038,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.INFO_TXT,
             disable_web_page_preview=True,
@@ -842,6 +1059,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.PASSWORD_GEN_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -853,6 +1079,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.ABOOK_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -863,6 +1098,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.COVID_TXT,
             disable_web_page_preview=True,
@@ -876,6 +1120,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.EXTRAMOD_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
@@ -885,6 +1138,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.TORRENT_TXT,
             disable_web_page_preview=True,
@@ -897,6 +1159,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.PINGS_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -907,6 +1178,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.STICKER_TXT,
             disable_web_page_preview=True,
@@ -919,6 +1199,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.VIDE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -929,6 +1218,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.SHARE_TXT,
             disable_web_page_preview=True,
@@ -941,6 +1239,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.URL_SHORTNER_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -951,6 +1258,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='extra')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.ADMIN_TXT,
             reply_markup=reply_markup,
@@ -966,6 +1282,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=" **Select required mode** ",
             disable_web_page_preview=True,
@@ -983,6 +1308,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text="**Select a Type**",
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -999,6 +1333,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text="**Select the Degree**",
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -1012,6 +1355,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text="**Select required mode**",
             disable_web_page_preview=True,
@@ -1031,6 +1383,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text="**Select Glitch power level**",
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -1049,6 +1410,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text="**Select Glitch power level**",
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -1065,6 +1435,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text="**Select Type Of Blur**",
             disable_web_page_preview=True,
             reply_markup=reply_markup,
@@ -1078,6 +1457,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=" **Select Required Mode** ",
             disable_web_page_preview=True,
@@ -1095,6 +1483,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='photo')   
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=" **Select Border** ",
             disable_web_page_preview=True,
@@ -1227,6 +1624,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         monsize = get_size(monsize)
         free = get_size(free)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.STATUS_TXT.format(total, users, chats, monsize, free),
             reply_markup=reply_markup,
             parse_mode='html'
@@ -1245,6 +1651,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         free = 536870912 - monsize
         monsize = get_size(monsize)
         free = get_size(free)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
         await query.message.edit_text(
             text=script.STATUS_TXT.format(total, users, chats, monsize, free),
             reply_markup=reply_markup,
