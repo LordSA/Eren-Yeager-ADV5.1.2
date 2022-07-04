@@ -7,9 +7,9 @@ currently being supported with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| v5.0.9  | Only on latest TG  |
-| 5.0.1   | Not Supported      |
-| v5.0.0 >| Not Supported      |
+| v5.1.2  | Only on latest TG  |
+| v5.1.0  | Not Supported      |
+| v5.0.9  | Not Supported      |
 |  OLD Version is out to date  |
 
 ## Reporting a Vulnerability
