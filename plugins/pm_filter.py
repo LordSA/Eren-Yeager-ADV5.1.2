@@ -478,6 +478,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
@@ -565,8 +574,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
             InlineKeyboardButton('『𝚂𝚃𝙰𝚃𝚄𝚂』', callback_data='stats')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        
+        reply_markup = InlineKeyboardMarkup(buttons)        
         await query.message.edit_text(
             text="◾◽◽"
         )
