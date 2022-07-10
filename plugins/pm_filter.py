@@ -500,7 +500,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ], [
             InlineKeyboardButton('『𝙿𝚄𝚁𝙶𝙴』', callback_data='purge'),
             InlineKeyboardButton('『𝙿𝙷𝙾𝚃𝙾』', callback_data='photo'),  
-            InlineKeyboardButton('『𝙴𝚇𝚃𝚁𝙰 𝙼𝙾𝙳』', callback_data='extra')
+            InlineKeyboardButton('『𝙸𝙼𝙳𝙱』', callback_data='extra')
         ], [            
             InlineKeyboardButton('『𝙼𝚄𝚂𝙸𝙲』', callback_data='music'),
             InlineKeyboardButton('『𝚃𝚃𝚂』', callback_data='tts'),
