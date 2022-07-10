@@ -37,3 +37,4 @@ python-dotenv
 py-tgcalls==0.8.2
 tswift
 future
+imdbpy==2021.4.18
