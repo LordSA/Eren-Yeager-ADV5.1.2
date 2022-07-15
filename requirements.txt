@@ -33,6 +33,29 @@ PyPDF2
 pyshorteners
 ffmpeg-python
 asyncio==3.4.3
+wikipedia
+coloredlogs
+
+
+
+
+# Optional deps to make bot faster
+aiohttp[speedups]
+cryptg
+cryptography
+
+#Search
+bs4
+html2text
+bing_image_downloader 
+search_engine_parser
+pornhub_api
+youtube_search
+
+#profanity (Credits to Julia)
+better_profanity
+textblob 
+nudepy
 python-dotenv
 py-tgcalls==0.8.2
 tswift
