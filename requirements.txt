@@ -33,6 +33,9 @@ PyPDF2
 pyshorteners
 ffmpeg-python
 asyncio==3.4.3
+python-dotenv
+py-tgcalls==0.8.2
+tswift
 wikipedia
 coloredlogs
 
