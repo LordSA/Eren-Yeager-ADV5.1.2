@@ -1,14 +1,14 @@
 
-from telethon import TelegramClient
+#from telethon import TelegramClient
 
-from plugins.Tools.config import get_int_key, get_str_key
+#from plugins.Tools.config import get_int_key, get_str_key
 
-TOKEN = get_str_key("TOKEN", required=True)
-NAME = TOKEN.split(":")[0]
+#TOKEN = get_str_key("TOKEN", required=True)
+#NAME = TOKEN.split(":")[0]
 
-tbot = TelegramClient(
+#tbot = TelegramClient(
     NAME, get_int_key("APP_ID", required=True), get_str_key("APP_HASH", required=True)
 )
 
 # Telethon
-tbot.start(bot_token=TOKEN)
+#tbot.start(bot_token=TOKEN)
