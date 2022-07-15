@@ -2,16 +2,16 @@ import inspect
 import re
 from pathlib import Path
 
-from telethon import events
+#from telethon import events
 
-from plugins.Tools.services.mongo import mongodb as db
-from plugins.Tools.services.telethon import tbot
+#from plugins.Tools.services.mongo import mongodb as db
+#from plugins.Tools.services.telethon import tbot
 
-gbanned = db.gban
-CMD_LIST = {}
+#gbanned = db.gban
+#CMD_LIST = {}
 
 
-def register(**args):
+#def register(**args):
     pattern = args.get("pattern")
     r_pattern = r"^[/]"
 
@@ -40,7 +40,7 @@ def register(**args):
         except BaseException:
             pass
 
-    def decorator(func):
+#    def decorator(func):
         async def wrapper(check):
             if check.edit_date:
                 return
@@ -72,7 +72,7 @@ def register(**args):
     return decorator
 
 
-def chataction(**args):
+#def chataction(**args):
     """Registers chat actions."""
 
     def decorator(func):
@@ -82,7 +82,7 @@ def chataction(**args):
     return decorator
 
 
-def userupdate(**args):
+#def userupdate(**args):
     """Registers user updates."""
 
     def decorator(func):
@@ -92,7 +92,7 @@ def userupdate(**args):
     return decorator
 
 
-def inlinequery(**args):
+#def inlinequery(**args):
     """Registers inline query."""
     pattern = args.get("pattern", None)
 
@@ -106,7 +106,7 @@ def inlinequery(**args):
     return decorator
 
 
-def callbackquery(**args):
+#def callbackquery(**args):
     """Registers inline query."""
 
     def decorator(func):
