@@ -58,6 +58,5 @@ pornhub_api
 better_profanity
 textblob 
 nudepy
-tswift
 
 
