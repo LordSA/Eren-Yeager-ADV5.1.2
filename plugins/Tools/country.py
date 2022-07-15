@@ -1,8 +1,8 @@
 #Eren Yeager
 from countryinfo import CountryInfo
 
-from plugins.services.events import register
-from plugins.services.telethon import tbot as borg
+from plugins.Tools.services.events import register
+from plugins.Tools.services.telethon import tbot as borg
 
 
 @register(pattern="^/country (.*)")
