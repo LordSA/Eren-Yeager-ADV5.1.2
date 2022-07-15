@@ -4,9 +4,9 @@ import sys
 import yaml
 from envparse import env
 
-from plugins.Tools.utils.logger import log
+#from plugins.Tools.utils.logger import log
 
-DEFAULTS = {
+#DEFAULTS = {
     "LOAD_MODULES": True,
     "DEBUG_MODE": True,
     "REDIS_HOST": "localhost",
@@ -18,22 +18,22 @@ DEFAULTS = {
     "JOIN_CONFIRM_DURATION": "30m",
 }
 
-CONFIG_PATH = "data/bot_conf.yaml"
+#CONFIG_PATH = "data/bot_conf.yaml"
 if os.name == "nt":
     log.debug("Detected Windows, changing config path...")
     CONFIG_PATH = os.getcwd() + "\\data\\bot_conf.yaml"
 
-if os.path.isfile(CONFIG_PATH):
+#if os.path.isfile(CONFIG_PATH):
     log.info(CONFIG_PATH)
     for item in (
         data := yaml.load(open("data/bot_conf.yaml", "r"), Loader=yaml.CLoader)
     ):
         DEFAULTS[item.upper()] = data[item]
-else:
+#else:
     log.info("Using env vars")
 
 
-def get_str_key(name, required=False):
+#def get_str_key(name, required=False):
     if name in DEFAULTS:
         default = DEFAULTS[name]
     else:
@@ -48,7 +48,7 @@ def get_str_key(name, required=False):
         return data
 
 
-def get_int_key(name, required=False):
+#def get_int_key(name, required=False):
     if name in DEFAULTS:
         default = DEFAULTS[name]
     else:
@@ -63,7 +63,7 @@ def get_int_key(name, required=False):
         return data
 
 
-def get_list_key(name, required=False):
+#def get_list_key(name, required=False):
     if name in DEFAULTS:
         default = DEFAULTS[name]
     else:
@@ -78,7 +78,7 @@ def get_list_key(name, required=False):
         return data
 
 
-def get_bool_key(name, required=False):
+#def get_bool_key(name, required=False):
     if name in DEFAULTS:
         default = DEFAULTS[name]
     else:
