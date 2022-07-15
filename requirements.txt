@@ -36,27 +36,10 @@ asyncio==3.4.3
 python-dotenv
 py-tgcalls==0.8.2
 tswift
-wikipedia
-coloredlogs
 
 
 
 
-# Optional deps to make bot faster
-aiohttp[speedups]
-cryptg
-cryptography
 
-#Search
-html2text
-bing_image_downloader 
-search_engine_parser
-pornhub_api
-
-
-#profanity (Credits to Julia)
-better_profanity
-textblob 
-nudepy
 
 
