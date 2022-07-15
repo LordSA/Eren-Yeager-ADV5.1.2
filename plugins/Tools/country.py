@@ -1,12 +1,12 @@
 #Eren Yeager
-from countryinfo import CountryInfo
+#from countryinfo import CountryInfo
 
-from plugins.Tools.services.events import register
-from plugins.Tools.services.telethon import tbot as borg
+#from plugins.Tools.services.events import register
+#from plugins.Tools.services.telethon import tbot as borg
 
 
-@register(pattern="^/country (.*)")
-async def msg(event):
+#@register(pattern="^/country (.*)")
+#async def msg(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
@@ -74,30 +74,30 @@ async def msg(event):
 
     wiki = a.get("wiki")
 
-    caption = f"""<b><u>Information Gathered Successfully</b></u>
+#    caption = f"""<b><u>Information Gathered Successfully</b></u>
 <b>
-Country Name:- {name}
-Alternative Spellings:- {hu}
-Country Area:- {area} square kilometers
-Borders:- {borders}
-Calling Codes:- {call}
-Country's Capital:- {capital}
-Country's currency:- {currencies}
-Demonym:- {HmM}
-Country Type:- {EsCoBaR}
-ISO Names:- {iso}
-Languages:- {lMAO}
-Native Name:- {nonive}
-population:- {waste}
-Region:- {reg}
-Sub Region:- {sub}
-Time Zones:- {tom}
-Top Level Domain:- {lanester}
-wikipedia:- {wiki}</b>
-Gathered By Daisy X.</b>
+#Country Name:- {name}
+#Alternative Spellings:- {hu}
+#Country Area:- {area} square kilometers
+#Borders:- {borders}
+#Calling Codes:- {call}
+#Country's Capital:- {capital}
+#Country's currency:- {currencies}
+#Demonym:- {HmM}
+#Country Type:- {EsCoBaR}
+#ISO Names:- {iso}
+#Languages:- {lMAO}
+#Native Name:- {nonive}
+#population:- {waste}
+#Region:- {reg}
+#Sub Region:- {sub}
+#Time Zones:- {tom}
+#Top Level Domain:- {lanester}
+#wikipedia:- {wiki}</b>
+#Gathered By Daisy X.</b>
 """
 
-    await borg.send_message(
+#    await borg.send_message(
         event.chat_id,
         caption,
         parse_mode="HTML",
