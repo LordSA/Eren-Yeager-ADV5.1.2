@@ -1,11 +1,11 @@
 
 
-import logging
+#import logging
 
-from loguru import logger
+#from loguru import logger
 
 
-class InterceptHandler(logging.Handler):
+#class InterceptHandler(logging.Handler):
     LEVELS_MAP = {
         logging.CRITICAL: "CRITICAL",
         logging.ERROR: "ERROR",
@@ -24,9 +24,9 @@ class InterceptHandler(logging.Handler):
         logger_opt.log(self._get_level(record), record.getMessage())
 
 
-logging.basicConfig(handlers=[InterceptHandler()], level=logging.INFO)
-log = logging.getLogger(__name__)
-logger.add(
+#logging.basicConfig(handlers=[InterceptHandler()], level=logging.INFO)
+#log = logging.getLogger(__name__)
+#logger.add(
     "logs/ey.log",
     rotation="1 d",
     compression="tar.xz",
@@ -34,4 +34,4 @@ logger.add(
     diagnose=True,
     level="INFO",
 )
-log.info("Enabled logging intro Eren Yeager.log file.")
+#log.info("Enabled logging intro Eren Yeager.log file.")
