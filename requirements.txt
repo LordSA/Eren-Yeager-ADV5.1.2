@@ -50,14 +50,12 @@ html2text
 bing_image_downloader 
 search_engine_parser
 pornhub_api
-youtube_search
+
 
 #profanity (Credits to Julia)
 better_profanity
 textblob 
 nudepy
-python-dotenv
-py-tgcalls==0.8.2
 tswift
-future
-imdbpy==2021.4.18
+
+
