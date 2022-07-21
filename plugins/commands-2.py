@@ -39,6 +39,12 @@ import base64
 import requests
 logger = logging.getLogger(__name__)
 
+m = None
+i = 0
+a = None
+query = None
+
+
 @Client.on_message(filters.command(["torrent", "tor"]))
 async def torrent(_, message):
     global m
