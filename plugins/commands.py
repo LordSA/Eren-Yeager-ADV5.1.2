@@ -3,21 +3,11 @@ import os
 import logging
 import random
 import asyncio
-import aiohttp
-import traceback
-from asyncio import get_running_loop
-from io import BytesIO
 from Script import script
-from time import time, sleep
-from datetime import datetime
-from pyrogram.errors import UserNotParticipant
-from plugins.Tools.help_func.extract_user import extract_user
-from plugins.Tools.help_func.last_online import last_online
 from pyrogram import Client, filters
 from urllib.parse import quote
 from info import SUPPORT_CHAT
 from gtts import gTTS
-from telegraph import upload_file
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
@@ -25,14 +15,6 @@ from database.users_chats_db import db
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, VIDS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp
 from database.connections_mdb import active_connection
-from googletrans import Translator
-from plugins.Tools.list import list
-from database.gtrans_mdb import find_one
-from plugins.Tools.help_func.admin_check import admin_check
-from plugins.Tools.help_func.cust_p_filters import f_onw_fliter
-from plugins.Tools.help_func.cust_p_filters import admin_fliter
-from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
-from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired, UserAdminInvalid
 import re
 import json
 import base64
@@ -547,9 +529,3 @@ async def save_template(client, message):
     await save_group_settings(grp_id, 'template', template)
     await sts.edit(f"Successfully changed template for {title} to\n\n{template}")
     
-    
-m = None
-i = 0
-a = None
-query = None
-
