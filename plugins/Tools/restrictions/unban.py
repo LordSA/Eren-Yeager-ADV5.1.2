@@ -3,7 +3,7 @@ from plugins.Tools.help_func.admin_check import admin_check
 from plugins.Tools.help_func.extract_user import extract_user
 
 
-@Client.on_message(filters.command(["unban", "unmute"]))
+@Client.on_message(filters.command(["gunban", "gunmute"]))
 async def un_ban_user(_, message):
     is_admin = await admin_check(message)
     if not is_admin:
