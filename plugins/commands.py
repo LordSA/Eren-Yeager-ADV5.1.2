@@ -5,9 +5,6 @@ import random
 import asyncio
 from Script import script
 from pyrogram import Client, filters
-from urllib.parse import quote
-from info import SUPPORT_CHAT
-from gtts import gTTS
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
