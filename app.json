@@ -40,11 +40,11 @@
         },
         "PICS": {
             "description": "Add some telegraph link of pictures .",
-            "required": true
+            "required": false
         },
         "VIDS": {
             "description": "add some telegraph link of video if you're not using pics.",
-            "required": false
+            "required": true
         "LOG_CHANNEL": {
             "description": "Bot Logs,Give a channel id with -100xxxxxxx",
             "required": true
@@ -59,7 +59,7 @@
         },
         "AUTH_CHANNEL": {
             "description": "ID of channel.Make sure bot is admin in this channel. Without subscribing this channel users cannot use bot.",
-            "required": false
+            "required": true
         },   
         "USE_CAPTION_FILTER": {
             "description": "Whether bot should use captions to improve search results. (True False)",
