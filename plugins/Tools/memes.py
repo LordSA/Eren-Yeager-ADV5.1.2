@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 
-# AESTHETIC------------ https://telegram.me/Josprojects ------------ #
+# AESTHETIC------------ https://telegram.me/lord1of5darkness9 ------------ #
 
 def aesthetify(string):
     PRINTABLE_ASCII = range(0x21, 0x7f)
@@ -16,7 +16,7 @@ def aesthetify(string):
 @Client.on_message(
     filters.command(["ask"]))
 async def aesthetic(client, message):
-    status_message = await message.reply_text("What the hell do you want??/പേടിച്ചു പോയോ ഞാൻ വെറുതേ പറഞ്ഞത")
+    status_message = await message.reply_text("What the hell do you want??\nപേടിച്ചു പോയോ ഞാൻ വെറുതേ പറഞ്ഞത")
     text = "".join(str(e) for e in message.command[1:])
     text = "".join(aesthetify(text))
     await status_message.edit(text)
