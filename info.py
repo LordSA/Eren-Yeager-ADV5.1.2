@@ -1,6 +1,5 @@
 import re
-import os
-from os import environ, getenv
+from os import environ
 from pyrogram import Client, filters
 
 id_pattern = re.compile(r'^.\d+$')
