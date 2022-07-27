@@ -7,27 +7,27 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 async def country_info(update: Message):
     country = update.text.split(" ", 1)[1]
     country = CountryInfo(country)
-    info = f"""--**Country Information**--
+    info = f"""--**𝙲𝙾𝚄𝙽𝚃𝚁𝚈 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽**--
 
-『𝙿𝚁𝙴𝚅』 : `{country.name()}`
-Native Name『𝙿𝚁𝙴𝚅』 : `{country.native_name()}`
-Capital『𝙿𝚁𝙴𝚅』 : `{country.capital()}`
-Population『𝙿𝚁𝙴𝚅』 : `{country.population()}`
-Region『𝙿𝚁𝙴𝚅』 : `{country.region()}`
-Sub Region『𝙿𝚁𝙴𝚅』 : `{country.subregion()}`
-Top Level Domains『𝙿𝚁𝙴𝚅』 : `{country.tld()}`
-Calling Codes『𝙿𝚁𝙴𝚅』 : `{country.calling_codes()}`
-Currencies『𝙿𝚁𝙴𝚅』 : `{country.currencies()}`
-Residence『𝙿𝚁𝙴𝚅』 : `{country.demonym()}`
-Timezone『𝙿𝚁𝙴𝚅』 : `{country.timezones()}`
+『𝙽𝙰𝙼𝙴』 : `{country.name()}`
+『𝙽𝙰𝚃𝙸𝚅𝙴 𝙽𝙰𝙼𝙴』 : `{country.native_name()}`
+『𝙲𝙰𝙿𝙸𝚃𝙰𝙻』 : `{country.capital()}`
+『𝙿𝙾𝙿𝚄𝙻𝙰𝚃𝙸𝙾𝙽』 : `{country.population()}`
+『𝚁𝙴𝙶𝙸𝙾𝙽』 : `{country.region()}`
+『𝚂𝚄𝙱 𝚁𝙴𝙶𝙸𝙾𝙽』 : `{country.subregion()}`
+『𝚃𝙾𝙿 𝙻𝙴𝚅𝙴𝙻 𝙳𝙾𝙼𝙰𝙸𝙽𝚂』 : `{country.tld()}`
+『𝙲𝙰𝙻𝙻𝙸𝙽𝙶 𝙲𝙾𝙳𝙴』 : `{country.calling_codes()}`
+『𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈』 : `{country.currencies()}`
+『𝚁𝙴𝚂𝙸𝙳𝙴𝙽𝙲𝙴』 : `{country.demonym()}`
+『𝚃𝙸𝙼𝙴𝚉𝙾𝙽𝙴』 : `{country.timezones()}`
 
-Made by **@mwpro11**"""
+ **@mwpro11**"""
     country_name = country.name()
     country_name = country_name.replace(" ", "+")
     reply_markup=InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Wikipedia『𝙿𝚁𝙴𝚅』', url=f'{country.wiki()}'),
-        InlineKeyboardButton('Google『𝙿𝚁𝙴𝚅』', url=f'https://www.google.com/search?q={country_name}')
+        InlineKeyboardButton('『𝚆𝙸𝙺𝙸𝙿𝙴𝙳𝙸𝙰』', url=f'{country.wiki()}'),
+        InlineKeyboardButton('『𝙶𝙾𝙾𝙶𝙻𝙴』', url=f'https://www.google.com/search?q={country_name}')
         ]]
     )
     try:
