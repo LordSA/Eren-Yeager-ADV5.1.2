@@ -159,7 +159,7 @@ async def next_page(bot, query):
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"📃 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")]
+             InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")])
 #            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
 #            InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')])
     else:
