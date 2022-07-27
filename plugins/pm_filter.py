@@ -824,7 +824,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
- elif query.data == "carbon":
+    elif query.data == "carbon":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt3')
         ]]
