@@ -1849,7 +1849,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('Piracy Is Crime')
+            await query.answer('Piracy Is Crime')
+
     elif query.data == "close":
         await query.message.delete()
     elif query.data == 'tips':
