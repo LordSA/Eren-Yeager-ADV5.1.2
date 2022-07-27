@@ -3,10 +3,8 @@ class script(object):
 𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href=https://t.me/{}>{}</a>, 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍,
 © 𝙴𝚛𝚎𝚗 𝚈𝚎𝚊𝚐𝚎𝚛 💖
 © <a href =https://t.me/lord1of5darkness9>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>"""
-    
     HELP_TXT = """𝙷𝙴𝚈 {}
-𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
-    
+𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""    
     ABOUT_TXT = """✯ 𝙼𝚈 𝙽𝙰𝙼𝙴: {}
 ⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸
 ✯ 『𝙲𝚁𝙴𝙰𝚃𝙾𝚁』   : <a href=https://t.me/mwpro11>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>
@@ -22,19 +20,16 @@ class script(object):
 ✯ 『𝙲𝙾𝙳𝙴𝙳 𝙱𝚈』  : <a href=https://t.me/lord1of5darkness9>𝙻𝙾𝚁𝙳 𝚂𝙰</a>
 ╠
 ✯ 『𝚅𝙴𝚁𝚂𝙸𝙾𝙽』   : v5.1.2 [ 𝙱𝙴𝚃𝙰 ]
-⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸"""
-    
+⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸"""    
     SOURCE_TXT = """<b>『𝙽𝙾𝚃𝙴』:</b>
 ✯ 『𝚃𝙰𝙻𝙺』  - 𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔 𝙸𝚂 𝙰 𝙿𝚁𝙸𝚅𝙰𝚃𝙴 𝙱𝙾𝚃 𝚈𝙾𝚄 𝙲𝙰𝙽 𝚄𝚂𝙴 𝙼𝙴 𝙱𝚄𝚃 𝙼𝚈 𝚂𝙾𝚄𝚁𝙲𝙴 𝙸𝚂 𝙽𝙾𝚃 𝙰𝚅𝙰𝙸𝙻𝙰𝙱𝙻𝙴
 ✯ 『𝚂𝙾𝚄𝚁𝙲𝙴』- <a href=https://t.me/mwmoviespro>𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔</a>  
 
 <b>𝔇𝔢𝔳𝔢𝔩𝔬𝔭𝔢𝔯:</b>
-- <a href=https://t.me/lord1of5darkness9>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>"""
-    
+- <a href=https://t.me/lord1of5darkness9>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>"""    
     WHOIS_TXT ="""<b>ᴡʜᴏɪs ᴍᴏᴅᴜʟᴇ</b>
 ɴᴏᴛᴇ:- ɢɪᴠᴇ ᴀ ᴜsᴇʀ ᴅᴇᴛᴀɪʟs
-•/whois : ɢɪᴠᴇ ᴀ ᴜsᴇʀ 𝔉ᴜʟʟ ᴅᴇᴛᴀɪʟs"""
-    
+•/whois : ɢɪᴠᴇ ᴀ ᴜsᴇʀ 𝔉ᴜʟʟ ᴅᴇᴛᴀɪʟs"""   
     MANUELFILTER_TXT = """ʜᴇʟᴘ: <b>𝙵𝙸𝙻𝚃𝙴𝚁𝚂</b>
 
 ✯ ғɪʟᴛᴇʀ ɪs 🅃🄷🄴 🄵🄴🄰🅃🅄🅁🄴 🅆🄴🅁🄴 🅄🅂🄴🅁🅂 🄲🄰🄽 🅂🄴🅃 🄰🅄🅃🄾🄼🄰🅃🄴🄳 🅁🄴🄿🄻🄸🄴🅂 🄵🄾🅁 🄰 🄿🄰🅁🅃🄸🄲🅄🄻🄰🅁 🄺🄴🅈🅆🄾🅁🄳 🄰🄽🄳 🄼🄾🅅🄸🄴 🅆🄾🅁🄻🄳 🅆🄸🄻🄻 🅁🄴🅂🄿🄾🄽🄳 🅆🄷🄴🄽🄴🅅🄴🅁 🄰 🄺🄴🅈🅆🄾🅁🄳 🄸🅂 🄵🄾🅄🄽🄳 🅃🄷🄴 🄼🄴🅂🅂🄰🄶🄴
@@ -48,8 +43,7 @@ class script(object):
 • /filter - <code>ᴀᴅᴅ ᴀ ғɪʟᴛᴇʀ ɪɴ ᴄʜᴀᴛ</code>
 • /filters - <code>ʟɪsᴛ ᴀʟʟ ᴛʜᴇ ғɪʟᴛᴇʀs ᴏғ ᴀ ᴄʜᴀᴛ</code>
 • /del - <code>ᴅᴇʟᴇᴛᴇ ᴀ sᴘᴇᴄɪғɪᴄ ғɪʟᴛᴇʀ ɪɴ ᴄʜᴀᴛ</code>
-• /delall - <code>ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ᴡʜᴏʟᴇ ғɪʟᴛᴇʀs ɪɴ ᴀ ᴄʜᴀᴛ [ᴄʜᴀᴛ ᴏᴡɴᴇʀ ᴏɴʟʏ]</code>"""
-    
+• /delall - <code>ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ᴡʜᴏʟᴇ ғɪʟᴛᴇʀs ɪɴ ᴀ ᴄʜᴀᴛ [ᴄʜᴀᴛ ᴏᴡɴᴇʀ ᴏɴʟʏ]</code>"""    
     BUTTON_TXT = """ʜᴇʟᴘ: <b>ʙᴜᴛᴛᴏɴs</b>𝚃𝚎𝚡𝚝𝚄𝙿𝙿𝙾𝚁𝚃𝙸𝙽𝙶』- 𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔 Supports both url and alert inline buttons.
 
 <b>𝙽𝙾𝚃𝙴:</b>
@@ -61,8 +55,7 @@ class script(object):
 <code>[Button Text](buttonurl:https://t.me/mwpro2_bot)</code>
 
 <b>Alert buttons:</b>
-<code>[Button Text](buttonalert:This is an alert message)</code>"""
-    
+<code>[Button Text](buttonalert:This is an alert message)</code>"""    
     BAN_TXT = """<b>𝖡𝖺𝗇𝗌:</b>
 𝖲𝗈𝗆𝖾 𝗉𝖾𝗈𝗉𝗅𝖾 𝗇𝖾𝖾𝖽 𝗍𝗈 𝖻𝖾 𝗉𝗎𝖻𝗅𝗂𝖼𝗅𝗒 𝖻𝖺𝗇𝗇𝖾𝖽; 𝗌𝗉𝖺𝗆𝗆𝖾𝗋𝗌, 𝖺𝗇𝗇𝗈𝗒𝖺𝗇𝖼𝖾𝗌, 𝗈𝗋 𝗃𝗎𝗌𝗍 𝗍𝗋𝗈𝗅𝗅𝗌.  
 𝖳𝗁𝗂𝗌 𝗆𝗈𝖽𝗎𝗅𝖾 𝖺𝗅𝗅𝗈𝗐𝗌 𝗒𝗈𝗎 𝗍𝗈 𝖽𝗈 𝗍𝗁𝖺𝗍 𝖾𝖺𝗌𝗂𝗅𝗒, 𝖻𝗒 𝖾𝗑𝗉𝗈𝗌𝗂𝗇𝗀 𝗌𝗈𝗆𝖾 𝖼𝗈𝗆𝗆𝗈𝗇 𝖺𝖼𝗍𝗂𝗈𝗇𝗌, 𝗌𝗈 𝖾𝗏𝖾𝗋𝗒𝗈𝗇𝖾 𝗐𝗂𝗅𝗅 𝗌𝖾𝖾!
@@ -81,8 +74,7 @@ class script(object):
 1. 𝙼𝚊𝚔𝚎 𝚖𝚎 𝚝𝚑𝚎 𝚊𝚍𝚖𝚒𝚗 𝚘𝚏 𝚢𝚘𝚞𝚛 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 𝚒𝚏 𝚒𝚝'𝚜 𝚙𝚛𝚒𝚟𝚊𝚝𝚎.
 2. 𝚖𝚊𝚔𝚎 𝚜𝚞𝚛𝚎 𝚝𝚑𝚊𝚝 𝚢𝚘𝚞𝚛 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 𝚍𝚘𝚎𝚜 𝚗𝚘𝚝 𝚌𝚘𝚗𝚝𝚊𝚒𝚗𝚜 𝚌𝚊𝚖𝚛𝚒𝚙𝚜, 𝚙𝚘𝚛𝚗 𝚊𝚗𝚍 𝚏𝚊𝚔𝚎 𝚏𝚒𝚕𝚎𝚜.
 3. Forward the last message to me with quotes.
- I'll add all the files in that channel to my db."""
-    
+ I'll add all the files in that channel to my db."""    
     CONNECTION_TXT = """Help: <b>Connections</b>
 
 - Used to connect bot to PM for managing filters 
@@ -95,8 +87,7 @@ class script(object):
 <b>Commands and Usage:</b>
 • /connect  - <code>connect a particular chat to your PM</code>
 • /disconnect  - <code>disconnect from a chat</code>
-• /connections - <code>list all your connections</code>"""
-    
+• /connections - <code>list all your connections</code>"""   
     EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
 
 <b>NOTE:</b>
@@ -106,8 +97,7 @@ these are the extra features of Movie World
 • /id - <code>get id of a specifed user.</code>
 • /info  - <code>get information about a user.</code>
 • /imdb  - <code>get the film information from IMDb source.</code>
-• /search  - <code>get the film information from various sources.</code>"""
-    
+• /search  - <code>get the film information from various sources.</code>"""    
     URL_SHORTNER_TXT = """Help: <b>URL Shortner</b>
 
 Some URLs is Shortner
@@ -121,8 +111,7 @@ Some URLs is Shortner
 <b>NOTE:</b>
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
-• These commands can be used by any group member."""
-    
+• These commands can be used by any group member."""    
     TGRAPH_TXT = """Help: <b>TELEGRAPH & PASTE</b>
 
 <b>NOTE:</b>
@@ -132,8 +121,7 @@ Some URLs is Shortner
 
 <b>Commands and Usage:</b>
 
-• /tgmedia or /tgraph - <code>upload supported media (within 5MB) to telegraph.</code>"""
-    
+• /tgmedia or /tgraph - <code>upload supported media (within 5MB) to telegraph.</code>"""    
     STICKER_TXT = """𝙃𝙚𝙡𝙥 𝙁𝙤𝙧 𝙎𝙩𝙞𝙘𝙠𝙚𝙧 𝙄𝙙
     
 • 𝙐𝙨𝙖𝙜𝙚
@@ -142,15 +130,13 @@ To Get Sticker ID
  
  ⭕ 𝙃𝙤𝙬 𝙏𝙤 𝙐𝙨𝙚
   
-◉ Reply To Any Sticker [/stickerid]"""
-    
+◉ Reply To Any Sticker [/stickerid]"""    
     RPT_TXT = """Help: <b>Report To Group Admins<b>
 This Feature is Used for Contacting Or Reporting Issues To Group Admins That The Bot Present 
 This Comaand Only Used In Groups
 
 <b>Commands and Usage<b>
-• /report - report to admins in the group"""
-    
+• /report - report to admins in the group"""    
     MUTE_TXT = """<b>𝖬𝗎𝗍𝖾:</b>
 𝖲𝗈𝗆𝖾 𝗉𝖾𝗈𝗉𝗅𝖾 𝗇𝖾𝖾𝖽 𝗍𝗈 𝖻𝖾 𝗉𝗎𝖻𝗅𝗂𝖼𝗅𝗒 Muted; 𝗌𝗉𝖺𝗆𝗆𝖾𝗋𝗌, 𝖺𝗇𝗇𝗈𝗒𝖺𝗇𝖼𝖾𝗌, 𝗈𝗋 𝗃𝗎𝗌𝗍 𝗍𝗋𝗈𝗅𝗅𝗌.  
 𝖳𝗁𝗂𝗌 𝗆𝗈𝖽𝗎𝗅𝖾 𝖺𝗅𝗅𝗈𝗐𝗌 𝗒𝗈𝗎 𝗍𝗈 𝖽𝗈 𝗍𝗁𝖺𝗍 𝖾𝖺𝗌𝗂𝗅𝗒, 𝖻𝗒 𝖾𝗑𝗉𝗈𝗌𝗂𝗇𝗀 𝗌𝗈𝗆𝖾 𝖼𝗈𝗆𝗆𝗈𝗇 𝖺𝖼𝗍𝗂𝗈𝗇𝗌, 𝗌𝗈 𝖾𝗏𝖾𝗋𝗒𝗈𝗇𝖾 𝗐𝗂𝗅𝗅 𝗌𝖾𝖾!   
@@ -165,8 +151,7 @@ This Comaand Only Used In Groups
 <b>NOTE:</b>
 • IMDb should have admin privillage.
 • These commands works on group.
-• These commands can be used by Only admin."""
-    
+• These commands can be used by Only admin."""    
     PIN_MESSAGE_TXT = """Help: <b>Pin Message</b>
 
 All the pin related commands can be found here; keep your chat up to date on the latest news with a simple pinned message!
@@ -178,8 +163,7 @@ All the pin related commands can be found here; keep your chat up to date on the
 <b>NOTE:</b>
 • IMDb should have admin privillage.
 • These commands works only group.
-• These commands can be used by Only admin."""
-    
+• These commands can be used by Only admin."""    
     PASTE_TXT = """Help: <b>Paste</b>
 
 Paste some texts or documents on a website!
@@ -191,8 +175,7 @@ Paste some texts or documents on a website!
 <b>NOTE:</b>
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
-• These commands can be used by any group member."""
-    
+• These commands can be used by any group member."""    
     GTRANS_TXT = """Help: <b>Google Translator</b>
 
 Translate texts to a specific language!
@@ -203,8 +186,7 @@ Translate texts to a specific language!
 <b>NOTE:</b>
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
-• IMDb can translate texts to 200+ languages."""
-    
+• IMDb can translate texts to 200+ languages."""    
     COVID_TXT = """➤ 𝐇𝐞𝐥𝐩: 𝖢𝗈𝗏𝗂𝖽
 𝚃𝚑𝚒𝚜 𝙲𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙𝚜 𝚢𝚘𝚞 𝚝𝚘 𝚔𝚗𝚘𝚠 𝚍𝚊ily 𝚒𝚗𝚏𝚘𝚛𝚖𝚊𝚝𝚒𝚘𝚗 𝚊𝚋𝚘𝚞𝚝 𝚌𝚘𝚟𝚒𝚍
 
@@ -213,8 +195,7 @@ Translate texts to a specific language!
 ➪ /covid - 𝗎𝗌𝖾 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗐𝗂𝗍𝗁 𝗒𝗈𝗎𝗋 𝖼𝗈𝗎𝗇𝗍𝗋𝗒 𝗇𝖺𝗆𝖾 𝗍𝗈 𝗀𝖾𝗍 𝖼𝗈𝗏𝗂𝖽𝖾 𝗂𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇
 
 ➛𝖤𝗑𝖺𝗆𝗉𝗅𝖾:
-/covid 𝖨𝗇𝖽𝗂𝖺"""
-    
+/covid 𝖨𝗇𝖽𝗂𝖺"""    
     COUNTRY_TXT = """
     
 Use /country (Country name)
@@ -233,7 +214,6 @@ Use /carbon (Country name)
  /calculate or /calc
  it will open calculator in bot
 """
-
     IMAGE_TXT = """➤ 𝐇𝐞𝐥𝐩: Photo
     
 𝚃𝚑𝚒𝚜 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙𝚜 𝚢𝚘𝚞 𝚝𝚘 𝚎𝚍𝚒𝚝 𝚒𝚖𝚊𝚐𝚎 𝚟𝚎𝚛𝚢 𝚎𝚊𝚜𝚒𝚕𝚢
@@ -250,8 +230,7 @@ Select your required mode from below! \n 𝚃𝚘 𝚆𝚘𝚛𝚔 𝚃𝚑𝚒�
 
 ➤ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐚𝐧𝐝 𝐔𝐬𝐚𝐠𝐞:
 
-➪ /audiobook: 𝖱𝖾𝗉𝗅𝗒 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗍𝗈 𝖺𝗇𝗒 𝖯𝖣𝖥 𝗍𝗈 𝗀𝖾𝗇𝖾𝗋𝖺𝗍𝖾 𝗍𝗁𝖾 𝖺𝗎𝖽𝗂𝗈"""
-    
+➪ /audiobook: 𝖱𝖾𝗉𝗅𝗒 𝗍𝗁𝗂𝗌 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗍𝗈 𝖺𝗇𝗒 𝖯𝖣𝖥 𝗍𝗈 𝗀𝖾𝗇𝖾𝗋𝖺𝗍𝖾 𝗍𝗁𝖾 𝖺𝗎𝖽𝗂𝗈"""    
     FILE_TXT = """➤ 𝐇𝐞𝐥𝐩: 𝖥𝗂𝗅𝖾 𝖲𝗍𝗈𝗋𝖾
  
 𝚆𝚒𝚝𝚑 𝚝𝚑𝚒𝚜 𝚌𝚘𝚖𝚖𝚊𝚍𝚜 𝚒 𝚌𝚊𝚗 𝚜𝚝𝚘𝚛𝚎 𝚏𝚒𝚕𝚎𝚜 𝚊𝚗𝚍 𝚐𝚒𝚟𝚎 𝚢𝚘𝚞 𝚊 𝚜𝚑𝚊𝚛𝚎𝚊𝚋𝚕𝚎 𝚕𝚒𝚗𝚔 𝚠𝚒𝚝𝚑 𝚝𝚑𝚒𝚜 𝚕𝚒𝚗𝚔 𝚒 𝚌𝚊𝚗 𝚜𝚑𝚊𝚛𝚎 𝚝𝚑𝚊𝚝 𝚏𝚒𝚕𝚎𝚜 𝚢𝚘𝚞 𝚐𝚒𝚟𝚎 𝚖𝚎 𝚏𝚛𝚘𝚖 𝚊𝚗𝚢 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 𝚠𝚒𝚝𝚑𝚘𝚞𝚝 𝚊𝚍𝚍𝚒𝚗𝚐 𝚖𝚎
