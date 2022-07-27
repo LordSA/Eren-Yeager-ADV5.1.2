@@ -132,13 +132,13 @@ async def next_page(bot, query):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton('🎬 {search} 🎬', 'reqst11')
+            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst11')
         ]
     )
     btn.insert(1,
         [
-            InlineKeyboardButton('『𝙵𝙸𝙻𝙴𝚂』: {len(files)}', 'reqst11'),
-            InlineKeyboardButton('『𝚃𝙸𝙿𝚂』', 'tips')
+            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』: {len(files)}', 'reqst11'),
+            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
         ]
     )
 
@@ -1905,13 +1905,13 @@ async def auto_filter(client, msg, spoll=False):
         
     btn.insert(0, 
         [
-            InlineKeyboardButton('🎬 {search} 🎬', 'reqst11')
+            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst11')
         ]
     )
     btn.insert(1,
         [
-            InlineKeyboardButton('『𝙵𝙸𝙻𝙴𝚂』: {len(files)}', 'reqst11'),
-            InlineKeyboardButton('『𝚃𝙸𝙿𝚂』', 'tips')
+            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』: {len(files)}', 'reqst11'),
+            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
         ]
     )
 
