@@ -39,7 +39,7 @@
 #        reply_markup=CALCULATE_BUTTONS,
 #        disable_web_page_preview=True,
 #        quote=True
-    )
+#    )
 
 
 #@Client.on_callback_query()
