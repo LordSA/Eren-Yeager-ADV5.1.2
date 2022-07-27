@@ -130,6 +130,17 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst11')
+        ]
+    )
+    btn.insert(1,
+        [
+            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』: {len(files)}', 'reqst11'),
+            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
+        ]
+    )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -1718,6 +1729,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
    #pic mode done
 
+    elif query.data == 'tips':
+        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\nᴇxᴀᴍᴘʟᴇ : ʟᴏᴋɪ S01 E01\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© Moviehub", True)
+    elif query.data == 'reqst11':
+        await query.answer(f"Hey {query.from_user.first_name} Bro 😍\n\n🎯 Click The Below Button The Files You Want... And Start The Bot Get The File and Go To Your House..😂\n\n Movie World", True)
+   
+
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help'),
@@ -1873,6 +1890,17 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst11')
+        ]
+    )
+    btn.insert(1,
+        [
+            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』: {len(files)}', 'reqst11'),
+            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
+        ]
+    )
         
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
