@@ -807,7 +807,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text="◾◾◾"
         )
         await query.message.edit_text(
-            text=script.HELP_TXT.format(query.from_user.mention),
+            text=script.HELLP_TXT.format(query.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
