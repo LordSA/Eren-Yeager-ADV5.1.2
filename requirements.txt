@@ -39,7 +39,7 @@ python-dotenv
 # R
 requests
 # S
-# speedtest-cli
+speedtest-cli
 # T
 telegraph==1.4.1
 tgcrypto
