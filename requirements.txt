@@ -1,45 +1,56 @@
 git+https://github.com/subinps/pyrogram@inline-m
-tgcrypto
-pymongo[srv]==3.12.3
-motor==2.5.1
-marshmallow==3.14.1
-umongo==3.0.1
-requests
+# A
+aiofiles
+aiohttp==3.8.1
+asyncio==3.4.3
+# B
+beautifulsoup4
 bs4
+# C
+carbonnow
+countryinfo
+# F
+ffmpeg-python
+# G
+glitch_this
+gTTS
+googletrans==3.1.0a0
+# H
+humanize
+# I
 imdbpy==2021.4.18
+# M
+marshmallow==3.14.1
+motor==2.5.1
+# N
+NumPy
+# O
+opencv-python-headless
+# P
+Pillow
+psutil
+py-tgcalls==0.8.2
+pymongo[srv]==3.12.3
+PyPDF2
+pypng
+pyshorteners
+python-dotenv
+# R
+requests
+# S
+speedtest-cli
+# T
+telegraph==1.4.1
+tgcrypto
+tswift
+# U
+umongo==3.0.1
+# W
+wget
+wheel
+# Y
+yt-dlp
+ytthumb
 youtube-dl
 youtube_search
-requests
-googletrans==3.1.0a0
-telegraph==1.4.1
-beautifulsoup4
-aiohttp==3.8.1
-gTTS
-NumPy
-glitch_this
-opencv-python-headless
 youtube-search-python==1.4.6
-yt-dlp
-pypng
-Pillow
-wget
-aiofiles
-psutil
-wheel
-humanize
-ytthumb
-pypdf2
-PyPDF2
-pyshorteners
-ffmpeg-python
-asyncio==3.4.3
-python-dotenv
-py-tgcalls==0.8.2
-tswift
-countryinfo
-carbonnow
-speedtest-cli
-
-
-
-
