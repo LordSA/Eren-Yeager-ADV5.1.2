@@ -111,13 +111,6 @@ async def next_page(bot, query):
     if settings['button']:
         btn = [
             [
-#                InlineKeyboardButton(
-#                    text=f"『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'
-#                ),
-#                InlineKeyboardButton(
-#                    text=f"『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1'
-#                )
-#            ], [
                 InlineKeyboardButton(
                     text=f"© 『{get_size(file.file_size)}』 {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
@@ -127,13 +120,6 @@ async def next_page(bot, query):
     else:
         btn = [
             [
-#                InlineKeyboardButton(
-#                    text=f"『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'
-#                ),
-#                InlineKeyboardButton(
-#                    text=f"『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1'
-#                ),
-#            ], [
                 InlineKeyboardButton(
                     text=f"© {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
@@ -144,6 +130,17 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(🎬 {search} 🎬', 'reqst11')
+        ]
+    )
+    btn.insert(1,
+        [
+            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』': {len(files)}', 'reqst11'),
+            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
+        ]
+    )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -155,19 +152,26 @@ async def next_page(bot, query):
         btn.append(
             [InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"📃 𝙿𝙰𝙶𝙴𝚂 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
-                                  callback_data="pages")]
+                                  callback_data="pages")],
+            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
+             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"📃 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")],
+            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
+             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')])
     else:
         btn.append(
             [
                 InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"📃 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")
-            ],
+            ],[
+                InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
+                InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')
+            ]
         )
     try:
         await query.edit_message_reply_markup(
