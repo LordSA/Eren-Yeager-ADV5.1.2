@@ -1732,7 +1732,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
     await query.answer('Piracy Is Crime')
-
+    elif query.data == "close":
+        await query.message.delete()
+    elif query.data == 'tips':
+        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\nᴇxᴀᴍᴘʟᴇ : ʟᴏᴋɪ S01 E01\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© Moviehub", True)
+    elif query.data == 'reqst11':
+        await query.answer(f"Hey {query.from_user.first_name} Bro 😍\n\n🎯 Click The Below Button The Files You Want... And Start The Bot Get The File and Go To Your House..😂\n\n© Moviehub", True)
+    try: await query.answer('Piracy Is Crime') 
+    except: pass
 
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
@@ -1759,13 +1766,6 @@ async def auto_filter(client, msg, spoll=False):
     if settings["button"]:
         btn = [
             [
-#                InlineKeyboardButton(
-#                    text=f'『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』', url='https://t.me/mwmoviespro'
-#                ),
-#                InlineKeyboardButton(
-#                    text=f'『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』', url='https://t.me/+2A6YKxDL4udlMGU1'
-#                ),
-#            ], [
                 InlineKeyboardButton(
                     text=f"© 『{get_size(file.file_size)}』 {file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
@@ -1775,13 +1775,6 @@ async def auto_filter(client, msg, spoll=False):
     else:
         btn = [
             [
-#                InlineKeyboardButton(
-#                    text=f'『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』', url='https://t.me/mwmoviespro'
-#                ),
-#                InlineKeyboardButton(
-#                    text=f'『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』', url='https://t.me/+2A6YKxDL4udlMGU1'
-#                ),
-#            ], [
                 InlineKeyboardButton(
                     text=f"© {file.file_name}",
                     callback_data=f'{pre}#{file.file_id}',
@@ -1793,6 +1786,17 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
+   btn.insert(0, 
+        [
+            InlineKeyboardButton(🎬 {search} 🎬', 'reqst11')
+        ]
+    )
+    btn.insert(1,
+        [
+            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』': {len(files)}', 'reqst11'),
+            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
+        ]
+    )
 
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
@@ -1800,11 +1804,15 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"📃 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{offset}")]
+             InlineKeyboardButton(text="『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{offset}")],
+            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
+             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="📃 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="📃 1/1", callback_data="pages")],
+            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
+             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
