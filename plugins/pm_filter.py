@@ -563,12 +563,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝚃𝙾𝚁𝚁𝙴𝙽𝚃』', callback_data='tor'),
             InlineKeyboardButton('『𝚃𝙷𝚄𝙶 𝙻𝙸𝙵𝙴』', callback_data='thug')     
         ], [
-            InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr'),
-            InlineKeyboardButton('『𝚁𝙴𝚂𝚃𝚁𝙸𝙲𝚃』',callback_data='restric'),
+            InlineKeyboardButton('『𝙻𝚈𝚁𝙸𝙲𝚂』', callback_data='lyrics'),
+            InlineKeyboardButton('『𝙼𝚄𝚃𝙴』',callback_data='mute'),
             InlineKeyboardButton('『𝚅𝙸𝙳𝙴𝙾』', callback_data='video')
         ], [
             InlineKeyboardButton('『𝚁𝙴𝙿𝙾𝚁𝚃』',callback_data='report'),
-            InlineKeyboardButton('『𝙸𝙽𝙺𝙸𝙲𝙺』', callback_data='zombies'),
+            InlineKeyboardButton('『𝙺𝙸𝙲𝙺』', callback_data='zombies'),
             InlineKeyboardButton('『𝙿𝙸𝙽』',callback_data='pin')                                           
         ], [
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='help'),
@@ -755,7 +755,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝙵𝚄𝙽』', callback_data='memes')                      
         ], [
             InlineKeyboardButton('『𝙰𝚄𝙳𝙸𝙾𝙱𝙾𝙾𝙺』',callback_data='abook'),            
-            InlineKeyboardButton('『𝙲𝙾𝚅𝙸𝙳』', callback_data='covid'),
+            InlineKeyboardButton('『𝙲𝙾𝚄𝙽𝚃𝚁𝚈』', callback_data='country'),
             InlineKeyboardButton('『𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃』', callback_data='sharetext')
         ], [
             InlineKeyboardButton('『𝙿𝙰𝚂𝚃𝙴』',callback_data='paste'),
@@ -763,6 +763,44 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴』', callback_data='flstr')
         ], [
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='nxt1'),
+            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
+            InlineKeyboardButton('『𝙽𝙴𝚇𝚃』', callback_data='next3')
+        ], [
+            InlineKeyboardButton('『𝙷𝙾𝙼𝙴』', callback_data='start'),            
+            InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
+            InlineKeyboardButton('『𝚂𝚃𝙰𝚃𝚄𝚂』', callback_data='stats')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
+            text=script.HELP_TXT.format(query.from_user.mention),
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+elif query.data == "nxt3":
+        buttons = [[           
+            InlineKeyboardButton('『𝙲𝙰𝚁𝙱𝙾𝙽』',callback_data='carbon'),            
+            InlineKeyboardButton('『𝙲𝙾𝚅𝙸𝙳』', callback_data='covid'),
+            InlineKeyboardButton('『𝙲𝙰𝙻𝙲𝚄𝙻𝙰𝚃𝙾𝚁』', callback_data='calculator')                      
+        ], [
+            InlineKeyboardButton('『𝙱𝙰𝙽[𝙶]』',callback_data='bang'),            
+            InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr'),
+            InlineKeyboardButton('『』', callback_data='nxt3')
+        ], [
+            InlineKeyboardButton('『』',callback_data='nxt3'),
+            InlineKeyboardButton('『』', callback_data='nxt3'),
+            InlineKeyboardButton('『』', callback_data='nxt3')
+        ], [
+            InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='nxt2'),
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
             InlineKeyboardButton('『𝙷𝙴𝙻𝙿』', callback_data='help')
         ], [
@@ -782,6 +820,86 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+ elif query.data == "carbon":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt3')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
+            text=script.CARBON_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "country":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
+            text=script.COUNTRY_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "calculator":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt3')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
+            text=script.CALCULATOR_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "bang":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt3')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="◾◽◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◽"
+        )
+        await query.message.edit_text(
+            text="◾◾◾"
+        )
+        await query.message.edit_text(
+            text=script.BAN_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
@@ -825,7 +943,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "restric":
+    elif query.data == "mute":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
@@ -947,7 +1065,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "tr":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1'),
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt3'),
             InlineKeyboardButton('𝙻𝙰𝙽𝙶-𝙲𝙾𝙳𝙴𝚂', url='https://cloud.google.com/translate/docs/languages')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -988,7 +1106,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "memes":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1108,7 +1226,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "covid":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='nxt2')
+            InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='nxt3')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
