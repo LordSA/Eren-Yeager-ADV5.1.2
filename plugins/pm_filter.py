@@ -152,26 +152,26 @@ async def next_page(bot, query):
         btn.append(
             [InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"📃 𝙿𝙰𝙶𝙴𝚂 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
-                                  callback_data="pages")],
-            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
-             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
+                                  callback_data="pages")]
+#            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
+#             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"📃 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")],
-            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
-             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')])
+             InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")]
+#            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
+#            InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')])
     else:
         btn.append(
             [
                 InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"📃 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")
-            ],[
-                InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
-                InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')
-            ]
+            ],
+#                InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
+#                InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')
+#            ]
         )
     try:
         await query.edit_message_reply_markup(
@@ -1924,15 +1924,15 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"📃 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{offset}")],
-            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
-             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
+             InlineKeyboardButton(text="『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{offset}")]
+#            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
+#             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="📃 1/1", callback_data="pages")],
-            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
-             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
+            [InlineKeyboardButton(text="📃 1/1", callback_data="pages")]
+#           [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
+#            InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
