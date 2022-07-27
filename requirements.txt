@@ -31,7 +31,7 @@ Pillow
 psutil
 py-tgcalls==0.8.2
 pymongo[srv]==3.12.3
-
+PyPDF2
 Pypdf2
 pypng
 pyshorteners
@@ -39,7 +39,7 @@ python-dotenv
 # R
 requests
 # S
-speedtest-cli
+# speedtest-cli
 # T
 telegraph==1.4.1
 tgcrypto
