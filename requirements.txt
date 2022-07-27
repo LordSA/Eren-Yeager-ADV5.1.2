@@ -37,8 +37,8 @@ python-dotenv
 py-tgcalls==0.8.2
 tswift
 countryinfo
-
-
+carbonnow
+speedtest-cli
 
 
 
