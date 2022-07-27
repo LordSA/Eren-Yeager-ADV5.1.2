@@ -1,9 +1,9 @@
-import os
-from pyrogram import Client, filters
-from pyrogram.types import *
+#import os
+#from pyrogram import Client, filters
+#from pyrogram.types import *
 
-CALCULATE_TEXT = ">"
-CALCULATE_BUTTONS = InlineKeyboardMarkup(
+#CALCULATE_TEXT = ">"
+#CALCULATE_BUTTONS = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton("DEL", callback_data="DEL"),
         InlineKeyboardButton("AC", callback_data="AC"),
@@ -32,7 +32,7 @@ CALCULATE_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
-@Client.on_message(filters.private & filters.command(["calc", "calculate"]))
+#@Client.on_message(filters.private & filters.command(["calc", "calculate"]))
 async def calculate(bot, update):
     await update.reply_text(
         text=CALCULATE_TEXT,
@@ -42,8 +42,8 @@ async def calculate(bot, update):
     )
 
 
-@Client.on_callback_query()
-async def cb_data(bot, update):
+#@Client.on_callback_query()
+#async def cb_data(bot, update):
         data = update.data
         try:
             message_text = update.message.text.split("\n")[0].strip().split("=")[0].strip()
