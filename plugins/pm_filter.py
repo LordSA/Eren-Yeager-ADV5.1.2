@@ -137,8 +137,8 @@ async def next_page(bot, query):
     )
     btn.insert(1,
         [
-            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』': {len(files)}', 'reqst11'),
-            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
+            InlineKeyboardButton('『𝙵𝙸𝙻𝙴𝚂』': {len(files)}', 'reqst11'),
+            InlineKeyboardButton('『𝚃𝙸𝙿𝚂』', 'tips')
         ]
     )
 
@@ -1911,8 +1911,8 @@ async def auto_filter(client, msg, spoll=False):
     )
     btn.insert(1,
         [
-            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』': {len(files)}', 'reqst11'),
-            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
+            InlineKeyboardButton('『𝙵𝙸𝙻𝙴𝚂』': {len(files)}', 'reqst11'),
+            InlineKeyboardButton('『𝚃𝙸𝙿𝚂』', 'tips')
         ]
     )
 
