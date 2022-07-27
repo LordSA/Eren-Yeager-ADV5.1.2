@@ -130,17 +130,6 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
-#    btn.insert(0, 
-#        [
-#            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst11')
-#        ]
-#    )
-#    btn.insert(1,
-#        [
-#            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』: {len(files)}', 'reqst11'),
-#            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
-#        ]
-#    )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -153,15 +142,11 @@ async def next_page(bot, query):
             [InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"📃 𝙿𝙰𝙶𝙴𝚂 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
-#            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
-#             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"📃 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")])
-#            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
-#            InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')])
     else:
         btn.append(
             [
@@ -169,9 +154,6 @@ async def next_page(bot, query):
                 InlineKeyboardButton(f"📃 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
-#                InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
-#                InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')
-#            ]
         )
     try:
         await query.edit_message_reply_markup(
@@ -793,12 +775,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝙲𝙰𝙻𝙲𝚄𝙻𝙰𝚃𝙾𝚁』', callback_data='calculator')                      
         ], [
             InlineKeyboardButton('『𝙱𝙰𝙽[𝙶]』',callback_data='bang'),            
-            InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr'),
-            InlineKeyboardButton('『』', callback_data='nxt3')
-        ], [
-            InlineKeyboardButton('『』',callback_data='nxt3'),
-            InlineKeyboardButton('『』', callback_data='nxt3'),
-            InlineKeyboardButton('『』', callback_data='nxt3')
+            InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr')
         ], [
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='nxt2'),
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
@@ -1850,11 +1827,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
     await query.answer('Piracy Is Crime')
-#    elif query.data == 'tips':
-#        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\nᴇxᴀᴍᴘʟᴇ : ʟᴏᴋɪ S01 E01\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n© Moviehub", True)
-#    elif query.data == 'reqst11':
-#        await query.answer(f"Hey {query.from_user.first_name} Bro 😍\n\n🎯 Click The Below Button The Files You Want... And Start The Bot Get The File and Go To Your House..😂\n\n Movie World", True)
-
 
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
@@ -1902,18 +1874,6 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
         
-#    btn.insert(0, 
-#        [
-#            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst11')
-#        ]
-#    )
-#    btn.insert(1,
-#        [
-#            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』: {len(files)}', 'reqst11'),
-#            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
-#        ]
-#    )
-
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
         BUTTONS[key] = search
@@ -1921,14 +1881,10 @@ async def auto_filter(client, msg, spoll=False):
         btn.append(
             [InlineKeyboardButton(text=f"📃 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="『𝙽𝙴𝚇𝚃』", callback_data=f"next_{req}_{key}_{offset}")]
-#            [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
-#             InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
         )
     else:
         btn.append(
             [InlineKeyboardButton(text="📃 1/1", callback_data="pages")]
-#           [InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙶𝚁𝙾𝚄𝙿』", url='https://t.me/mwmoviespro'),
-#            InlineKeyboardButton("『𝙹𝙾𝙸𝙽 𝙾𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻』", url='https://t.me/+2A6YKxDL4udlMGU1')]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
