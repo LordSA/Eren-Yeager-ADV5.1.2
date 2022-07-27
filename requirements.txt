@@ -7,7 +7,7 @@ asyncio==3.4.3
 beautifulsoup4
 bs4
 # C
-carbonnow
+#carbonnow
 countryinfo
 # F
 ffmpeg-python
