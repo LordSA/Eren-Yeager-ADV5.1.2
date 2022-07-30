@@ -125,7 +125,7 @@ async def next_page(bot, query):
                 ),
                 InlineKeyboardButton(
                     text=f"『{get_size(file.file_size)}』",
-                    callback_data=f'files_#{file.file_id}',
+                    callback_data=f'files#{file.file_id}',
                 ),
             ]
             for file in files
@@ -500,9 +500,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝙿𝙷𝙾𝚃𝙾』', callback_data='photo'),  
             InlineKeyboardButton('『𝙸𝙼𝙳𝙱』', callback_data='extra')
         ], [            
-            InlineKeyboardButton('『𝙼𝚄𝚂𝙸𝙲』', callback_data='music'),
+            InlineKeyboardButton('『𝚃𝙷𝚄𝙶 𝙻𝙸𝙵𝙴』', callback_data='thug'),
             InlineKeyboardButton('『𝚃𝚃𝚂』', callback_data='tts'),
             InlineKeyboardButton('『𝙹𝚂𝙾𝙽』',callback_data='info')
+        ], [
+            InlineKeyboardButton('『𝙻𝚈𝚁𝙸𝙲𝚂』', callback_data='lyrics'),
+            InlineKeyboardButton('『𝙼𝚄𝚂𝙸𝙲』', callback_data='music'),
+            InlineKeyboardButton('『𝚅𝙸𝙳𝙴𝙾』', callback_data='video')            
         ], [                        
             InlineKeyboardButton('『𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷』', callback_data='tgraph'),            
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
@@ -554,15 +558,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('『𝕾𝚃𝙸𝙲𝙺𝙴𝚁 𝙸𝙳』', callback_data='stid'),
             InlineKeyboardButton('『𝚃𝙾𝚁𝚁𝙴𝙽𝚃』', callback_data='tor'),
-            InlineKeyboardButton('『𝚃𝙷𝚄𝙶 𝙻𝙸𝙵𝙴』', callback_data='thug')     
+            InlineKeyboardButton('『𝙲𝙰𝚁𝙱𝙾𝙽』',callback_data='carbon')                
         ], [
-            InlineKeyboardButton('『𝙻𝚈𝚁𝙸𝙲𝚂』', callback_data='lyrics'),
             InlineKeyboardButton('『𝙼𝚄𝚃𝙴』',callback_data='mute'),
-            InlineKeyboardButton('『𝚅𝙸𝙳𝙴𝙾』', callback_data='video')
-        ], [
             InlineKeyboardButton('『𝚁𝙴𝙿𝙾𝚁𝚃』',callback_data='report'),
-            InlineKeyboardButton('『𝙺𝙸𝙲𝙺』', callback_data='zombies'),
-            InlineKeyboardButton('『𝙿𝙸𝙽』',callback_data='pin')                                           
+            InlineKeyboardButton('『𝙺𝙸𝙲𝙺』', callback_data='zombies')                                                       
+        ], [
+            InlineKeyboardButton('『𝙰𝚄𝙳𝙸𝙾𝙱𝙾𝙾𝙺』',callback_data='abook'),            
+            InlineKeyboardButton('『𝙲𝙾𝚄𝙽𝚃𝚁𝚈』', callback_data='country'),
+            InlineKeyboardButton('『𝙵𝚄𝙽』', callback_data='memes')
+        ], [
+            InlineKeyboardButton('『𝙿𝙸𝙽』',callback_data='pin'),
+            InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr'),
+            Inlinekeyboardbutton('『𝙻𝙾𝙶𝙾』', callback_data='logo')
         ], [
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='help'),
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
@@ -745,19 +753,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[           
             InlineKeyboardButton('『𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃𝙴𝚁』',callback_data='shortner'),            
             InlineKeyboardButton('『𝙿𝙰𝚂𝚂-𝙶𝙴𝙽』', callback_data='genpassword'),
-            InlineKeyboardButton('『𝙵𝚄𝙽』', callback_data='memes')                      
-        ], [
-            InlineKeyboardButton('『𝙰𝚄𝙳𝙸𝙾𝙱𝙾𝙾𝙺』',callback_data='abook'),            
-            InlineKeyboardButton('『𝙲𝙾𝚄𝙽𝚃𝚁𝚈』', callback_data='country'),
-            InlineKeyboardButton('『𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃』', callback_data='sharetext')
+            Inlinekeyboardbutton('『𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃』', callback_data='sharetext')                      
         ], [
             InlineKeyboardButton('『𝙿𝙰𝚂𝚃𝙴』',callback_data='paste'),
             InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who'),
             InlineKeyboardButton('『𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴』', callback_data='flstr')
+        ], [            
+            InlineKeyboardButton('『𝙲𝙾𝚅𝙸𝙳』', callback_data='covid'),
+            InlineKeyboardButton('『𝙲𝙰𝙻𝙲𝚄𝙻𝙰𝚃𝙾𝚁』', callback_data='calculator'),
+            InlineKeyboardButton('『𝙱𝙰𝙽[𝙶]』',callback_data='bang')                                             
         ], [
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='nxt1'),
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
-            InlineKeyboardButton('『𝙽𝙴𝚇𝚃』', callback_data='next3')
+            InlineKeyboardButton('『𝙷𝙴𝙻𝙿』', callback_data='help')
         ], [
             InlineKeyboardButton('『𝙷𝙾𝙼𝙴』', callback_data='start'),            
             InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
@@ -779,42 +787,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "nxt3":
-        buttons = [[           
-            InlineKeyboardButton('『𝙲𝙰𝚁𝙱𝙾𝙽』',callback_data='carbon'),            
-            InlineKeyboardButton('『𝙲𝙾𝚅𝙸𝙳』', callback_data='covid'),
-            InlineKeyboardButton('『𝙲𝙰𝙻𝙲𝚄𝙻𝙰𝚃𝙾𝚁』', callback_data='calculator')                      
-        ], [
-            InlineKeyboardButton('『𝙱𝙰𝙽[𝙶]』',callback_data='bang'),            
-            InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr')
-        ], [
-            InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='nxt2'),
-            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
-            InlineKeyboardButton('『𝙷𝙴𝙻𝙿』', callback_data='help')
-        ], [
-            InlineKeyboardButton('『𝙷𝙾𝙼𝙴』', callback_data='start'),            
-            InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
-            InlineKeyboardButton('『𝚂𝚃𝙰𝚃𝚄𝚂』', callback_data='stats')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
+    elif query.data == "tips":                   
+        await query.answer(
             text="◾◽◽"
         )
-        await query.message.edit_text(
+        await query.ansewer(
             text="◾◾◽"
         )
-        await query.message.edit_text(
+        await query.answer(
             text="◾◾◾"
         )
-        await query.message.edit_text(
-            text=script.HELLP_TXT.format(query.from_user.mention),
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode='html'
+        await query.answer(
+            text=script.TIPS_TXT.format(query.from_user.mention)           
         )
     elif query.data == "carbon":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt3')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -854,7 +842,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "calculator":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt3')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -874,7 +862,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "bang":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt3')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1053,7 +1041,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "tr":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt3'),
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2'),
             InlineKeyboardButton('𝙻𝙰𝙽𝙶-𝙲𝙾𝙳𝙴𝚂', url='https://cloud.google.com/translate/docs/languages')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1214,7 +1202,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "covid":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='nxt3')
+            InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='nxt2')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1729,8 +1717,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
    #pic mode done
 
-    elif query.data == "movss":
-        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\n🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n©  Movie World", show_alert=True)
+    
     elif query.data == 'reqst11':
         await query.answer(f"Hey {query.from_user.first_name} Bro 😍\n\n🎯 Click The Below Button The Files You Want... And Start The Bot Get The File and Go To Your House..😂\n\n Movie World", True)
    
@@ -1898,7 +1885,7 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(1,
         [
             InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』: {len(files)}', 'reqst11'),
-            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
+            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', callback_data='tips')
         ]
     )
         
