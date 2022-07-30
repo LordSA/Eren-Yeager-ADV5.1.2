@@ -570,7 +570,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ], [
             InlineKeyboardButton('『𝙿𝙸𝙽』',callback_data='pin'),
             InlineKeyboardButton('『𝚃𝚁𝙰𝙽𝚂𝙰𝙻𝙰𝚃𝙴』', callback_data='tr'),
-            Inlinekeyboardbutton('『𝙻𝙾𝙶𝙾』', callback_data='logo')
+            InlinekeyboardButton('『𝙻𝙾𝙶𝙾』', callback_data='logo')
         ], [
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='help'),
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
