@@ -138,7 +138,7 @@ async def next_page(bot, query):
     btn.insert(1,
         [
             InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』: {total_results}', 'reqst11'),
-            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', callback_data='tips')
+            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
         ]
     )
 
@@ -788,13 +788,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "tips":                   
-        await query.answer(
+        await query.message.edit_text(
             text="◾◽◽"
         )
-        await query.ansewer(
+        await query.message.edit_text(
             text="◾◾◽"
         )
-        await query.answer(
+        await query.message.edit_text(
             text="◾◾◾"
         )
         await query.answer(
@@ -836,7 +836,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text="◾◾◾"
         )
         await query.message.edit_text(
-            text=script.HELP_TXT,
+            text=script.TIPS_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
