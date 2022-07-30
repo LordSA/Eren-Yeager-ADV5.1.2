@@ -137,8 +137,8 @@ async def next_page(bot, query):
     )
     btn.insert(1,
         [
-            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』: {len(files)}', 'reqst11'),
-            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', 'tips')
+            InlineKeyboardButton(f'『𝙵𝙸𝙻𝙴𝚂』: {total_results}', 'reqst11'),
+            InlineKeyboardButton(f'『𝚃𝙸𝙿𝚂』', callback_data='tips')
         ]
     )
 
@@ -798,11 +798,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text="◾◾◾"
         )
         await query.answer(
-            text=script.TIPS_TXT.format(query.from_user.mention)           
+            text=script.TIPS_TXT.format(query.from_user.mention),
+            show_alert=True          
         )
     elif query.data == "carbon":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1182,7 +1183,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "abook":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='nxt2')
+            InlineKeyboardButton('👩‍🦯 𝖁𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1302,7 +1303,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "video":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
