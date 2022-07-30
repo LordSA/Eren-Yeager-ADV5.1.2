@@ -788,15 +788,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "tips":                   
-        await query.message.edit_text(
-            text="◾◽◽"
-        )
-        await query.message.edit_text(
-            text="◾◾◽"
-        )
-        await query.message.edit_text(
-            text="◾◾◾"
-        )
         await query.answer(
             text=script.TIPS_TXT.format(query.from_user.mention),
             show_alert=True          
