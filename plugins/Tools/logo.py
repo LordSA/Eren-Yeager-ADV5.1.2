@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 @Client.on_message(filters.command('logo'))
-async def lego(self,event):
+async def lego(event):
  quew = event.pattern_match.group(100)
  if event.sender_id == ADMINS:
      pass
