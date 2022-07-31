@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 @Client.on_message(filters.command('logo'))
-async def lego(event):
+async def lego(self,event):
  quew = event.pattern_match.group(100)
  if event.sender_id == ADMINS:
      pass
@@ -18,7 +18,7 @@ async def lego(event):
        pass
  await event.reply('Creating your logo...wait!')
  try:
-    text = event.pattern_match.group(100)
+    text = quew
     img = Image.open('./plugins/resources/blackbg (1).jpg')
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
@@ -39,4 +39,4 @@ async def lego(event):
     if os.path.exists(fname2):
             os.remove(fname2)
  except Exception as e:
-   await event.reply(f'error, {e}')
+   await event.reply(f'error {e}')
