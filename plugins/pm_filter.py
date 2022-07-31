@@ -753,7 +753,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[           
             InlineKeyboardButton('『𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃𝙴𝚁』',callback_data='shortner'),            
             InlineKeyboardButton('『𝙿𝙰𝚂𝚂-𝙶𝙴𝙽』', callback_data='genpassword'),
-            Inlinekeyboardbutton('『𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃』', callback_data='sharetext')                      
+            InlineKeyboardButton('『𝚂𝙷𝙰𝚁𝙸𝙽𝙶 𝚃𝙴𝚇𝚃』', callback_data='sharetext')                      
         ], [
             InlineKeyboardButton('『𝙿𝙰𝚂𝚃𝙴』',callback_data='paste'),
             InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who'),
