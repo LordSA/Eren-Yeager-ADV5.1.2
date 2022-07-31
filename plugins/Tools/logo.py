@@ -7,15 +7,13 @@ from PIL import Image, ImageDraw, ImageFont
 @Client.on_message(filters.command('logo'))
 async def lego(event):
  quew = event.pattern_match.group(100)
- if event.sender_id == ADMINS:
-     pass
- else:
+ 
      
-    if not quew:
-       await event.reply('Provide Some Text To Draw!')
-       return
-    else:
-       pass
+ if not quew:
+    await event.reply('Provide Some Text To Draw!')
+    return
+ else:
+     pass
  await event.reply('Creating your logo...wait!')
  try:
     text = event.pattern_match.group(100)
