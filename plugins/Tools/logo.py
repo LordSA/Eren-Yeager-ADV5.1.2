@@ -6,18 +6,18 @@ from PIL import Image, ImageDraw, ImageFont
 
 @Client.on_message(filters.command('logo'))
 @staticmethod
-async def lego(event):
+async def lego(bot, event):
  quew = event.pattern_match.group(100)
  if event.sender_id == ADMINS:
      pass
  else:
 
     if not quew:
-       await event.reply('Provide Some Text To Draw!')
+       await bot.reply('Provide Some Text To Draw!')
        return
     else:
        pass
- await event.reply('Creating your logo...wait!')
+ await bot.reply('Creating your logo...wait!')
  try:
     text = event.pattern_match.group(100)
     img = Image.open('./plugins/resources/blackbg (1).jpg')
