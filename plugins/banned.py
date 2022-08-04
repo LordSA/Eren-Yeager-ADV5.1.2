@@ -17,6 +17,7 @@ async def disabled_chat(_, client, message: Message):
 
 disabled_group=filters.create(disabled_chat)
 
+
 @Client.on_message(filters.private & banned_user & filters.incoming)
 async def ban_reply(bot, message):
     ban = await db.get_ban_status(message.from_user.id)
