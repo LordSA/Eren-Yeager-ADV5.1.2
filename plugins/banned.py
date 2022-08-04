@@ -14,6 +14,7 @@ banned_user = filters.create(banned_users)
 
 async def disabled_chat(_, client, message: Message):
     return message.chat.id in temp.BANNED_CHATS
+
 disabled_group=filters.create(disabled_chat)
 
 @Client.on_message(filters.private & banned_user & filters.incoming)
