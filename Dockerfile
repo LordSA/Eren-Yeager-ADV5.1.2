@@ -6,7 +6,7 @@ COPY requirements.txt /requirements.txt
 
 RUN cd /
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /movie-world
+RUN mkdir /ren-Yeager-ADV5.1.2
 WORKDIR /Eren-Yeager-ADV5.1.2
 COPY start.sh /start.sh
 CMD ["/bin/bash", "/start.sh"]
