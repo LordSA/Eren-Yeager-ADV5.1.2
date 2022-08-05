@@ -45,6 +45,7 @@
         "VIDS": {
             "description": "add some telegraph link of video if you're not using pics.",
             "required": true
+        },
         "LOG_CHANNEL": {
             "description": "Bot Logs,Give a channel id with -100xxxxxxx",
             "required": true
