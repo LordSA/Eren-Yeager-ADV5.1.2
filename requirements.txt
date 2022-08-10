@@ -1,4 +1,4 @@
-git+https://github.com/subinps/pyrogram@inline-m
+pyrogram>=2.0.30
 # A
 aiofiles
 aiohttp==3.8.1
