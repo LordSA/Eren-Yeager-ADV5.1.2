@@ -1,5 +1,5 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
 from info import VIDS
 import random
 
@@ -42,7 +42,7 @@ async def photo(client: Client, message: Message):
                     ],
                 ]
             ),
-            reply_to_message_id=message.message_id,
+            reply_to_message_id=message.id,
         )
     except Exception as e:
         print("photomarkup error - " + str(e))
