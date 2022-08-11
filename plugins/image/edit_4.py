@@ -64,7 +64,7 @@ async def rotate_180(client, message):
             )
             await msg.edit("Processing Image...")
             src = cv2.imread(a)
-            image = cv2.rotate(src, ROTATE_180)
+            image = cv2.rotate(src, cv2.ROTATE_180)
             cv2.imwrite(edit_img_loc, image)
             await message.reply_chat_action("upload_photo")
             await message.reply_to_message.reply_photo(edit_img_loc, quote=True)
