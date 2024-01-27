@@ -1,7 +1,7 @@
 pyrogram>=2.0.30
 # A
 aiofiles
-aiohttp==3.8.5
+aiohttp==3.9.0
 asyncio==3.4.3
 # B
 beautifulsoup4
