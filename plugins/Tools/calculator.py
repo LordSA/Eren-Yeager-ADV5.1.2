@@ -1,4 +1,4 @@
-#import os
+'''import os
 #from pyrogram import Client, filters
 #from pyrogram.types import *
 
@@ -62,4 +62,4 @@
 #                reply_markup=CALCULATE_BUTTONS
 #            )
 #        except Exception as error:
-#            print(error)
+            print(error)'''
