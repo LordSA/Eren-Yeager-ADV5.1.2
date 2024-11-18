@@ -1,7 +1,7 @@
 pyrogram>=2.0.30
 # A
 aiofiles
-aiohttp==3.9.0
+aiohttp==3.9.2
 asyncio==3.4.3
 # B
 beautifulsoup4
@@ -30,7 +30,7 @@ opencv-python-headless
 Pillow
 psutil
 py-tgcalls==0.8.2
-pymongo[srv]==3.12.3
+pymongo[srv]==4.6.3
 PyPDF2
 Pypdf2
 pypng
