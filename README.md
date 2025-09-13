@@ -52,11 +52,15 @@ git clone https://github.com/LordSA/movie-world.git
 ````
 pip3 install U -r requirements.txt
 ````
-Edit info.py with variables as given below then run bot
+Edit info.py with variables as given below then run bot(to test)
 ````
 python3 bot.py
 ````
-
+then
+````
+pm2 start venv/bin/python3 --name eren-bot -- bot.py
+pm2 logs eren-bot
+````
 </details>
 
 
