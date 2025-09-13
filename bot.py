@@ -91,14 +91,9 @@ class Bot(Client):
 
 
 app = Bot()
-app.run()
-
-
-
-# Replace with your Telegram user ID to restrict access
 OWNER_ID = 1125789849  
 
-@Client.on_message(filters.command("update") & filters.user(OWNER_ID))
+@app.on_message(filters.command("update") & filters.user(OWNER_ID))
 async def update_bot(client, message: Message):
     await message.reply_text("🚀 Starting bot update...")
 
@@ -119,3 +114,6 @@ async def update_bot(client, message: Message):
     # Step 3: Restart bot using PM2
     subprocess.run(["pm2", "restart", "eren-bot"])
     await message.reply_text("✅ Bot updated and restarted successfully!")
+app.run()
+
+
