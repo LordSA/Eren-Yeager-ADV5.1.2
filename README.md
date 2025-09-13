@@ -44,15 +44,15 @@
 ## Deploy
 
 <details><summary>Deploy To VPS</summary>
-<p>
-```
+  
+```bash
 git clone https://github.com/LordSA/movie-world.git
 # Install Packages
 pip3 install U -r requirements.txt
 Edit info.py with variables as given below then run bot
 python3 bot.py
-```
-</p>
+````
+
 </details>
 
 
@@ -107,4 +107,3 @@ Forking, editing a few lines, and releasing a V.x or alpha/beta/gamma branch doe
 Licensed under [GNU AGPL 2.0](https://github.com/EvamariaTG/evamaria/blob/master/LICENSE).  
 Selling this code to others for money is *strictly prohibited*.
 
-[![For Vaza](https://telegra.ph/file/e743b0c8a04252774bac2.jpg)](https://telegra.ph/file/98342dc186fd7484cba91.mp4 "Oru Kootam Vazhakalk samarpikkunnu")
