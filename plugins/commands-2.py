@@ -305,7 +305,7 @@ async def text_to_speech(_, message: Message):
 
 #Telegraph
 
-@Client.on_message(filters.command(["tgmedia", "tgraph", "telegraph"]))
+'''@Client.on_message(filters.command(["tgmedia", "tgraph", "telegraph"]))
 async def telegraph_handler(client, message: Message):
     replied = message.reply_to_message
     if not replied:
@@ -362,7 +362,7 @@ async def telegraph_handler(client, message: Message):
     finally:
         if os.path.exists(download_location):
             os.remove(download_location)
-
+'''
 
 
 @Client.on_message(filters.command('whois') & f_onw_fliter)
