@@ -521,24 +521,37 @@ def convert(text):
     tts.write_to_fp(audio)
     return audio
 
+def convert(text, lang="en"):
+    """Blocking function to convert text to speech using gTTS"""
+    tts = gTTS(text=text, lang=lang)
+    file_path = "tts.mp3"
+    tts.save(file_path)
+    return file_path
+
+
 @Client.on_message(filters.command("tts"))
 async def text_to_speech(_, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply to some text ffs.")
+        return await message.reply_text("⚠️ Reply to a text message.")
     if not message.reply_to_message.text:
-        return await message.reply_text("Reply to some text ffs.")
-    m = await message.reply_text("Processing")
+        return await message.reply_text("⚠️ Reply to a text message.")
+
+    m = await message.reply_text("⏳ Processing...")
     text = message.reply_to_message.text
+
     try:
-        loop = get_running_loop()
-        audio = await loop.run_in_executor(None, convert, text)
-        await message.reply_audio(audio)
+        loop = asyncio.get_running_loop()
+        file_path = await loop.run_in_executor(None, convert, text)
+
+        await message.reply_voice(file_path)  # send as voice note
         await m.delete()
-        audio.close()
+
+        if os.path.exists(file_path):
+            os.remove(file_path)
+
     except Exception as e:
-        await m.edit(e)
-        e = traceback.format_exc()
-        print(e)
+        await m.edit(f"❌ Error: {e}")
+        print(traceback.format_exc())
 
 #Telegraph
 
