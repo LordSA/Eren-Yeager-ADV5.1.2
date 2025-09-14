@@ -422,8 +422,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝕾𝙴𝙰𝚁𝙲𝙷』', switch_inline_query_current_chat=''),
             InlineKeyboardButton('『𝕾𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11')
         ], [
-            InlineKeyboardButton('『𝙲𝙷𝙰𝙽𝙽𝙴𝙻』', url='https://t.me/+Sw4QUQp-kIU1NjY1'),
-            InlineKeyboardButton('『𝙶𝚁𝙾𝚄𝙿』', url='https://t.me/mwmoviespro')
+            InlineKeyboardButton('『𝙲𝙷𝙰𝙽𝙽𝙴𝙻』', url='https://t.me/+Sw4QUQp-kIU1NjY1')
+ #           InlineKeyboardButton('『𝙶𝚁𝙾𝚄𝙿』', url='https://t.me/mwmoviespro')
         ], [
             InlineKeyboardButton('『𝙷𝙴𝙻𝙿』', callback_data='help'),
             InlineKeyboardButton('『𝕬𝙱𝙾𝚄𝚃』', callback_data='about')
@@ -450,7 +450,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('『𝙰𝚄𝚃𝙾 𝙵𝙸𝙻𝚃𝙴𝚁』', callback_data='autofilter'),
             InlineKeyboardButton('『𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂』', callback_data='coct')            
         ], [
-            InlineKeyboardButton('『𝙿𝚄𝚁𝙶𝙴』', callback_data='purge'),  
+            InlineKeyboardButton('『𝙿𝚄𝚁𝙶𝙴』', callback_data='purge'),
+            InlineKeyboardButton('『𝕾𝚃𝙸𝙲𝙺𝙴𝚁 𝙸𝙳』', callback_data='stid'),  
             InlineKeyboardButton('『𝙸𝙼𝙳𝙱』', callback_data='extra')
         ], [            
             InlineKeyboardButton('『𝚃𝙷𝚄𝙶 𝙻𝙸𝙵𝙴』', callback_data='thug'),
@@ -507,21 +508,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "nxt1":
         buttons = [[
-            InlineKeyboardButton('『𝕾𝚃𝙸𝙲𝙺𝙴𝚁 𝙸𝙳』', callback_data='stid'),
-            InlineKeyboardButton('『𝚃𝙾𝚁𝚁𝙴𝙽𝚃』', callback_data='tor')               
-        ], [
             InlineKeyboardButton('『𝙼𝚄𝚃𝙴』',callback_data='mute'),
             InlineKeyboardButton('『𝚁𝙴𝙿𝙾𝚁𝚃』',callback_data='report'),
             InlineKeyboardButton('『𝙺𝙸𝙲𝙺』', callback_data='zombies')                                                       
         ], [
-            InlineKeyboardButton('『𝙵𝚄𝙽』', callback_data='memes')
-        ], [
+            InlineKeyboardButton('『𝙵𝚄𝙽』', callback_data='memes'),
+ #       ], [
             InlineKeyboardButton('『𝙿𝙸𝙽』',callback_data='pin'),
             InlineKeyboardButton('『𝙻𝙾𝙶𝙾』', callback_data='logo')
         ], [
+            InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who'),
+            InlineKeyboardButton('『𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴』', callback_data='flstr'),                                
+            InlineKeyboardButton('『𝙱𝙰𝙽[𝙶]』',callback_data='bang')
+        ], [            
             InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='help'),
-            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
-            InlineKeyboardButton('『𝙽𝙴𝚇𝚃』', callback_data='nxt2')
+            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11')#,
+ #           InlineKeyboardButton('『𝙽𝙴𝚇𝚃』', callback_data='')
         ], [
             InlineKeyboardButton('『𝙷𝙾𝙼𝙴』', callback_data='start'),            
             InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
@@ -602,7 +604,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "who":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -696,40 +698,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "nxt2":
-        buttons = [[
-            InlineKeyboardButton('『𝚆𝙷𝙾𝙸𝚂』', callback_data='who'),
-            InlineKeyboardButton('『𝙵𝙸𝙻𝙴 𝚂𝚃𝙾𝚁𝙴』', callback_data='flstr')                      
-        ], [
-            InlineKeyboardButton('『𝙿𝙰𝚂𝚃𝙴』',callback_data='paste'),
-            
-#        ], [            
-            InlineKeyboardButton('『𝙱𝙰𝙽[𝙶]』',callback_data='bang')                                             
-        ], [
-            InlineKeyboardButton('『𝙿𝚁𝙴𝚅』', callback_data='nxt1'),
-            InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
-            InlineKeyboardButton('『𝙷𝙴𝙻𝙿』', callback_data='help')
-        ], [
-            InlineKeyboardButton('『𝙷𝙾𝙼𝙴』', callback_data='start'),            
-            InlineKeyboardButton('✴ 𝙿𝙸𝙽𝙶', callback_data='ping'),
-            InlineKeyboardButton('『𝚂𝚃𝙰𝚃𝚄𝚂』', callback_data='stats')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text="◾◽◽"
-        )
-        await query.message.edit_text(
-            text="◾◾◽"
-        )
-        await query.message.edit_text(
-            text="◾◾◾"
-        )
-        await query.message.edit_text(
-            text=script.HELP_TXT.format(query.from_user.mention),
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
     elif query.data == "tips":                   
         await query.answer(
             text=script.TIPS_TXT.format(query.from_user.mention),
@@ -757,7 +725,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "bang":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -817,7 +785,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "flstr":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -871,26 +839,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await query.message.edit_text(
             text=script.ZOMBIES_TXT,
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "paste":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text="◾◽◽"
-        )
-        await query.message.edit_text(
-            text="◾◾◽"
-        )
-        await query.message.edit_text(
-            text="◾◾◾"
-        )
-        await query.message.edit_text(
-            text=script.PASTE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
@@ -1017,7 +965,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "stid":
         buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt1')
+            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1031,26 +979,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await query.message.edit_text(
             text=script.STICKER_TXT,
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "sharetext":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 𝕭𝙰𝙲𝙺', callback_data='nxt2')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text="◾◽◽"
-        )
-        await query.message.edit_text(
-            text="◾◾◽"
-        )
-        await query.message.edit_text(
-            text="◾◾◾"
-        )
-        await query.message.edit_text(
-            text=script.SHARE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
