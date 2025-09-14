@@ -460,7 +460,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ], [
            
         ], [                        
-            InlineKeyboardButton('『𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷』', callback_data='tgraph'),            
+#            InlineKeyboardButton('『𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙿𝙷』', callback_data='tgraph'),            
             InlineKeyboardButton('『𝚂𝚄𝙿𝙿𝙾𝚁𝚃』', url='https://t.me/mwpro11'),
             InlineKeyboardButton('『𝙽𝙴𝚇𝚃』', callback_data='nxt1')
         ], [
