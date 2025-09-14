@@ -311,7 +311,6 @@ async def telegraph_handler(client, message: Message):
     if not replied:
         return await message.reply("Reply to a supported media file")
 
-    # Check supported files
     if not (
         (replied.photo and replied.photo.file_size <= 5242880)
         or (replied.animation and replied.animation.file_size <= 5242880)
@@ -328,15 +327,18 @@ async def telegraph_handler(client, message: Message):
     ):
         return await message.reply("Not supported or file too large (max 5MB)!")
 
-    download_location = await client.download_media(
-        message=replied,
-        file_name="downloads/"
-    )
+    download_location = await client.download_media(replied, file_name="downloads/")
 
     try:
-        response = upload_file(download_location)
+        if not os.path.exists(download_location):
+            return await message.reply("❌ File download failed.")
 
-        # response can be string or list depending on version
+        try:
+            response = upload_file(download_location)
+        except Exception as e:
+            traceback.print_exc()
+            return await message.reply(f"Upload error: {e}")
+
         if isinstance(response, list):
             link = f"https://telegra.ph{response[0]}"
         else:
@@ -346,21 +348,23 @@ async def telegraph_handler(client, message: Message):
             f"<b>Link:</b>\n\n<code>{link}</code>",
             quote=True,
             reply_markup=InlineKeyboardMarkup(
-                [[
-                     InlineKeyboardButton("『𝕺𝙿𝙴𝙽 𝕷𝙸𝙽𝙺』", url=link),
-                     InlineKeyboardButton("『𝕾𝙷𝙰𝚁𝙴 𝕷𝙸𝙽𝙺』", url=f"https://telegram.me/share/url?url={link}")
-                ], [
-                    InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data="close_data")
-                ]]
+                [
+                    [
+                        InlineKeyboardButton("『𝕺𝙿𝙴𝙽 𝕷𝙸𝙽𝙺』", url=link),
+                        InlineKeyboardButton("『𝕾𝙷𝙰𝚁𝙴 𝕷𝙸𝙽𝙺』", url=f"https://telegram.me/share/url?url={link}")
+                    ],
+                    [
+                        InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data="close_data")
+                    ]
+                ]
             )
         )
-    except Exception as e:
-        await message.reply(f"Error: {str(e)}")
     finally:
-        try:
+        if os.path.exists(download_location):
             os.remove(download_location)
-        except Exception:
-            pass
+
+
+
 @Client.on_message(filters.command('whois') & f_onw_fliter)
 async def who_is(client, message):
     """ extract user information """
