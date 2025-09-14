@@ -556,53 +556,51 @@ async def text_to_speech(_, message: Message):
 #Telegraph
 
 @Client.on_message(filters.command(["tgmedia", "tgraph", "telegraph"]))
-async def telegraph(client, message):
+async def telegraph_handler(client: Client, message: Message):
     replied = message.reply_to_message
     if not replied:
-        await message.reply("Reply to a supported media file")
-        return
-    if not (
-        (replied.photo and replied.photo.file_size <= 5242880)
-        or (replied.animation and replied.animation.file_size <= 5242880)
-        or (
-            replied.video
-            and replied.video.file_name.endswith(".mp4")
-            and replied.video.file_size <= 5242880
-        )
-        or (
-            replied.document
-            and replied.document.file_name.endswith(
-                (".jpg", ".jpeg", ".png", ".gif", ".mp4"),
-            )
-            and replied.document.file_size <= 5242880
-        )
-    ):
-        await message.reply("Not supported!")
-        return
-    download_location = await client.download_media(
-        message=message.reply_to_message,
-        file_name="root/downloads/",
-    )
+        return await message.reply("Reply to a supported media file.")
+
+    # Only accept files <= 5 MB
+    if replied.photo:
+        if replied.photo.file_size > 5242880:
+            return await message.reply("Photo too large! (max 5 MB)")
+    elif replied.animation:
+        if replied.animation.file_size > 5242880:
+            return await message.reply("GIF too large! (max 5 MB)")
+    elif replied.video:
+        if not replied.video.file_name.endswith(".mp4") or replied.video.file_size > 5242880:
+            return await message.reply("Only MP4 videos under 5 MB are supported!")
+    elif replied.document:
+        if not replied.document.file_name.endswith((".jpg", ".jpeg", ".png", ".gif", ".mp4")):
+            return await message.reply("Not supported file type!")
+        if replied.document.file_size > 5242880:
+            return await message.reply("File too large! (max 5 MB)")
+    else:
+        return await message.reply("Not supported!")
+
+    # Download media
+    download_location = await client.download_media(replied, file_name="downloads/")
+
     try:
         response = upload_file(download_location)
-    except Exception as document:
-        await message.reply(message, text=document)
-    else:
+        link = f"https://telegra.ph{response[0]}"
         await message.reply(
-            f"<b>Link:-</b>\n\n <code>https://telegra.ph{response[0]}</code>",
-            quote=True,
+            f"<b>Link:</b> <code>{link}</code>",
             reply_markup=InlineKeyboardMarkup(
-            [
                 [
-                    InlineKeyboardButton(text="『𝕺𝙿𝙴𝙽 𝕷𝙸𝙽𝙺』", url=f"https://telegra.ph{response[0]}"),
-                    InlineKeyboardButton(text="『𝕾𝙷𝙰𝚁𝙴 𝕷𝙸𝙽𝙺』", url=f"https://telegram.me/share/url?url=https://telegra.ph{response[0]}")
-             ], [
-                InlineKeyboardButton(text="『𝙿𝚁𝙴𝚅』", callback_data="close_data")
-           ]]
+                    [
+                        InlineKeyboardButton("『𝕺𝙿𝙴𝙽 𝕷𝙸𝙽𝙺』", url=link),
+                        InlineKeyboardButton("『𝕾𝙷𝙰𝚁𝙴 𝕷𝙸𝙽𝙺』", url=f"https://t.me/share/url?url={link}")
+                    ]
+                ]
+            )
         )
-    )
+    except Exception as e:
+        await message.reply(f"Error: {e}")
     finally:
-        os.remove(download_location)
+        if os.path.exists(download_location):
+            os.remove(download_location)
 
 @Client.on_message(filters.command('whois') & f_onw_fliter)
 async def who_is(client, message):
