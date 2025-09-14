@@ -306,11 +306,12 @@ async def text_to_speech(_, message: Message):
 #Telegraph
 
 @Client.on_message(filters.command(["tgmedia", "tgraph", "telegraph"]))
-async def telegraph(client, message):
+async def telegraph_handler(client, message: Message):
     replied = message.reply_to_message
     if not replied:
         return await message.reply("Reply to a supported media file")
 
+    # Check supported files
     if not (
         (replied.photo and replied.photo.file_size <= 5242880)
         or (replied.animation and replied.animation.file_size <= 5242880)
@@ -321,47 +322,44 @@ async def telegraph(client, message):
         )
         or (
             replied.document
-            and replied.document.file_name.endswith(
-                (".jpg", ".jpeg", ".png", ".gif", ".mp4"),
-            )
+            and replied.document.file_name.endswith((".jpg", ".jpeg", ".png", ".gif", ".mp4"))
             and replied.document.file_size <= 5242880
         )
     ):
-        return await message.reply("Not supported!")
+        return await message.reply("Not supported or file too large (max 5MB)!")
 
     download_location = await client.download_media(
         message=replied,
-        file_name="root/downloads/",
+        file_name="downloads/"
     )
 
     try:
-        # ✅ FIX: pass list instead of str
-        response = upload_file([download_location])
-        link = f"https://telegra.ph{response[0]}"
+        response = upload_file(download_location)
+
+        # response can be string or list depending on version
+        if isinstance(response, list):
+            link = f"https://telegra.ph{response[0]}"
+        else:
+            link = f"https://telegra.ph{response}"
 
         await message.reply(
-            f"<b>Link:</b> <code>{link}</code>",
+            f"<b>Link:</b>\n\n<code>{link}</code>",
+            quote=True,
             reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("『𝕺𝙿𝙴𝙽 𝕷𝙸𝙽𝙆』", url=link),
-                        InlineKeyboardButton(
-                            "『𝕾𝙷𝙰𝚁𝙴 𝕷𝙸𝙽𝙆』",
-                            url=f"https://t.me/share/url?url={link}",
-                        ),
-                    ]
-                ]
-            ),
+                [[
+                     InlineKeyboardButton("『𝕺𝙿𝙴𝙽 𝕷𝙸𝙽𝙺』", url=link),
+                     InlineKeyboardButton("『𝕾𝙷𝙰𝚁𝙴 𝕷𝙸𝙽𝙺』", url=f"https://telegram.me/share/url?url={link}")
+                ], [
+                    InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data="close_data")
+                ]]
+            )
         )
-
     except Exception as e:
-        # ✅ FIX: reply with the error string
         await message.reply(f"Error: {str(e)}")
-
     finally:
         try:
             os.remove(download_location)
-        except:
+        except Exception:
             pass
 @Client.on_message(filters.command('whois') & f_onw_fliter)
 async def who_is(client, message):
