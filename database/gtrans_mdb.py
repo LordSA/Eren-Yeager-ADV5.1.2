@@ -1,43 +1,42 @@
-import pymongo
-
+from motor.motor_asyncio import AsyncIOMotorClient
 from info import DATABASE_URI, DATABASE_NAME
-
 import logging
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
-myclient = pymongo.MongoClient(DATABASE_URI)
-mydb = myclient[DATABASE_NAME]
-mycol = mydb["USER"]
+client = AsyncIOMotorClient(DATABASE_URI)
+db = client[DATABASE_NAME]
+mycol = db["USER"]
 
-def insert(chat_id):
-            user_id = int(chat_id)
-            user_det = {"_id":user_id,"lg_code":None}
-            try:
-            	mycol.insert_one(user_det)
-            except:
-            	pass
 
-def set(chat_id,lg_code):
-	 mycol.update_one({"_id":chat_id},{"$set":{"lg_code":lg_code}})
+async def insert(chat_id: int):
+    user_det = {"_id": int(chat_id), "lg_code": None}
+    try:
+        await mycol.insert_one(user_det)
+    except Exception as e:
+        logger.debug(f"User already exists or error: {e}")
 
-	 	
-def unset(chat_id):
-	mycol.update_one({"_id":chat_id},{"$set":{"lg_code":None}})
 
-def find(chat_id):
-	id =  {"_id":chat_id}
-	x = mycol.find(id)
-	for i in x:
-             lgcd = i["lg_code"]
-             return lgcd 
+async def set(chat_id: int, lg_code: str):
+    await mycol.update_one({"_id": chat_id}, {"$set": {"lg_code": lg_code}}, upsert=True)
 
-def getid():
+
+async def unset(chat_id: int):
+    await mycol.update_one({"_id": chat_id}, {"$set": {"lg_code": None}})
+
+
+async def find(chat_id: int):
+    doc = await mycol.find_one({"_id": chat_id}, {"lg_code": 1})
+    return doc["lg_code"] if doc else None
+
+
+async def getid():
     values = []
-    for key  in mycol.find():
-         id = key["_id"]
-         values.append((id)) 
+    async for key in mycol.find({}, {"_id": 1}):
+        values.append(key["_id"])
     return values
 
-def find_one(id):
-	return mycol.find_one({"_id":id})
+
+async def find_one(id: int):
+    return await mycol.find_one({"_id": id})
