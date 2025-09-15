@@ -5,7 +5,7 @@ from pyrogram.types import Message
 from info import ADMINS, LOG_CHANNEL   # ADMINS = [owner_id], LOG_CHANNEL = -100xxxxxxxxxx
 
 
-OWNER_ID = ADMINS if isinstance(ADMINS, int) else ADMINS[0]
+OWNER_ID = 1125789849 #ADMINS
 
 
 def set_env_var(key: str, value: str):
