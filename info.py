@@ -2,7 +2,7 @@ import re
 from os import environ
 from pyrogram import Client, filters
 from dotenv import load_dotenv
-load_dotenv(config.env)
+load_dotenv("config.env")
 
 
 
