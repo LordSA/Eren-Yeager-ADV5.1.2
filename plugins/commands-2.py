@@ -262,22 +262,34 @@ def instatus(client, message):
 #Share Text(Venel revert akikondim)
 #TTS
 
-def convert(text):
-    audio = BytesIO()
-    i = Translator().translate(text, dest="en")
-    lang = i.src
-    tts = gTTS(text, lang=lang)
-    audio.name = lang + ".mp3"
-    tts.write_to_fp(audio)
-    return audio
+VOICES = [
+    "nova", "alloy", "ash", "coral",
+    "echo", "fable", "onyx", "sage", "shimmer"
+]
 
-def convert(text, lang="en"):
-    """Blocking function to convert text to speech using gTTS"""
-    tts = gTTS(text=text, lang=lang)
-    file_path = "tts.mp3"
-    tts.save(file_path)
-    return file_path
+def get_voice(voice: str):
+    if not voice:
+        return "coral"
+    v = voice.lower()
+    return v if v in VOICES else "coral"
 
+async def fetch_tts(text: str, voice="coral", speed="1.00"):
+    url = "https://ttsmp3.com/makemp3_ai.php"
+    payload = {
+        "msg": text,
+        "lang": get_voice(voice),
+        "speed": speed,
+        "source": "ttsmp3"
+    }
+
+    async with aiohttp.ClientSession() as session:
+        async with session.post(url, data=payload) as resp:
+            data = await resp.json()
+            if data.get("Error") == "Usage Limit exceeded":
+                return {"error": "TTS API usage limit exceeded", "response": data}
+            if data.get("Error") == 0 and data.get("URL"):
+                return {"url": data["URL"]}
+            return {"error": "TTS generation failed", "response": data}
 
 @Client.on_message(filters.command("tts"))
 async def text_to_speech(_, message: Message):
@@ -290,10 +302,21 @@ async def text_to_speech(_, message: Message):
     text = message.reply_to_message.text
 
     try:
-        loop = asyncio.get_running_loop()
-        file_path = await loop.run_in_executor(None, convert, text)
+        result = await fetch_tts(text)
+        if "error" in result:
+            return await m.edit(f"❌ Error: {result['error']}")
 
-        await message.reply_voice(file_path)  # send as voice note
+        audio_url = result["url"]
+        file_path = "tts.mp3"
+
+        # Download MP3 file
+        async with aiohttp.ClientSession() as session:
+            async with session.get(audio_url) as r:
+                with open(file_path, "wb") as f:
+                    f.write(await r.read())
+
+        # Send as voice note
+        await message.reply_voice(file_path)
         await m.delete()
 
         if os.path.exists(file_path):
@@ -305,22 +328,25 @@ async def text_to_speech(_, message: Message):
 
 #Telegraph
 
-'''@Client.on_message(filters.command(["tgmedia", "tgraph", "telegraph"]))
+@Client.on_message(filters.command(["tgmedia", "tgraph", "telegraph"]))
 async def telegraph_handler(client, message: Message):
     replied = message.reply_to_message
     if not replied:
         return await message.reply("Reply to a supported media file")
 
+    # Check supported files & size
     if not (
         (replied.photo and replied.photo.file_size <= 5242880)
         or (replied.animation and replied.animation.file_size <= 5242880)
         or (
             replied.video
+            and replied.video.file_name
             and replied.video.file_name.endswith(".mp4")
             and replied.video.file_size <= 5242880
         )
         or (
             replied.document
+            and replied.document.file_name
             and replied.document.file_name.endswith((".jpg", ".jpeg", ".png", ".gif", ".mp4"))
             and replied.document.file_size <= 5242880
         )
@@ -339,10 +365,16 @@ async def telegraph_handler(client, message: Message):
             traceback.print_exc()
             return await message.reply(f"Upload error: {e}")
 
-        if isinstance(response, list):
+        # Normalize response
+        link = None
+        if isinstance(response, (list, tuple)) and len(response) > 0:
             link = f"https://telegra.ph{response[0]}"
-        else:
+        elif isinstance(response, str):
             link = f"https://telegra.ph{response}"
+        elif isinstance(response, dict) and "src" in response:
+            link = f"https://telegra.ph{response['src']}"
+        else:
+            return await message.reply("❌ Unexpected response from Telegraph API.")
 
         await message.reply(
             f"<b>Link:</b>\n\n<code>{link}</code>",
@@ -351,18 +383,20 @@ async def telegraph_handler(client, message: Message):
                 [
                     [
                         InlineKeyboardButton("『𝕺𝙿𝙴𝙽 𝕷𝙸𝙽𝙺』", url=link),
-                        InlineKeyboardButton("『𝕾𝙷𝙰𝚁𝙴 𝕷𝙸𝙽𝙺』", url=f"https://telegram.me/share/url?url={link}")
+                        InlineKeyboardButton(
+                            "『𝕾𝙷𝙰𝚁𝙴 𝕷𝙸𝙽𝙺』",
+                            url=f"https://telegram.me/share/url?url={link}",
+                        ),
                     ],
-                    [
-                        InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data="close_data")
-                    ]
+                    [InlineKeyboardButton("『𝙿𝚁𝙴𝚅』", callback_data="close_data")],
                 ]
-            )
+            ),
         )
+
     finally:
         if os.path.exists(download_location):
             os.remove(download_location)
-'''
+
 
 
 @Client.on_message(filters.command('whois') & f_onw_fliter)
