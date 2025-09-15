@@ -1,4 +1,4 @@
-import os
+'''import os
 import subprocess
 from pyrogram import Client, filters
 from pyrogram.types import Message
@@ -86,4 +86,4 @@ async def delete_variable(client: Client, message: Message):
     del_env_var(key)
     msg = f"🗑️ Environment variable <b>{key}</b> deleted."
     await client.send_message(OWNER_ID, msg)
-    await send_log(client, f"🗑️ [DELVAR]\n{msg}")
+    await send_log(client, f"🗑️ [DELVAR]\n{msg}")'''
