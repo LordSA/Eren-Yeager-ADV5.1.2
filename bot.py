@@ -3,7 +3,7 @@ import logging.config
 import subprocess
 from pyrogram import filters
 from pyrogram.types import Message
-from info import LOG_CHANNEL
+from info import LOG_CHANNEL, AUTH_USERS
 
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
@@ -92,7 +92,7 @@ class Bot(Client):
 
 
 app = Bot()
-OWNER_ID = 1125789849  
+OWNER_ID = AUTH_USERS  
 
 @app.on_message(filters.command("update") & filters.user(OWNER_ID))
 async def update_bot(client: Client, message: Message):
