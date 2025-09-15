@@ -1,6 +1,9 @@
 import re
 from os import environ
 from pyrogram import Client, filters
+from dotenv import load_dotenv
+load_dotenv()
+
 
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
