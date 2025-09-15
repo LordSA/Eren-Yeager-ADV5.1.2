@@ -4,6 +4,7 @@ import logging
 import random
 import asyncio
 import aiohttp
+import tempfile
 import traceback
 from asyncio import get_running_loop
 from io import BytesIO
@@ -289,7 +290,7 @@ async def ai_tts(text: str, voice: str = "coral", speed: str = "1.00"):
             if res.get("Error") == 0 and res.get("URL"):
                 return {"url": res["URL"]}
             return {"error": "TTS generation failed", "response": res}
-            
+
 @Client.on_message(filters.command("tts"))
 async def text_to_speech(client: Client, message: Message):
     if not message.reply_to_message or not message.reply_to_message.text:
