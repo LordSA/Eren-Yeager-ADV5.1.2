@@ -122,6 +122,7 @@ async def update_bot(client: Client, message: Message):
 
     # Final DM to owner
     await client.send_message(owner, "✅ Update finished. Bot restarted successfully!")
+    from xnxx_plugin import *  # Registers xsearch and xvideo commands
 app.run()
 
 
