@@ -261,70 +261,69 @@ def instatus(client, message):
 
 #Share Text(Venel revert akikondim)
 #TTS
-
 VOICES = [
     "nova", "alloy", "ash", "coral",
     "echo", "fable", "onyx", "sage", "shimmer"
 ]
 
-def get_voice(voice: str):
+def get_voice(voice: str) -> str:
     if not voice:
         return "coral"
     v = voice.lower()
     return v if v in VOICES else "coral"
 
-async def fetch_tts(text: str, voice="coral", speed="1.00"):
+async def ai_tts(text: str, voice: str = "coral", speed: str = "1.00"):
+    """Call ttsmp3 AI API and return audio URL or error"""
     url = "https://ttsmp3.com/makemp3_ai.php"
-    payload = {
+    data = {
         "msg": text,
         "lang": get_voice(voice),
         "speed": speed,
         "source": "ttsmp3"
     }
-
     async with aiohttp.ClientSession() as session:
-        async with session.post(url, data=payload) as resp:
-            data = await resp.json()
-            if data.get("Error") == "Usage Limit exceeded":
-                return {"error": "TTS API usage limit exceeded", "response": data}
-            if data.get("Error") == 0 and data.get("URL"):
-                return {"url": data["URL"]}
-            return {"error": "TTS generation failed", "response": data}
-
+        async with session.post(url, data=data) as resp:
+            res = await resp.json()
+            if res.get("Error") == "Usage Limit exceeded":
+                return {"error": "TTS API usage limit exceeded", "response": res}
+            if res.get("Error") == 0 and res.get("URL"):
+                return {"url": res["URL"]}
+            return {"error": "TTS generation failed", "response": res}
+            
 @Client.on_message(filters.command("tts"))
-async def text_to_speech(_, message: Message):
-    if not message.reply_to_message:
-        return await message.reply_text("⚠️ Reply to a text message.")
-    if not message.reply_to_message.text:
-        return await message.reply_text("⚠️ Reply to a text message.")
+async def text_to_speech(client: Client, message: Message):
+    if not message.reply_to_message or not message.reply_to_message.text:
+        return await message.reply_text("⚠️ Reply to a text message with /tts")
 
-    m = await message.reply_text("⏳ Processing...")
+    m = await message.reply_text("⏳ Generating voice...")
+
     text = message.reply_to_message.text
+    voice = "coral"   # default voice
+    speed = "1.00"
 
     try:
-        result = await fetch_tts(text)
+        result = await ai_tts(text, voice, speed)
+
         if "error" in result:
             return await m.edit(f"❌ Error: {result['error']}")
 
         audio_url = result["url"]
-        file_path = "tts.mp3"
 
-        # Download MP3 file
+        # download temporarily
+        tmp_file = tempfile.mktemp(suffix=".mp3")
         async with aiohttp.ClientSession() as session:
             async with session.get(audio_url) as r:
-                with open(file_path, "wb") as f:
+                with open(tmp_file, "wb") as f:
                     f.write(await r.read())
 
-        # Send as voice note
-        await message.reply_voice(file_path)
+        await message.reply_voice(tmp_file)
         await m.delete()
 
-        if os.path.exists(file_path):
-            os.remove(file_path)
+        if os.path.exists(tmp_file):
+            os.remove(tmp_file)
 
     except Exception as e:
         await m.edit(f"❌ Error: {e}")
-        print(traceback.format_exc())
 
 #Telegraph
 
