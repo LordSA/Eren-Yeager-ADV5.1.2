@@ -3,7 +3,7 @@ import logging.config
 import subprocess
 from pyrogram import filters
 from pyrogram.types import Message
-from info import LOG_CHANNEL, AUTH_USERS
+from info import LOG_CHANNEL, ADMINS
 
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
@@ -92,7 +92,7 @@ class Bot(Client):
 
 
 app = Bot()
-OWNER_ID = AUTH_USERS  
+OWNER_ID = ADMINS  
 
 @app.on_message(filters.command("update") & filters.user(OWNER_ID))
 async def update_bot(client: Client, message: Message):
@@ -122,44 +122,6 @@ async def update_bot(client: Client, message: Message):
 
     # Final DM to owner
     await client.send_message(owner, "✅ Update finished. Bot restarted successfully!")
-    '''
-    async def send_log(client, text: str):
-    try:
-        if LOG_CHANNEL:
-            await client.send_message(LOG_CHANNEL, text)
-    except Exception as e:
-        print(f"[LOG ERROR] {e}")
-
-
-@Client.on_message(filters.command("update") & filters.user(AUTH_USERS))
-async def update_bot(client: Client, message: Message):
-    owner_id = message.from_user.id
-
-    # DM only
-    await client.send_message(owner_id, "🚀 Update started...")
-
-    # Step 1: Git Pull
-    git_pull = subprocess.run(["git", "pull"], capture_output=True, text=True)
-    git_output = git_pull.stdout + git_pull.stderr
-
-    if "Already up to date." in git_output:
-        await client.send_message(owner_id, "✅ Bot is already up to date.")
-        return
-
-    await client.send_message(owner_id, f"📦 Git Pull Output:\n{git_output}")
-    await send_log(client, "📥 New update pulled from GitHub.")
-
-    # Step 2: Install requirements
-    pip_install = subprocess.run(
-        ["pip", "install", "-r", "requirements.txt"], capture_output=True, text=True
-    )
-    pip_output = pip_install.stdout + pip_install.stderr
-    await client.send_message(owner_id, f"📦 Requirements:\n{pip_output}")
-
-    # Step 3: Restart bot
-    subprocess.run(["pm2", "restart", "eren-bot"])
-    await client.send_message(owner_id, "✅ Update completed & bot restarted.")
-    await send_log(client, "♻️ Bot restarted after update.")'''
 app.run()
 
 

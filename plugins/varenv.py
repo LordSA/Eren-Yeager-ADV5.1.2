@@ -1,11 +1,11 @@
-'''import os
+import os
 import subprocess
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from info import AUTH_USERS, LOG_CHANNEL   # AUTH_USERS = [owner_id], LOG_CHANNEL = -100xxxxxxxxxx
+from info import ADMINS, LOG_CHANNEL   # ADMINS = [owner_id], LOG_CHANNEL = -100xxxxxxxxxx
 
 
-OWNER_ID = AUTH_USERS if isinstance(AUTH_USERS, int) else AUTH_USERS[0]
+OWNER_ID = ADMINS if isinstance(ADMINS, int) else ADMINS[0]
 
 
 def set_env_var(key: str, value: str):
@@ -86,4 +86,4 @@ async def delete_variable(client: Client, message: Message):
     del_env_var(key)
     msg = f"🗑️ Environment variable <b>{key}</b> deleted."
     await client.send_message(OWNER_ID, msg)
-    await send_log(client, f"🗑️ [DELVAR]\n{msg}")'''
+    await send_log(client, f"🗑️ [DELVAR]\n{msg}")
