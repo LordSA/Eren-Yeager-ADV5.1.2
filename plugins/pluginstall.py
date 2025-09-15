@@ -2,18 +2,34 @@ import os
 import re
 import sys
 import aiohttp
+import importlib.util
 from pyrogram import Client, filters
 from info import ADMINS, LOG_CHANNEL
-from plugin_db import PluginDB, install_plugin  # MongoDB setup from previous message
+from plugin_db import PluginDB, install_plugin  # MongoDB setup
 
-OWNER_ID = ADMINS
+OWNER_ID = 1125789849 #ADMINS
 
+# ------------------- Helpers -------------------
 async def fetch_url(url):
     async with aiohttp.ClientSession() as session:
-        async with session.get(url + f"?timestamp={str(int(__import__('time').time()))}") as resp:
+        async with session.get(url + f"?timestamp={int(__import__('time').time())}") as resp:
             if resp.status == 200:
                 return await resp.text()
             return None
+
+def load_plugin(plugin_name):
+    """Dynamically load plugin from plugins/ folder"""
+    os.makedirs("plugins", exist_ok=True)
+    file_path = os.path.join("plugins", f"{plugin_name}.py")
+    if not os.path.exists(file_path):
+        return None
+    spec = importlib.util.spec_from_file_location(plugin_name, file_path)
+    if spec and spec.loader:
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[plugin_name] = module
+        spec.loader.exec_module(module)
+        return module
+    return None
 
 # ------------------- INSTALL PLUGIN -------------------
 @Client.on_message(filters.command("pinstall") & filters.user(OWNER_ID))
@@ -26,7 +42,7 @@ async def install_plugin_cmd(client, message):
     for link in links:
         if "gist.github.com" in link:
             link = link if link.endswith("raw") else link + "/raw"
-        
+
         data = await fetch_url(link)
         if not data:
             return await message.reply("❌ Invalid URL or failed to fetch plugin")
@@ -34,15 +50,12 @@ async def install_plugin_cmd(client, message):
         plugin_name_match = re.search(r'pattern:\s*["\'](.*?)["\']', data)
         plugin_name = plugin_name_match.group(1).split()[0] if plugin_name_match else "temp_plugin"
 
-        os.makedirs("plugins", exist_ok=True)
         file_path = os.path.join("plugins", f"{plugin_name}.py")
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(data)
-        
+
         try:
-            if f"plugins.{plugin_name}" in sys.modules:
-                del sys.modules[f"plugins.{plugin_name}"]
-            __import__(f"plugins.{plugin_name}")
+            load_plugin(plugin_name)
         except Exception as e:
             os.remove(file_path)
             return await message.reply(f"❌ Invalid plugin: {e}")
@@ -82,9 +95,11 @@ async def remove_plugin_cmd(client, message):
     
     await PluginDB.remove(plugin_name)
     try:
-        os.remove(os.path.join("plugins", f"{plugin_name}.py"))
-        if f"plugins.{plugin_name}" in sys.modules:
-            del sys.modules[f"plugins.{plugin_name}"]
+        file_path = os.path.join("plugins", f"{plugin_name}.py")
+        if os.path.exists(file_path):
+            os.remove(file_path)
+        if plugin_name in sys.modules:
+            del sys.modules[plugin_name]
     except: pass
     await message.reply(f"🗑️ Deleted plugin: {plugin_name}")
 
@@ -107,9 +122,7 @@ async def update_plugin_cmd(client, message):
         f.write(data)
     
     try:
-        if f"plugins.{plugin_name}" in sys.modules:
-            del sys.modules[f"plugins.{plugin_name}"]
-        __import__(f"plugins.{plugin_name}")
+        load_plugin(plugin_name)
     except Exception as e:
         os.remove(file_path)
         return await message.reply(f"❌ Invalid plugin after update: {e}")
