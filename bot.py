@@ -94,7 +94,7 @@ class Bot(Client):
 app = Bot()
 OWNER_ID = AUTH_USERS  
 
-'''@app.on_message(filters.command("update") & filters.user(OWNER_ID))
+@app.on_message(filters.command("update") & filters.user(OWNER_ID))
 async def update_bot(client: Client, message: Message):
     owner = message.from_user.id
 
@@ -121,7 +121,8 @@ async def update_bot(client: Client, message: Message):
     subprocess.run(["pm2", "restart", "eren-bot"])
 
     # Final DM to owner
-    await client.send_message(owner, "✅ Update finished. Bot restarted successfully!")'''
+    await client.send_message(owner, "✅ Update finished. Bot restarted successfully!")
+    '''
     async def send_log(client, text: str):
     try:
         if LOG_CHANNEL:
@@ -158,7 +159,7 @@ async def update_bot(client: Client, message: Message):
     # Step 3: Restart bot
     subprocess.run(["pm2", "restart", "eren-bot"])
     await client.send_message(owner_id, "✅ Update completed & bot restarted.")
-    await send_log(client, "♻️ Bot restarted after update.")
+    await send_log(client, "♻️ Bot restarted after update.")'''
 app.run()
 
 
