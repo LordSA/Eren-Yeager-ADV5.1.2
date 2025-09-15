@@ -2,7 +2,7 @@ class script(object):
     START_TXT = """𝙷𝙴𝙻𝙾 {},
 𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href=https://t.me/{}>{}</a>, 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍,
 © 𝙴𝚛𝚎𝚗 𝚈𝚎𝚊𝚐𝚎𝚛 💖
-© <a href =https://t.me/lord1of5darkness9>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>
+© <a href =https://t.me/shibili_offline>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>
 Beta Coming Soon..."""
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
@@ -20,7 +20,7 @@ Beta Coming Soon..."""
 ╠
 ✯ 『𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁』: <a href=https://id.heroku.com/login>𝙷𝙴𝚁𝙾𝙺𝚄</a>
 ╠
-✯ 『𝙲𝙾𝙳𝙴𝙳 𝙱𝚈』  : <a href=https://t.me/lord1of5darkness9>𝙻𝙾𝚁𝙳 𝚂𝙰</a>
+✯ 『𝙲𝙾𝙳𝙴𝙳 𝙱𝚈』  : <a href=https://t.me/shibili_offline>𝙻𝙾𝚁𝙳 𝚂𝙰</a>
 ╠
 ✯ 『𝚅𝙴𝚁𝚂𝙸𝙾𝙽』   : v5.1.2 
 ⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸⫷⫸"""    
@@ -29,7 +29,7 @@ Beta Coming Soon..."""
 ✯ 『𝚂𝙾𝚄𝚁𝙲𝙴』- <a href=https://t.me/mwmoviespro>𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔</a>  
 
 <b>𝔇𝔢𝔳𝔢𝔩𝔬𝔭𝔢𝔯:</b>
-- <a href=https://t.me/lord1of5darkness9>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>"""    
+- <a href=https://t.me/shibili_offline>𝕷𝖔𝖗𝖉 𝖔𝖋 𝕯𝖆𝖗𝖐𝖓𝖊𝖘𝖘</a>"""    
     WHOIS_TXT ="""<b>ᴡʜᴏɪs ᴍᴏᴅᴜʟᴇ</b>
 ɴᴏᴛᴇ:- ɢɪᴠᴇ ᴀ ᴜsᴇʀ ᴅᴇᴛᴀɪʟs
 •/whois : ɢɪᴠᴇ ᴀ ᴜsᴇʀ 𝔉ᴜʟʟ ᴅᴇᴛᴀɪʟs"""   
