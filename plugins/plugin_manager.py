@@ -7,7 +7,7 @@ from pyrogram import Client, filters
 from info import ADMINS, LOG_CHANNEL
 from plugin_db import PluginDB, install_plugin  # Your MongoDB plugin setup
 
-OWNER_ID = [int(i) for i in ADMINS]  # Ensure list of ints for filters.user()
+OWNER_ID = ADMINS  # Ensure list of ints for filters.user()
 
 # ------------------- Helpers -------------------
 async def fetch_url(url: str) -> str | None:
@@ -138,3 +138,4 @@ async def update_plugin_cmd(client, message):
         return await message.reply(f"❌ Invalid plugin after update: {e}")
 
     await message.reply(f"✅ Updated plugin: {plugin_name}")
+
