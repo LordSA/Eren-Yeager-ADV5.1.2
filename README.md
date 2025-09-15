@@ -4,13 +4,13 @@
   <img src="https://telegra.ph/file/7226c9d57dc698158bab2.jpg" alt="Eren Yeager Logo">
 </p>
 
-# 𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁 ADV5.1.2
+# 𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁 ADV5.2.0
 
 [![Stars](https://img.shields.io/github/stars/LordSA/movie-world?style=flat-square&color=yellow)](https://github.com/LordSA/movie-world/stargazers)  
 [![Forks](https://img.shields.io/github/forks/LordSA/movie-world?style=flat-square&color=orange)](https://github.com/LordSA/movie-world/fork)  
 [![Size](https://img.shields.io/github/repo-size/LordSA/movie-world?style=flat-square&color=green)](https://github.com/LordSA/movie-world/)  
 [![Contributors](https://img.shields.io/github/contributors/LordSA/movie-world?style=flat-square&color=green)](https://github.com/LordSA/movie-world/graphs/contributors)  
-[![License](https://img.shields.io/badge/License-AGPL-blue)](https://github.com/LordSA/movie-world/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-AGPLv3-blue)](https://www.gnu.org/licenses/agpl-3.0.en.html)  
 
 ---
 
@@ -41,13 +41,16 @@
 > Check `info.py` for examples and defaults
 
 ---
+
 ## Deploy
 
 <details><summary>Deploy To VPS</summary>
   
 ```bash
-git clone https://github.com/LordSA/movie-world.git
-````
+git clone https://github.com/LordSA/EREN-YEAGER-ADV5.2.0.git
+cd /EREN-YEAGER-ADV5.2.0
+```
+
 # Install Packages
 ````
 pip3 install U -r requirements.txt
@@ -92,26 +95,29 @@ pm2 logs eren-bot
 • /channel - to get list of total connected channels
 • /broadcast - to broadcast a message to all Eva Maria users
 ```
+
+---
+
 ## Support
-[![Telegram Group](https://img.shields.io/badge/Telegram-Group-30302f?style=flat&logo=telegram)](https://telegram.dog/EvaMariaSupport)  
+[![OWNER](https://img.shields.io/badge/Telegram-Group-30302f?style=flat&logo=telegram)](https://telegram.dog/shibili_offline)  
 [![Telegram Channel](https://img.shields.io/badge/Telegram-Channel-30302f?style=flat&logo=telegram)](https://telegram.dog/mwpro11)
 
-## Credits 
-* [![𝙴𝚁𝙴𝙽 𝚈𝙴𝙰𝙶𝙴𝚁💔-Devs](https://img.shields.io/static/v1?label=MovieWorld&message=devs&color=critical)](https://telegram.dog/MovieWorldDevs)
+---
 
-## Thanks To 
-- Dan for his awesome [Pyrogram Library](https://github.com/pyrogram/pyrogram)
-- Mahesh for the [Media-Search-bot](https://github.com/Mahesh0253/Media-Search-bot)
-- Subin for the Evamaria [Evamaria](https://github.com/EvamariaTG/Evamaria)
-- [Trojanz](https://github.com/trojanzhex) for [Unlimited Filter Bot](https://github.com/TroJanzHEX/Unlimited-Filter-Bot) and [AutoFilterBot](https://github.com/trojanzhex/auto-filter-bot)
-- Everyone who supported this journey
+## Credits
+- Dan — [Pyrogram Library](https://github.com/pyrogram/pyrogram)  
+- Mahesh — [Media-Search-bot](https://github.com/Mahesh0253/Media-Search-bot)  
+- Trojanz — [Unlimited Filter Bot](https://github.com/TroJanzHEX/Unlimited-Filter-Bot) & [AutoFilterBot](https://github.com/trojanzhex/auto-filter-bot)
+- Subin for the Evamaria [Evamaria](https://github.com/EvamariaTG/Evamaria)  
+- Everyone who supported this project
+
+---
 
 ### Note
-Forking, editing a few lines, and releasing a V.x or alpha/beta/gamma branch doesn’t make you the original developer. Fork the repo and edit as per your needs.
+Forking, editing a few lines, or releasing a branch doesn’t make you the original developer. Fork the repo and edit as per your needs.
+
+---
 
 ## Disclaimer
-[![GNU Affero General Public License 2.0](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.en.html#header)  
-
-Licensed under [GNU AGPL 2.0](https://github.com/EvamariaTG/evamaria/blob/master/LICENSE).  
-Selling this code to others for money is *strictly prohibited*.
-
+Licensed under [GNU AGPL v3.0](https://www.gnu.org/licenses/agpl-3.0.en.html#header).  
+Selling this code for money is *strictly prohibited*.
