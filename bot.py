@@ -92,7 +92,7 @@ class Bot(Client):
 
 
 app = Bot()
-OWNER_ID = 1125789849 #ADMINS  
+OWNER_ID = ADMINS  
 
 @app.on_message(filters.command("update") & filters.user(OWNER_ID))
 async def update_bot(client: Client, message: Message):
