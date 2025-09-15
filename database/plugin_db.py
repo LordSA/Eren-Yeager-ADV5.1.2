@@ -10,7 +10,7 @@ plugin_collection = db['plugins']
 class PluginDB:
     @staticmethod
     async def add(name: str, url: str):
-        """Add plugin if not exists"""
+        """Add a plugin if it doesn't exist"""
         exists = await plugin_collection.find_one({"name": name})
         if exists:
             return exists
@@ -20,13 +20,13 @@ class PluginDB:
 
     @staticmethod
     async def find_all():
-        """Get all plugins"""
+        """Return a list of all installed plugins"""
         plugins = await plugin_collection.find({}).to_list(length=1000)
         return plugins
 
     @staticmethod
     async def find_by_name(name: str):
-        """Get plugin by name"""
+        """Get plugin details by name"""
         return await plugin_collection.find_one({"name": name})
 
     @staticmethod
@@ -38,7 +38,7 @@ class PluginDB:
         return plugin
 
 async def install_plugin(url: str, name: str):
-    """Helper to add plugin"""
+    """Helper function to add plugin to DB"""
     plugin = await PluginDB.find_by_name(name)
     if plugin:
         return plugin
