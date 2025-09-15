@@ -3,6 +3,7 @@ import logging.config
 import subprocess
 from pyrogram import filters
 from pyrogram.types import Message
+from info import LOG_CHANNEL
 
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
@@ -94,26 +95,33 @@ app = Bot()
 OWNER_ID = 1125789849  
 
 @app.on_message(filters.command("update") & filters.user(OWNER_ID))
-async def update_bot(client, message: Message):
-    await message.reply_text("🚀 Starting bot update...")
+async def update_bot(client: Client, message: Message):
+    owner = message.from_user.id
 
-    # Step 1: Pull latest code
-    git_pull = subprocess.run(
-        ["git", "pull"], capture_output=True, text=True
-    )
+    # Notify owner DM
+    await client.send_message(owner, "🚀 Update started...")
+
+    # Step 1: Git Pull
+    git_pull = subprocess.run(["git", "pull"], capture_output=True, text=True)
     git_output = git_pull.stdout + git_pull.stderr
-    await message.reply_text(f"📦 Git Pull Output:\n{git_output}")
+
+    if "Already up to date." in git_output:
+        await client.send_message(owner, "✅ Bot is already up-to-date.")
+        return
+
+    await client.send_message(LOG_CHANNEL, f"📦 <b>Git Pull Logs</b>:\n<code>{git_output}</code>")
 
     # Step 2: Install requirements
-    pip_install = subprocess.run(
-        ["pip", "install", "-r", "requirements.txt"], capture_output=True, text=True
-    )
+    pip_install = subprocess.run(["pip", "install", "-r", "requirements.txt"], capture_output=True, text=True)
     pip_output = pip_install.stdout + pip_install.stderr
-    await message.reply_text(f"📦 Requirements Installation Output:\n{pip_output}")
 
-    # Step 3: Restart bot using PM2
+    await client.send_message(LOG_CHANNEL, f"📦 <b>Pip Install Logs</b>:\n<code>{pip_output}</code>")
+
+    # Step 3: Restart bot with PM2
     subprocess.run(["pm2", "restart", "eren-bot"])
-    await message.reply_text("✅ Bot updated and restarted successfully!")
+
+    # Final DM to owner
+    await client.send_message(owner, "✅ Update finished. Bot restarted successfully!")
 app.run()
 
 
