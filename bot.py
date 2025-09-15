@@ -4,6 +4,8 @@ import subprocess
 from pyrogram import filters
 from pyrogram.types import Message
 from info import LOG_CHANNEL, ADMINS
+from dotenv import load_dotenv
+load_dotenv()
 
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
