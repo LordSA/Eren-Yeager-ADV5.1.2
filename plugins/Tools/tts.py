@@ -1,23 +1,35 @@
 import os
 import traceback
-from io import BytesIO
 from gtts import gTTS
-from googletrans import Translator
+from io import BytesIO
+from langdetect import detect
 from asyncio import get_running_loop
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
+# Import your dictionary
+from plugins.Tools.list import list
+
 
 def convert(text: str):
-    """Convert text to speech using gTTS with auto language detection"""
+    """Convert text to speech using gTTS with langdetect + custom list mapping"""
     try:
         # Detect language
-        detected = Translator().translate(text, dest="en")
-        lang = detected.src
+        detected_lang = detect(text)  # e.g., "ml", "hi", "en"
+        lang_code = None
+
+        # Map with your list.py (values are already codes like "ml")
+        for name, code in list.items():
+            if code == detected_lang or name.lower() == detected_lang.lower():
+                lang_code = code
+                break
+
+        if not lang_code:  # fallback
+            lang_code = "en"
 
         # Generate TTS
         file_path = "tts_output.mp3"
-        tts = gTTS(text=text, lang=lang)
+        tts = gTTS(text=text, lang=lang_code)
         tts.save(file_path)
 
         return file_path
@@ -37,9 +49,7 @@ async def text_to_speech(_, message: Message):
         loop = get_running_loop()
         file_path = await loop.run_in_executor(None, convert, text)
 
-        # Reply as voice (so it plays inline in Telegram)
-        await message.reply_voice(file_path)
-
+        await message.reply_voice(file_path)  # Voice message in Telegram
         await m.delete()
 
         if os.path.exists(file_path):
