@@ -27,7 +27,7 @@ from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, VIDS, BATCH_FILE_C
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp
 from database.connections_mdb import active_connection
 from googletrans import Translator
-from plugins.Tools.list import list as LANGS
+from plugins.Tools.list import list
 from database.gtrans_mdb import find_one
 from plugins.Tools.help_func.admin_check import admin_check
 from plugins.Tools.help_func.cust_p_filters import f_onw_fliter
@@ -262,56 +262,62 @@ def instatus(client, message):
 
 #Share Text(Venel revert akikondim)
 #TTS
-# Build reverse lookup: code → name
-CODE_TO_NAME = {v: k for k, v in LANGS.items()}
+from langdetect import detect
+
+# import your lang map (keep variable name as 'list')
+from plugins.Tools.list import list
+
+
+def convert(text: str, lang: str = "en") -> str:
+    """Blocking conversion of text to speech using gTTS"""
+    file_path = tempfile.mktemp(suffix=".mp3")
+    tts = gTTS(text=text, lang=lang)
+    tts.save(file_path)
+    return file_path
+
 
 @Client.on_message(filters.command("tts") & filters.reply)
-async def tts_handler(client: Client, message: Message):
-    if not message.reply_to_message.text:
-        return await message.reply_text("⚠️ Reply to a text message with /tts [lang_code or name]")
+async def text_to_speech(_, message: Message):
+    if not message.reply_to_message or not message.reply_to_message.text:
+        return await message.reply_text("⚠️ Reply to a text message with `/tts [language]`")
 
     text = message.reply_to_message.text
-    args = message.text.split()
-
-    # Default language
-    lang = "en"
-
-    # User given argument
-    if len(args) > 1:
-        query = args[1].lower()
-        if query in LANGS:  # matched by name
-            lang = LANGS[query]
-        elif query in CODE_TO_NAME:  # matched by code
-            lang = query
-        else:
-            return await message.reply_text("❌ Invalid language. Use `/languages` to see all options.")
-
-    status = await message.reply_text(f"⏳ Generating voice in `{CODE_TO_NAME.get(lang, lang)}`...")
+    lang = "en"  # default
 
     try:
-        # Generate TTS
-        tts = gTTS(text=text, lang=lang, slow=False)
+        # 1. Check if user passed a language manually
+        if len(message.command) > 1:
+            user_lang = " ".join(message.command[1:]).lower().strip()
+            if user_lang in list:
+                lang = list[user_lang]
+            elif user_lang in list.values():  # if already a code like "ml"
+                lang = user_lang
 
-        # Save to temp file
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
-            tmp_path = tmp.name
-            tts.save(tmp_path)
-
-        await message.reply_voice(tmp_path, caption=f"🎙 TTS in `{CODE_TO_NAME.get(lang, lang)}`")
-        await status.delete()
-
-        os.remove(tmp_path)
+        # 2. Auto detect if no manual lang given
+        else:
+            detected = detect(text)  # e.g. "ml", "hi"
+            if detected in list.values():
+                lang = detected
 
     except Exception as e:
-        await status.edit(f"❌ Error: {e}")
+        print(f"[TTS] Language detect error: {e}")
+        lang = "en"
 
+    m = await message.reply_text(f"⏳ Processing... (lang = `{lang}`)")
 
-@Client.on_message(filters.command("languages"))
-async def list_languages(client: Client, message: Message):
-    """Send list of available languages"""
-    langs = [f"`{v}` - {k.title()}" for k, v in LANGS.items()]
-    text = "🌍 **Available Languages:**\n\n" + "\n".join(langs)
-    await message.reply_text(text)
+    try:
+        loop = asyncio.get_running_loop()
+        file_path = await loop.run_in_executor(None, convert, text, lang)
+
+        await message.reply_voice(file_path, caption=f"🎙 TTS (lang = `{lang}`)")
+        await m.delete()
+
+        if os.path.exists(file_path):
+            os.remove(file_path)
+
+    except Exception as e:
+        await m.edit(f"❌ Error: {e}")
+        print(traceback.format_exc())
 
 #Telegraph
 
