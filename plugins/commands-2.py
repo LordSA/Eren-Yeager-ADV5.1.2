@@ -262,34 +262,36 @@ def instatus(client, message):
 
 #Share Text(Venel revert akikondim)
 #TTS
-VOICES = [
-    "nova", "alloy", "ash", "coral",
-    "echo", "fable", "onyx", "sage", "shimmer"
-]
+# Voice map for TTSmp3 AI
+VOICE_MAP = {
+    "coral": "Joanna",     # Female, clear
+    "wave": "Matthew",     # Male, neutral
+    "soft": "Salli",       # Female, soft
+    "deep": "Justin",      # Male, deep
+}
 
-def get_voice(voice: str) -> str:
-    if not voice:
-        return "coral"
-    v = voice.lower()
-    return v if v in VOICES else "coral"
-
-async def ai_tts(text: str, voice: str = "coral", speed: str = "1.00"):
+async def ai_tts(text: str, voice: str = "coral", speed: int = 1):
     """Call ttsmp3 AI API and return audio URL or error"""
     url = "https://ttsmp3.com/makemp3_ai.php"
     data = {
         "msg": text,
-        "lang": get_voice(voice),
-        "speed": speed,
+        "lang": VOICE_MAP.get(voice, "Joanna"),
+        "speed": str(speed),   # must be "0", "1", "2"
         "source": "ttsmp3"
     }
     async with aiohttp.ClientSession() as session:
         async with session.post(url, data=data) as resp:
-            res = await resp.json()
+            try:
+                res = await resp.json()
+            except Exception:
+                return {"error": "Invalid response from API"}
+            
             if res.get("Error") == "Usage Limit exceeded":
                 return {"error": "TTS API usage limit exceeded", "response": res}
             if res.get("Error") == 0 and res.get("URL"):
                 return {"url": res["URL"]}
             return {"error": "TTS generation failed", "response": res}
+
 
 @Client.on_message(filters.command("tts"))
 async def text_to_speech(client: Client, message: Message):
@@ -299,8 +301,10 @@ async def text_to_speech(client: Client, message: Message):
     m = await message.reply_text("⏳ Generating voice...")
 
     text = message.reply_to_message.text
-    voice = "coral"   # default voice
-    speed = "1.00"
+    # Allow custom args like /tts coral 1
+    parts = message.text.split()
+    voice = parts[1].lower() if len(parts) > 1 else "coral"
+    speed = int(parts[2]) if len(parts) > 2 and parts[2].isdigit() else 1
 
     try:
         result = await ai_tts(text, voice, speed)
@@ -310,18 +314,19 @@ async def text_to_speech(client: Client, message: Message):
 
         audio_url = result["url"]
 
-        # download temporarily
-        tmp_file = tempfile.mktemp(suffix=".mp3")
+        # download audio file
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
+            tmp_path = tmp.name
         async with aiohttp.ClientSession() as session:
             async with session.get(audio_url) as r:
-                with open(tmp_file, "wb") as f:
+                with open(tmp_path, "wb") as f:
                     f.write(await r.read())
 
-        await message.reply_voice(tmp_file)
+        await message.reply_voice(tmp_path, caption=f"🎙 Voice: {voice}, Speed: {speed}")
         await m.delete()
 
-        if os.path.exists(tmp_file):
-            os.remove(tmp_file)
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
 
     except Exception as e:
         await m.edit(f"❌ Error: {e}")
