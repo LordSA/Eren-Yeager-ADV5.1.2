@@ -262,67 +262,27 @@ def instatus(client, message):
 
 #Share Text(Venel revert akikondim)
 #TTS
-# Voice map for TTSmp3 AI
-
-
-# -------- Helper functions -------- #
-
-def detect_lang(text: str) -> str:
-    """Detect Malayalam or default to English."""
-    if re.search(r"[\u0D00-\u0D7F]", text):  # Malayalam Unicode block
-        return "ml"
-    return "en"
-
-def ai_tts(text: str, voice="Brian", speed="0"):
-    """TTS using ttsmp3.com (good for English voices)."""
-    try:
-        url = "https://ttsmp3.com/makemp3_new.php"
-        headers = {
-            "User-Agent": "Mozilla/5.0",
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
-        data = {
-            "msg": text,
-            "lang": voice,
-            "source": "ttsmp3"
-        }
-        r = requests.post(url, headers=headers, data=data)
-        if r.status_code == 200 and r.json().get("URL"):
-            return r.json()["URL"]
-    except Exception as e:
-        print(f"TTSmp3 error: {e}")
-    return None
-
-# -------- Bot Command -------- #
-
 @Client.on_message(filters.command("tts") & filters.reply)
 async def tts_handler(client: Client, message: Message):
     if not message.reply_to_message.text:
         return await message.reply_text("⚠️ Reply to a text message with /tts")
 
     text = message.reply_to_message.text
-    lang = detect_lang(text)
-
     status = await message.reply_text("⏳ Generating voice...")
 
     try:
-        if lang == "ml":  # Malayalam → gTTS
-            tts = gTTS(text=text, lang="ml", slow=False)
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
-                tmp_path = tmp.name
-                tts.save(tmp_path)
+        # gTTS auto-detects language
+        tts = gTTS(text=text, lang="auto", slow=False)
 
-            await message.reply_voice(tmp_path, caption="🎙 Malayalam TTS")
-            os.remove(tmp_path)
+        # Save temp file
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
+            tmp_path = tmp.name
+            tts.save(tmp_path)
 
-        else:  # English → TTSmp3
-            url = ai_tts(text, voice="Brian", speed="0")
-            if url:
-                await message.reply_voice(url, caption="🎙 English TTS")
-            else:
-                await status.edit("❌ Failed to generate English TTS.")
-
+        await message.reply_voice(tmp_path, caption="🎙 Generated with gTTS")
         await status.delete()
+
+        os.remove(tmp_path)
 
     except Exception as e:
         await status.edit(f"❌ Error: {e}")
