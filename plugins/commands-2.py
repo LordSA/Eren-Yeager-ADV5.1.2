@@ -17,7 +17,6 @@ from plugins.Tools.help_func.last_online import last_online
 from pyrogram import Client, filters
 from urllib.parse import quote
 from info import SUPPORT_CHAT
-from gtts import gTTS
 from telegraph import upload_file
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
@@ -26,8 +25,6 @@ from database.users_chats_db import db
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, VIDS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp
 from database.connections_mdb import active_connection
-from googletrans import Translator
-from plugins.Tools.list import list
 from database.gtrans_mdb import find_one
 from plugins.Tools.help_func.admin_check import admin_check
 from plugins.Tools.help_func.cust_p_filters import f_onw_fliter
@@ -261,64 +258,7 @@ def instatus(client, message):
 
 
 #Share Text(Venel revert akikondim)
-#TTS
-'''from langdetect import detect
 
-# import your lang map (keep variable name as 'list')
-from plugins.Tools.list import list
-
-
-def convert(text: str, lang: str = "en") -> str:
-    """Blocking conversion of text to speech using gTTS"""
-    file_path = tempfile.mktemp(suffix=".mp3")
-    tts = gTTS(text=text, lang=lang)
-    tts.save(file_path)
-    return file_path
-
-
-@Client.on_message(filters.command("tts") & filters.reply)
-async def text_to_speech(_, message: Message):
-    if not message.reply_to_message or not message.reply_to_message.text:
-        return await message.reply_text("⚠️ Reply to a text message with `/tts [language]`")
-
-    text = message.reply_to_message.text
-    lang = "en"  # default
-
-    try:
-        # 1. Check if user passed a language manually
-        if len(message.command) > 1:
-            user_lang = " ".join(message.command[1:]).lower().strip()
-            if user_lang in list:
-                lang = list[user_lang]
-            elif user_lang in list.values():  # if already a code like "ml"
-                lang = user_lang
-
-        # 2. Auto detect if no manual lang given
-        else:
-            detected = detect(text)  # e.g. "ml", "hi"
-            if detected in list.values():
-                lang = detected
-
-    except Exception as e:
-        print(f"[TTS] Language detect error: {e}")
-        lang = "en"
-
-    m = await message.reply_text(f"⏳ Processing... (lang = `{lang}`)")
-
-    try:
-        loop = asyncio.get_running_loop()
-        file_path = await loop.run_in_executor(None, convert, text, lang)
-
-        await message.reply_voice(file_path, caption=f"🎙 TTS (lang = `{lang}`)")
-        await m.delete()
-
-        if os.path.exists(file_path):
-            os.remove(file_path)
-
-    except Exception as e:
-        await m.edit(f"❌ Error: {e}")
-        print(traceback.format_exc())
-'''
 #Telegraph
 
 @Client.on_message(filters.command(["tgmedia", "tgraph", "telegraph"]))
