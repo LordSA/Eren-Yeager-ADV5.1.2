@@ -262,7 +262,7 @@ def instatus(client, message):
 
 #Share Text(Venel revert akikondim)
 #TTS
-from langdetect import detect
+'''from langdetect import detect
 
 # import your lang map (keep variable name as 'list')
 from plugins.Tools.list import list
@@ -318,7 +318,7 @@ async def text_to_speech(_, message: Message):
     except Exception as e:
         await m.edit(f"❌ Error: {e}")
         print(traceback.format_exc())
-
+'''
 #Telegraph
 
 @Client.on_message(filters.command(["tgmedia", "tgraph", "telegraph"]))
