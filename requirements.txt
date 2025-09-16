@@ -25,6 +25,7 @@ Pillow
 opencv-python-headless
 gTTS
 glitch_this
+langdetect
 
 # Mongo / DB
 motor==3.3.2
