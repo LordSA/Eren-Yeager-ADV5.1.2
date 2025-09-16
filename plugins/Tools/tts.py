@@ -1,54 +1,67 @@
 import os
 import traceback
-from gtts import gTTS
-from googletrans import Translator
 from io import BytesIO
+import aiohttp
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from asyncio import get_running_loop
 
+VOICES = [
+    "nova", "alloy", "ash", "coral", "echo",
+    "fable", "onyx", "sage", "shimmer"
+]
 
-def convert_text_to_speech(text):
+def get_voice(voice: str) -> str:
+    if not voice:
+        return "coral"
+    v = voice.lower()
+    return v if v in VOICES else "coral"
+
+async def fetch_tts_audio(text: str, voice: str = "coral", speed: str = "1.00") -> BytesIO:
     """
-    Converts text to an in-memory audio file (BytesIO) using gTTS.
-    The language is automatically detected.
+    Fetch TTS audio from ttsmp3.com API and return as BytesIO.
     """
-    translator = Translator()
-    try:
-        translated_text = translator.translate(text)
-        detected_lang = translated_text.src
-    except Exception as e:
-        # Fallback to English if language detection fails
-        print(f"Language detection failed: {e}. Defaulting to 'en'.")
-        detected_lang = 'en'
+    voice = get_voice(voice)
+    payload = {
+        "msg": text,
+        "lang": voice,
+        "speed": speed,
+        "source": "ttsmp3"
+    }
 
-    audio = BytesIO()
-    tts = gTTS(text=text, lang=detected_lang)
-    tts.write_to_fp(audio)
-    audio.seek(0)
-    audio.name = f"{detected_lang}.mp3"
-    return audio
+    async with aiohttp.ClientSession() as session:
+        async with session.post("https://ttsmp3.com/makemp3_ai.php", data=payload) as resp:
+            data = await resp.json()
+            if data.get("Error") == "Usage Limit exceeded":
+                raise Exception("TTS API usage limit exceeded")
+            if data.get("Error") != 0 or not data.get("URL"):
+                raise Exception(f"TTS generation failed: {data}")
+
+            audio_url = data["URL"]
+            async with session.get(audio_url) as audio_resp:
+                audio_bytes = await audio_resp.read()
+                audio = BytesIO(audio_bytes)
+                audio.name = f"{voice}.mp3"
+                audio.seek(0)
+                return audio
 
 @Client.on_message(filters.command("tts"))
-async def text_to_speech(_, message: Message):
+async def text_to_speech(client: Client, message: Message):
     """
-    Telegram bot handler for the /tts command.
-    Responds to a message with a text-to-speech audio file.
+    Telegram bot handler for /tts command.
+    Replies with TTS audio of the replied message text.
     """
     if not message.reply_to_message or not message.reply_to_message.text:
         return await message.reply_text("Please reply to a message containing text.")
 
-    m = await message.reply_text("Converting text to speech...")
     text_to_convert = message.reply_to_message.text
+    voice = "coral"  # default voice, could parse from command args
+
+    m = await message.reply_text("Converting text to speech...")
 
     try:
-        loop = get_running_loop()
-        audio_file = await loop.run_in_executor(None, convert_text_to_speech, text_to_convert)
-        
+        audio_file = await fetch_tts_audio(text_to_convert, voice)
         await message.reply_audio(audio_file)
-    except Exception as e:
-        error_message = f"An error occurred: {e}"
-        await m.edit_text(error_message)
-        print(traceback.format_exc())
-    finally:
         await m.delete()
+    except Exception as e:
+        await m.edit_text(f"❌ An error occurred: {e}")
+        print(traceback.format_exc())
