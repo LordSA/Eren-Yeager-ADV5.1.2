@@ -263,73 +263,69 @@ def instatus(client, message):
 #Share Text(Venel revert akikondim)
 #TTS
 # Voice map for TTSmp3 AI
-VOICE_MAP = {
-    "coral": "Joanna",     # Female, clear
-    "wave": "Matthew",     # Male, neutral
-    "soft": "Salli",       # Female, soft
-    "deep": "Justin",      # Male, deep
-}
-
-async def ai_tts(text: str, voice: str = "coral", speed: int = 1):
-    """Call ttsmp3 AI API and return audio URL or error"""
-    url = "https://ttsmp3.com/makemp3_ai.php"
-    data = {
-        "msg": text,
-        "lang": VOICE_MAP.get(voice, "Joanna"),
-        "speed": str(speed),   # must be "0", "1", "2"
-        "source": "ttsmp3"
-    }
-    async with aiohttp.ClientSession() as session:
-        async with session.post(url, data=data) as resp:
-            try:
-                res = await resp.json()
-            except Exception:
-                return {"error": "Invalid response from API"}
-            
-            if res.get("Error") == "Usage Limit exceeded":
-                return {"error": "TTS API usage limit exceeded", "response": res}
-            if res.get("Error") == 0 and res.get("URL"):
-                return {"url": res["URL"]}
-            return {"error": "TTS generation failed", "response": res}
 
 
-@Client.on_message(filters.command("tts"))
-async def text_to_speech(client: Client, message: Message):
-    if not message.reply_to_message or not message.reply_to_message.text:
+# -------- Helper functions -------- #
+
+def detect_lang(text: str) -> str:
+    """Detect Malayalam or default to English."""
+    if re.search(r"[\u0D00-\u0D7F]", text):  # Malayalam Unicode block
+        return "ml"
+    return "en"
+
+def ai_tts(text: str, voice="Brian", speed="0"):
+    """TTS using ttsmp3.com (good for English voices)."""
+    try:
+        url = "https://ttsmp3.com/makemp3_new.php"
+        headers = {
+            "User-Agent": "Mozilla/5.0",
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+        data = {
+            "msg": text,
+            "lang": voice,
+            "source": "ttsmp3"
+        }
+        r = requests.post(url, headers=headers, data=data)
+        if r.status_code == 200 and r.json().get("URL"):
+            return r.json()["URL"]
+    except Exception as e:
+        print(f"TTSmp3 error: {e}")
+    return None
+
+# -------- Bot Command -------- #
+
+@Client.on_message(filters.command("tts") & filters.reply)
+async def tts_handler(client: Client, message: Message):
+    if not message.reply_to_message.text:
         return await message.reply_text("⚠️ Reply to a text message with /tts")
 
-    m = await message.reply_text("⏳ Generating voice...")
-
     text = message.reply_to_message.text
-    # Allow custom args like /tts coral 1
-    parts = message.text.split()
-    voice = parts[1].lower() if len(parts) > 1 else "coral"
-    speed = int(parts[2]) if len(parts) > 2 and parts[2].isdigit() else 1
+    lang = detect_lang(text)
+
+    status = await message.reply_text("⏳ Generating voice...")
 
     try:
-        result = await ai_tts(text, voice, speed)
+        if lang == "ml":  # Malayalam → gTTS
+            tts = gTTS(text=text, lang="ml", slow=False)
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
+                tmp_path = tmp.name
+                tts.save(tmp_path)
 
-        if "error" in result:
-            return await m.edit(f"❌ Error: {result['error']}")
-
-        audio_url = result["url"]
-
-        # download audio file
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
-            tmp_path = tmp.name
-        async with aiohttp.ClientSession() as session:
-            async with session.get(audio_url) as r:
-                with open(tmp_path, "wb") as f:
-                    f.write(await r.read())
-
-        await message.reply_voice(tmp_path, caption=f"🎙 Voice: {voice}, Speed: {speed}")
-        await m.delete()
-
-        if os.path.exists(tmp_path):
+            await message.reply_voice(tmp_path, caption="🎙 Malayalam TTS")
             os.remove(tmp_path)
 
+        else:  # English → TTSmp3
+            url = ai_tts(text, voice="Brian", speed="0")
+            if url:
+                await message.reply_voice(url, caption="🎙 English TTS")
+            else:
+                await status.edit("❌ Failed to generate English TTS.")
+
+        await status.delete()
+
     except Exception as e:
-        await m.edit(f"❌ Error: {e}")
+        await status.edit(f"❌ Error: {e}")
 
 #Telegraph
 
