@@ -143,7 +143,7 @@ async def update_bot(client: Client, message: Message):
     # Step 4: Restart bot with PM2
     subprocess.run(["pm2", "restart", "eren-bot"])
 
-    from xnxx_plugin import *  # Registers xsearch and xvideo commands
+    
 app.run()
 
 
