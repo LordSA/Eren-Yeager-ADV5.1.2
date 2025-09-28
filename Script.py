@@ -391,6 +391,41 @@ a bot to create a link to share text in the telegram.
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
+
+    TTS_HELP = """
+🎙️ **Text-to-Speech Bot Help**
+
+**Usage:**
+• Reply to any text message and use `/tts`
+• Specify language: `/tts malayalam`
+
+**Indian Languages:** 🇮🇳
+• malayalam - മലയാളം
+• hindi - हिन्दी  
+• tamil - தமிழ்
+• bengali - বাংলা
+• telugu - తెలుగు
+• marathi - मराठी
+• gujarati - ગુજરાતી
+• kannada - ಕನ್ನಡ
+• punjabi - ਪੰਜਾਬੀ
+• urdu - اردو
+
+**English Voices:**
+• nova, alloy, ash, coral, echo
+• fable, onyx, sage, shimmer
+
+**Examples:**
+• `/tts malayalam` - Convert to Malayalam
+• `/tts hindi` - Convert to Hindi
+• `/tts coral` - Use coral English voice
+• `/tts` - Auto-detect language
+
+**Features:**
+• Auto language detection from text
+• Supports 10+ Indian languages
+• Maximum 3000 characters per message
+    """
     ZOMBIES_TXT = """Help: <b>Zombies</b>
 
 <b>Kick incative members from group. Add me as admin with ban users permission in group.</b>
