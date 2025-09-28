@@ -4,23 +4,72 @@ from io import BytesIO
 import aiohttp
 from pyrogram import Client, filters
 from pyrogram.types import Message
+import re
+from script import TTS_HELP
 
+# Original English voices
 VOICES = [
     "nova", "alloy", "ash", "coral", "echo",
     "fable", "onyx", "sage", "shimmer"
 ]
 
+# Indian languages mapping for ttsmp3.com API
+INDIAN_LANGUAGES = {
+    "malayalam": "Malayalam",
+    "hindi": "Hindi", 
+    "tamil": "Tamil",
+    "bengali": "Bengali",
+    "telugu": "Telugu",
+    "marathi": "Marathi",
+    "gujarati": "Gujarati",
+    "kannada": "Kannada",
+    "punjabi": "Punjabi",
+    "urdu": "Urdu",
+    "english": "coral",  # Default English voice
+}
+
+# Language detection patterns using Unicode ranges
+LANGUAGE_PATTERNS = {
+    "malayalam": re.compile(r'[\u0d00-\u0d7f]'),  # Malayalam
+    "hindi": re.compile(r'[\u0900-\u097f]'),      # Devanagari (Hindi)
+    "tamil": re.compile(r'[\u0b80-\u0bff]'),      # Tamil
+    "bengali": re.compile(r'[\u0980-\u09ff]'),    # Bengali
+    "telugu": re.compile(r'[\u0c00-\u0c7f]'),     # Telugu
+    "gujarati": re.compile(r'[\u0a80-\u0aff]'),   # Gujarati
+    "kannada": re.compile(r'[\u0c80-\u0cff]'),    # Kannada
+    "marathi": re.compile(r'[\u0900-\u097f]'),    # Devanagari (Marathi)
+    "punjabi": re.compile(r'[\u0a00-\u0a7f]'),    # Gurmukhi (Punjabi)
+    "urdu": re.compile(r'[\u0600-\u06ff]'),       # Arabic script (Urdu)
+}
+
+def detect_language(text: str) -> str:
+    """Auto-detect language from text using Unicode ranges."""
+    for lang, pattern in LANGUAGE_PATTERNS.items():
+        if pattern.search(text):
+            return lang
+    return "english"  # Default to English
+
 def get_voice(voice: str) -> str:
-    """Get valid voice name, default to coral if invalid."""
+    """Get valid voice name, support both English voices and Indian languages."""
     if not voice:
         return "coral"
+    
     v = voice.lower().strip()
-    return v if v in VOICES else "coral"
+    
+    # Check if it's an Indian language
+    if v in INDIAN_LANGUAGES:
+        return INDIAN_LANGUAGES[v]
+    
+    # Check if it's an English voice
+    if v in VOICES:
+        return v
+    
+    # Default fallback
+    return "coral"
 
 async def fetch_tts_audio(text: str, voice: str = "coral", speed: str = "1.00") -> BytesIO:
     """
-    Fetch TTS audio from ttsmp3.com API and return as BytesIO.
-    Fixed encoding and error handling issues.
+    Fetch TTS audio from ttsmp3.com API with Indian language support.
     """
     voice = get_voice(voice)
     
@@ -96,16 +145,15 @@ async def fetch_tts_audio(text: str, voice: str = "coral", speed: str = "1.00") 
 @Client.on_message(filters.command("tts"))
 async def text_to_speech(client: Client, message: Message):
     """
-    Telegram bot handler for /tts command.
-    Replies with TTS audio of the replied message text.
-    Fixed encoding and error handling.
+    Telegram bot handler for /tts command with Indian language support.
     """
     try:
         # Check if replying to a message with text
         if not message.reply_to_message:
             return await message.reply_text(
                 "❌ Please reply to a message containing text.\n"
-                "Usage: Reply to a text message and use /tts"
+                "Usage: Reply to a text message and use /tts\n"
+                "Example: /tts malayalam, /tts hindi, /tts tamil"
             )
         
         # Get text from replied message
@@ -118,15 +166,23 @@ async def text_to_speech(client: Client, message: Message):
         if not text_to_convert or not text_to_convert.strip():
             return await message.reply_text("❌ The replied message doesn't contain any text.")
         
-        # Parse voice from command (optional)
+        # Parse voice/language from command
         voice = "coral"  # default voice
         command_args = message.text.split()[1:] if len(message.text.split()) > 1 else []
+        
         if command_args:
             voice = get_voice(command_args[0])
+        else:
+            # Auto-detect language if no argument provided
+            detected_lang = detect_language(text_to_convert)
+            if detected_lang != "english":
+                voice = get_voice(detected_lang)
+                print(f"Auto-detected language: {detected_lang}")
         
         # Show processing message
+        lang_display = voice if voice in INDIAN_LANGUAGES.values() else f"voice: {voice}"
         m = await message.reply_text(
-            f"🎙️ Converting text to speech using voice: {voice}\n"
+            f"🎙️ Converting text to speech using {lang_display}\n"
             f"Text length: {len(text_to_convert)} characters"
         )
         
@@ -136,9 +192,9 @@ async def text_to_speech(client: Client, message: Message):
         # Send audio file
         await message.reply_audio(
             audio_file,
-            caption=f"🎵 TTS Audio (Voice: {voice})",
+            caption=f"🎵 TTS Audio ({lang_display})",
             performer="TTS Bot",
-            title=f"TTS - {voice.title()}"
+            title=f"TTS - {lang_display}"
         )
         
         # Delete processing message
@@ -155,28 +211,8 @@ async def text_to_speech(client: Client, message: Message):
         print(f"TTS Error: {error_msg}")
         print(traceback.format_exc())
 
-# Optional: Add help command
 @Client.on_message(filters.command("ttshelp"))
 async def tts_help(client: Client, message: Message):
-    """Show TTS help information."""
-    help_text = """
-🎙️ **Text-to-Speech Bot Help**
-
-**Usage:**
-• Reply to any text message and use `/tts`
-• Optionally specify voice: `/tts coral`
-
-**Available Voices:**
-• nova, alloy, ash, coral, echo
-• fable, onyx, sage, shimmer
-
-**Examples:**
-• `/tts` - Convert replied text using default voice (coral)
-• `/tts nova` - Convert using nova voice
-• `/tts echo` - Convert using echo voice
-
-**Limits:**
-• Maximum 3000 characters per message
-• API usage limits may apply
-    """
+    """Show TTS help information with Indian language support."""
+    help_text = TTS_HELP
     await message.reply_text(help_text)
