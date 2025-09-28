@@ -6,11 +6,47 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 import re
 from Script import script
-from lang import tts
+class tts(object):
+
+# Original English voices
+VOICES = [
+    "nova", "alloy", "ash", "coral", "echo",
+    "fable", "onyx", "sage", "shimmer"
+]
+
+# Indian languages mapping for ttsmp3.com API
+INDIAN_LANGUAGES = {
+    "malayalam": "Malayalam",
+    "hindi": "Hindi", 
+    "tamil": "Tamil",
+    "bengali": "Bengali",
+    "telugu": "Telugu",
+    "marathi": "Marathi",
+    "gujarati": "Gujarati",
+    "kannada": "Kannada",
+    "punjabi": "Punjabi",
+    "urdu": "Urdu",
+    "english": "coral",  # Default English voice
+}
+
+# Language detection patterns using Unicode ranges
+LANGUAGE_PATTERNS = {
+    "malayalam": re.compile(r'[\u0d00-\u0d7f]'),  # Malayalam
+    "hindi": re.compile(r'[\u0900-\u097f]'),      # Devanagari (Hindi)
+    "tamil": re.compile(r'[\u0b80-\u0bff]'),      # Tamil
+    "bengali": re.compile(r'[\u0980-\u09ff]'),    # Bengali
+    "telugu": re.compile(r'[\u0c00-\u0c7f]'),     # Telugu
+    "gujarati": re.compile(r'[\u0a80-\u0aff]'),   # Gujarati
+    "kannada": re.compile(r'[\u0c80-\u0cff]'),    # Kannada
+    "marathi": re.compile(r'[\u0900-\u097f]'),    # Devanagari (Marathi)
+    "punjabi": re.compile(r'[\u0a00-\u0a7f]'),    # Gurmukhi (Punjabi)
+    "urdu": re.compile(r'[\u0600-\u06ff]'),       # Arabic script (Urdu)
+}
+
 
 def detect_language(text: str) -> str:
     """Auto-detect language from text using Unicode ranges."""
-    for lang, pattern in tts.LANGUAGE_PATTERNS.items():
+    for lang, pattern in LANGUAGE_PATTERNS.items():
         if pattern.search(text):
             return lang
     return "english"  # Default to English
@@ -23,11 +59,11 @@ def get_voice(voice: str) -> str:
     v = voice.lower().strip()
     
     # Check if it's an Indian language
-    if v in tts.INDIAN_LANGUAGES:
-        return tts.INDIAN_LANGUAGES[v]
+    if v in INDIAN_LANGUAGES:
+        return INDIAN_LANGUAGES[v]
     
     # Check if it's an English voice
-    if v in tts.VOICES:
+    if v in VOICES:
         return v
     
     # Default fallback
@@ -146,7 +182,7 @@ async def text_to_speech(client: Client, message: Message):
                 print(f"Auto-detected language: {detected_lang}")
         
         # Show processing message
-        lang_display = voice if voice in tts.INDIAN_LANGUAGES.values() else f"voice: {voice}"
+        lang_display = voice if voice in INDIAN_LANGUAGES.values() else f"voice: {voice}"
         m = await message.reply_text(
             f"🎙️ Converting text to speech using {lang_display}\n"
             f"Text length: {len(text_to_convert)} characters"
@@ -182,4 +218,5 @@ async def tts_help(client: Client, message: Message):
     """Show TTS help information with Indian language support."""
     help_text = script.TTS_HELP
     await message.reply_text(help_text)
+
 
