@@ -6,8 +6,6 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 import re
 from Script import script
-class tts(object):
-
 # Original English voices
 VOICES = [
     "nova", "alloy", "ash", "coral", "echo",
@@ -218,5 +216,6 @@ async def tts_help(client: Client, message: Message):
     """Show TTS help information with Indian language support."""
     help_text = script.TTS_HELP
     await message.reply_text(help_text)
+
 
 
