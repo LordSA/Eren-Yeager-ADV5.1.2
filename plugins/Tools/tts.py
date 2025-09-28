@@ -5,7 +5,7 @@ import aiohttp
 from pyrogram import Client, filters
 from pyrogram.types import Message
 import re
-from Script import script
+
 # Original English voices
 VOICES = [
     "nova", "alloy", "ash", "coral", "echo",
@@ -41,7 +41,6 @@ LANGUAGE_PATTERNS = {
     "urdu": re.compile(r'[\u0600-\u06ff]'),       # Arabic script (Urdu)
 }
 
-
 def detect_language(text: str) -> str:
     """Auto-detect language from text using Unicode ranges."""
     for lang, pattern in LANGUAGE_PATTERNS.items():
@@ -67,9 +66,93 @@ def get_voice(voice: str) -> str:
     # Default fallback
     return "coral"
 
-async def fetch_tts_audio(text: str, voice: str = "coral", speed: str = "1.00") -> BytesIO:
+async def fetch_tts_primary(text: str, voice: str) -> BytesIO:
+    """Primary TTS using ttsmp3.com API."""
+    payload = {
+        "msg": text,
+        "lang": voice,
+        "speed": "1.00",
+        "source": "ttsmp3"
+    }
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    
+    async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=30)) as session:
+        async with session.post("https://ttsmp3.com/makemp3_ai.php", data=payload, headers=headers, timeout=15) as resp:
+            if resp.status != 200:
+                raise Exception(f"HTTP {resp.status}")
+            
+            data = await resp.json()
+            if data.get("Error") != 0 or not data.get("URL"):
+                raise Exception(f"API Error: {data.get('Error', 'Unknown')}")
+            
+            # Download audio
+            async with session.get(data["URL"], timeout=20) as audio_resp:
+                if audio_resp.status != 200:
+                    raise Exception(f"Download failed: {audio_resp.status}")
+                
+                audio_bytes = await audio_resp.read()
+                if len(audio_bytes) == 0:
+                    raise Exception("Empty audio file")
+                
+                audio = BytesIO(audio_bytes)
+                audio.name = f"tts_{voice}.mp3"
+                audio.seek(0)
+                return audio
+
+async def fetch_tts_fallback(text: str, lang_code: str) -> BytesIO:
+    """Fallback TTS using Google Translate TTS."""
+    # Google TTS language codes
+    google_lang_codes = {
+        "malayalam": "ml", "hindi": "hi", "tamil": "ta", "bengali": "bn",
+        "telugu": "te", "marathi": "mr", "gujarati": "gu", "kannada": "kn",
+        "punjabi": "pa", "urdu": "ur", "english": "en"
+    }
+    
+    # Get proper language code
+    for lang_name, code in google_lang_codes.items():
+        if lang_name.lower() in lang_code.lower() or code == lang_code:
+            lang_code = code
+            break
+    
+    # Limit text for Google TTS
+    if len(text) > 200:
+        text = text[:200] + "..."
+    
+    # Google Translate TTS endpoint
+    url = "https://translate.google.com/translate_tts"
+    params = {
+        'ie': 'UTF-8',
+        'q': text,
+        'tl': lang_code,
+        'client': 'tw-ob'
+    }
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    }
+    
+    async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=20)) as session:
+        async with session.get(url, params=params, headers=headers) as resp:
+            if resp.status != 200:
+                raise Exception(f"Google TTS failed: HTTP {resp.status}")
+            
+            audio_bytes = await resp.read()
+            if len(audio_bytes) < 100:
+                raise Exception("Invalid audio response from Google TTS")
+            
+            audio = BytesIO(audio_bytes)
+            audio.name = f"gtts_{lang_code}.mp3"
+            audio.seek(0)
+            return audio
+
+async def fetch_tts_audio(text: str, voice: str = "coral", speed: str = "1.00") -> tuple:
     """
-    Fetch TTS audio from ttsmp3.com API with Indian language support.
+    Fetch TTS audio with fallback support for Indian languages.
+    Returns (audio_file, method_used)
     """
     voice = get_voice(voice)
     
@@ -82,65 +165,47 @@ async def fetch_tts_audio(text: str, voice: str = "coral", speed: str = "1.00") 
     if len(text) > 3000:
         text = text[:3000] + "..."
     
-    payload = {
-        "msg": text,
-        "lang": voice,
-        "speed": speed,
-        "source": "ttsmp3"
-    }
+    # Try primary API first for English voices and some Indian languages
+    if voice in VOICES or voice in ["Hindi", "Tamil", "Bengali"]:
+        try:
+            audio_file = await fetch_tts_primary(text, voice)
+            return audio_file, "Primary TTS"
+        except Exception as e:
+            print(f"Primary TTS failed: {e}")
+            # Continue to fallback
     
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Content-Type': 'application/x-www-form-urlencoded'
-    }
-    
+    # Use Google TTS for Malayalam and other Indian languages
     try:
-        async with aiohttp.ClientSession(
-            timeout=aiohttp.ClientTimeout(total=30),
-            headers=headers
-        ) as session:
-            # Make POST request to TTS API
-            async with session.post(
-                "https://ttsmp3.com/makemp3_ai.php", 
-                data=payload,
-                timeout=15
-            ) as resp:
-                if resp.status != 200:
-                    raise Exception(f"HTTP {resp.status}: Server error")
-                
-                try:
-                    data = await resp.json()
-                except Exception as e:
-                    raise Exception(f"Failed to parse API response: {e}")
-                
-                # Check for API errors
-                if data.get("Error") == "Usage Limit exceeded":
-                    raise Exception("TTS API usage limit exceeded. Please try again later.")
-                
-                if data.get("Error") != 0 or not data.get("URL"):
-                    error_msg = data.get("Error", "Unknown error")
-                    raise Exception(f"TTS generation failed: {error_msg}")
-                
-                audio_url = data["URL"]
-                
-                # Download audio file
-                async with session.get(audio_url, timeout=20) as audio_resp:
-                    if audio_resp.status != 200:
-                        raise Exception(f"Failed to download audio: HTTP {audio_resp.status}")
-                    
-                    audio_bytes = await audio_resp.read()
-                    if len(audio_bytes) == 0:
-                        raise Exception("Received empty audio file")
-                    
-                    audio = BytesIO(audio_bytes)
-                    audio.name = f"tts_{voice}.mp3"
-                    audio.seek(0)
-                    return audio
-                    
-    except aiohttp.ClientError as e:
-        raise Exception(f"Network error: {e}")
+        # Map voice back to language name for Google TTS
+        lang_for_google = voice
+        if voice == "Malayalam":
+            lang_for_google = "malayalam"
+        elif voice == "Hindi":
+            lang_for_google = "hindi"
+        elif voice == "Tamil":
+            lang_for_google = "tamil"
+        elif voice == "Bengali":
+            lang_for_google = "bengali"
+        elif voice == "Telugu":
+            lang_for_google = "telugu"
+        elif voice == "Marathi":
+            lang_for_google = "marathi"
+        elif voice == "Gujarati":
+            lang_for_google = "gujarati"
+        elif voice == "Kannada":
+            lang_for_google = "kannada"
+        elif voice == "Punjabi":
+            lang_for_google = "punjabi"
+        elif voice == "Urdu":
+            lang_for_google = "urdu"
+        else:
+            lang_for_google = "english"
+        
+        audio_file = await fetch_tts_fallback(text, lang_for_google)
+        return audio_file, "Google TTS"
+    
     except Exception as e:
-        raise Exception(f"TTS error: {e}")
+        raise Exception(f"Both TTS services failed: {e}")
 
 @Client.on_message(filters.command("tts"))
 async def text_to_speech(client: Client, message: Message):
@@ -186,13 +251,13 @@ async def text_to_speech(client: Client, message: Message):
             f"Text length: {len(text_to_convert)} characters"
         )
         
-        # Generate TTS audio
-        audio_file = await fetch_tts_audio(text_to_convert, voice)
+        # Generate TTS audio with fallback
+        audio_file, method_used = await fetch_tts_audio(text_to_convert, voice)
         
         # Send audio file
         await message.reply_audio(
             audio_file,
-            caption=f"🎵 TTS Audio ({lang_display})",
+            caption=f"🎵 TTS Audio ({lang_display}) - {method_used}",
             performer="TTS Bot",
             title=f"TTS - {lang_display}"
         )
@@ -214,8 +279,38 @@ async def text_to_speech(client: Client, message: Message):
 @Client.on_message(filters.command("ttshelp"))
 async def tts_help(client: Client, message: Message):
     """Show TTS help information with Indian language support."""
-    help_text = script.TTS_HELP
+    help_text = """
+🎙️ **Text-to-Speech Bot Help**
+
+**Usage:**
+• Reply to any text message and use `/tts`
+• Specify language: `/tts malayalam`
+
+**Indian Languages:** 🇮🇳
+• malayalam - മലയാളം
+• hindi - हिन्दी  
+• tamil - தமிழ்
+• bengali - বাংলা
+• telugu - తెలుగు
+• marathi - मराठी
+• gujarati - ગુજરાતી
+• kannada - ಕನ್ನಡ
+• punjabi - ਪੰਜਾਬੀ
+• urdu - اردو
+
+**English Voices:**
+• nova, alloy, ash, coral, echo
+• fable, onyx, sage, shimmer
+
+**Examples:**
+• `/tts malayalam` - Convert to Malayalam
+• `/tts hindi` - Convert to Hindi
+• `/tts coral` - Use coral English voice
+• `/tts` - Auto-detect language
+
+**Features:**
+• Auto language detection from text
+• Supports 10+ Indian languages
+• Maximum 3000 characters per message
+    """
     await message.reply_text(help_text)
-
-
-
